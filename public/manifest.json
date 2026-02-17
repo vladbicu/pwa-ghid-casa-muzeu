@@ -1,0 +1,41 @@
+{
+  "name": "Ghid Casa Muzeu Bukowina",
+  "short_name": "Ghid Muzeu",
+  "description": "Aplicație pentru ghizii voluntari ai Casei Muzeu Bukowina",
+  "start_url": "/ghid/",
+  "scope": "/ghid/",
+  "display": "standalone",
+  "background_color": "#FAF7F0",
+  "theme_color": "#2C1810",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "lang": "ro",
+  "categories": ["education", "lifestyle"]
+}

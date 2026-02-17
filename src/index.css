@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-museum-beige text-museum-walnut font-sans antialiased;
+    background-image: radial-gradient(circle at center, #FAF7F0 0%, #F0EBE3 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .wood-grain {
+    background-color: #6B4423;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 12px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(0,0,0,0.1) 0px,
+        rgba(0,0,0,0.1) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+  }
+
+  .wood-grain-light {
+    background-color: #FAF7F0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(44, 24, 16, 0.03) 0px,
+        rgba(44, 24, 16, 0.03) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+  }
+
+  /* Safe area padding for notched devices */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
+
+/* Hide scrollbar for clean horizontal scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Prose styling adjustments */
+.prose {
+  --tw-prose-body: rgb(44 24 16 / 0.8);
+  --tw-prose-headings: rgb(44 24 16);
+}
