@@ -3,11 +3,9 @@ import toursData from '../data/tours.json';
 import stopsData from '../data/stops.json';
 import type { Tour, Stop, ToursData, StopsData, Lang } from '../types';
 
-// Type assertions for JSON imports
 const { tours } = toursData as ToursData;
 const { stops } = stopsData as StopsData;
 
-// Create a map for quick stop lookup by ID
 const stopsMap = new Map<string, Stop>(stops.map((s) => [s.id, s]));
 
 export function useTours() {
@@ -25,9 +23,6 @@ export function useStops() {
   return stops;
 }
 
-/**
- * Returns stops for a tour in the order defined by tour.stopIds
- */
 export function useStopsForTour(tour: Tour | null | undefined) {
   return useMemo(() => {
     if (!tour) return [];
@@ -44,9 +39,6 @@ export function useStop(stopId: string | undefined) {
   }, [stopId]);
 }
 
-/**
- * Returns the index of a stop within a tour's stopIds array
- */
 export function useStopIndex(tour: Tour | null | undefined, stopId: string | undefined) {
   return useMemo(() => {
     if (!tour || !stopId) return -1;
@@ -54,16 +46,83 @@ export function useStopIndex(tour: Tour | null | undefined, stopId: string | und
   }, [tour, stopId]);
 }
 
-// Helper to get localized text with fallback to Romanian
 export function getLocalizedText<T>(
   record: Record<Lang, T> | undefined,
   lang: Lang
 ): T | undefined {
   if (!record) return undefined;
   const value = record[lang];
-  // If the value is empty string or empty array, fallback to 'ro'
   if (value === '' || (Array.isArray(value) && value.length === 0)) {
     return record['ro'];
   }
   return value ?? record['ro'];
+}
+
+// --- Room grouping ---
+
+function getRoomName(roomId: string): string {
+  if (roomId.endsWith('-TIN')) return 'Tindă';
+  const match = roomId.match(/-C(\d+)$/);
+  if (match) return `Camera ${match[1]}`;
+  return roomId;
+}
+
+export interface RoomGroup {
+  roomId: string;
+  roomName: string;
+  stops: Stop[];
+}
+
+export function groupStopsByRoom(stops: Stop[]): RoomGroup[] {
+  const groups = new Map<string, Stop[]>();
+  for (const stop of stops) {
+    if (!groups.has(stop.roomId)) groups.set(stop.roomId, []);
+    groups.get(stop.roomId)!.push(stop);
+  }
+  return Array.from(groups.entries()).map(([roomId, roomStops]) => ({
+    roomId,
+    roomName: getRoomName(roomId),
+    stops: roomStops,
+  }));
+}
+
+// --- Dynamic duration ---
+
+export function computeTourDuration(tour: Tour): string {
+  const totalSeconds = tour.stopIds
+    .map((id) => stopsMap.get(id)?.estSeconds ?? 0)
+    .reduce((sum, s) => sum + s, 0);
+  const totalMins = Math.round(totalSeconds / 60);
+  const lo = Math.max(1, Math.round(totalMins * 0.8 / 5) * 5);
+  const hi = Math.round(totalMins * 1.2 / 5) * 5;
+  return `${lo}–${hi} min`;
+}
+
+// --- Resume tour ---
+
+const RESUME_KEY = 'ghid-resume';
+
+export interface ResumeState {
+  tourId: string;
+  stopId: string;
+}
+
+export function saveResume(tourId: string, stopId: string) {
+  localStorage.setItem(RESUME_KEY, JSON.stringify({ tourId, stopId }));
+}
+
+export function clearResume() {
+  localStorage.removeItem(RESUME_KEY);
+}
+
+export function useResumeTour(): ResumeState | null {
+  return useMemo(() => {
+    const stored = localStorage.getItem(RESUME_KEY);
+    if (!stored) return null;
+    try {
+      return JSON.parse(stored) as ResumeState;
+    } catch {
+      return null;
+    }
+  }, []);
 }

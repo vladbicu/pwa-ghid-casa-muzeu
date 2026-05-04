@@ -24,6 +24,8 @@ export function LanguageSwitcher() {
     <div ref={containerRef} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={`Selectează limba — ${currentLang?.label}`}
+        aria-expanded={isOpen}
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-museum-sand hover:bg-museum-sand/80 transition-colors text-sm font-medium text-museum-walnut"
       >
         <Globe size={16} />
@@ -57,9 +59,6 @@ export function LanguageSwitcher() {
                 }`}
               >
                 <span>{lang.label}</span>
-                {!lang.available && (
-                  <span className="ml-2 text-xs text-museum-walnut/40">(Coming soon)</span>
-                )}
               </button>
             ))}
           </motion.div>

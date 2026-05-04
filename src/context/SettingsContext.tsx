@@ -11,9 +11,9 @@ const LANGUAGE_KEY = 'ghid-language';
 
 const availableLanguages: { code: Lang; label: string; available: boolean }[] = [
   { code: 'ro', label: 'Română', available: true },
-  { code: 'en', label: 'English', available: false },
-  { code: 'fr', label: 'Français', available: false },
-  { code: 'it', label: 'Italiano', available: false },
+  { code: 'en', label: 'English', available: true },
+  { code: 'fr', label: 'Français', available: true },
+  { code: 'it', label: 'Italiano', available: true },
 ];
 
 const SettingsContext = createContext<SettingsContextType | null>(null);

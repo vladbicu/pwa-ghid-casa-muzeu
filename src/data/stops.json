@@ -9,10 +9,25 @@
       "type": "intro",
       "order": 10,
       "estSeconds": 75,
-      "title": { "ro": "Bun venit la Casa Veronica Bicu", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Casă veche (1854)", "Colecție etnografică (familia Bicu)", "Fiecare obiect are poveste"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Cu ce obiect dintr-o casă veche ați crescut sau vă amintiți?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Bun venit la Casa Veronica Bicu",
+        "en": "Welcome to Casa Veronica Bicu",
+        "fr": "Bienvenue à la Casa Veronica Bicu",
+        "it": "Benvenuti a Casa Veronica Bicu"
+      },
+      "script": { "ro": "Bun venit la Casa Veronica Bicu! Vă aflați în fața uneia dintre cele mai vechi case din Putna — construită în 1854 de un om pe nume Niculai Bâcu. De atunci, șase generații s-au succedat în această casă. Casa are dimensiuni surprinzătoare pentru vremea ei: unsprezece metri lungime și opt metri lățime, construită din bârne de lemn de brad, acoperită inițial cu șindrilă. Ganul — cum se numea veranda laterală — era locul de răgaz al verii, cu vedere spre grădină. Podeaua e din scânduri groase de lemn, iar zidurile au respirat umiditatea Bucovinei generații la rând. Ceea ce vedeți în jurul vostru nu este o reconstituire — este, în mare parte, ceea ce a rămas în casă, îngrijit și povestit de mătușa Veronica Bicu. Povestea acestui loc e despre oameni simpli, care au trăit bine cu ceea ce aveau.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Casă veche (1854)", "Colecție etnografică (familia Bicu)", "Fiecare obiect are poveste"],
+        "en": ["An old house (1854)", "Ethnographic collection (Bicu family)", "Every object has a story"],
+        "fr": ["Une vieille maison (1854)", "Collection ethnographique (famille Bicu)", "Chaque objet a son histoire"],
+        "it": ["Una casa antica (1854)", "Collezione etnografica (famiglia Bicu)", "Ogni oggetto ha una storia"]
+      },
+      "questions": {
+        "ro": ["Cu ce obiect dintr-o casă veche ați crescut sau vă amintiți?"],
+        "en": ["Which object from an old house did you grow up with or remember?"],
+        "fr": ["Quel objet d'une vieille maison avez-vous connu ou dont vous vous souvenez ?"],
+        "it": ["Con quale oggetto di una casa antica siete cresciuti o vi ricordate?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-TIN-01.jpg"
     },
@@ -23,10 +38,25 @@
       "type": "room",
       "order": 20,
       "estSeconds": 60,
-      "title": { "ro": "Tinda: inima de trecere a casei", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Spațiu central", "Acces față–spate", "Leagă camerele între ele"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ați mai văzut o casă cu tindă pe mijloc?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Tinda: inima de trecere a casei",
+        "en": "The Hallway: the heart of the house",
+        "fr": "Le couloir : le cœur de passage de la maison",
+        "it": "L'ingresso: il cuore di passaggio della casa"
+      },
+      "script": { "ro": "Tinda — sau holul — era inima de trecere a oricărei case bucovinene tradiționale. Stați acum exact în centrul casei. De aici se intră în toate camerele: în stânga și-n dreapta câte o cameră mare, și mai departe bucătăria și cămara. Tinda nu era doar un spațiu de tranzit — era locul unde se primeau oamenii înainte de a-i invita în casă, unde se lăsau cizmele, unde se atârnau hainele ude de ploaie. Pe vreme de vară, ușile rămâneau deschise și bătea vântul prin casă — un sistem simplu de climatizare naturală. Casa asta, cu grosimea bârnelor ei și cu umbra acoperișului larg, păstra vara răcoare și iarna căldura. Tinda e locul unde casa îți spune: intră, ești așteptat.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Spațiu central", "Acces față–spate", "Leagă camerele între ele"],
+        "en": ["Central space", "Front-to-back access", "Connects the rooms"],
+        "fr": ["Espace central", "Accès avant–arrière", "Relie les pièces entre elles"],
+        "it": ["Spazio centrale", "Accesso fronte–retro", "Collega le stanze tra loro"]
+      },
+      "questions": {
+        "ro": ["Ați mai văzut o casă cu tindă pe mijloc?"],
+        "en": ["Have you ever seen a house with a central hallway like this?"],
+        "fr": ["Avez-vous déjà vu une maison avec un couloir central ?"],
+        "it": ["Avete mai visto una casa con un corridoio centrale come questo?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-TIN-02.jpg"
     },
@@ -37,10 +67,25 @@
       "type": "object",
       "order": 30,
       "estSeconds": 60,
-      "title": { "ro": "Timeline: repere din istoria Bucovinei", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Context regional", "Influențe și tradiții", "Legătura cu obiectele din casă"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce perioadă din timeline vă stârnește curiozitatea?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Timeline: repere din istoria Bucovinei",
+        "en": "Timeline: milestones from the history of Bukovina",
+        "fr": "Frise chronologique : repères de l'histoire de Bucovine",
+        "it": "Linea del tempo: tappe della storia della Bucovina"
+      },
+      "script": { "ro": "Pe această planșă vedeți reperele mari ale Bucovinei — de la întemeierea Putnei de Ștefan cel Mare în 1466, prin stăpânirea habsburgică din 1775, prin Unirea din 1918, și până în zilele noastre. Bucovina e o regiune cu suprapuneri culturale rare: germani, polonezi, evrei, ucraineni, români — toți au locuit cot la cot în același spațiu. Această casă a traversat toate aceste epoci. A văzut stăpânire austriacă, război, colectivizare. Familia Bâcu — locuitorii ei — a supraviețuit schimbând ce trebuia schimbat și păstrând ce merita păstrat. Meseria cioplitorului în piatră, documentată la Putna în monografia lui Dimitrie Dan din 1905, era una dintre ocupațiile principale ale zonei. Piatra, lemnul și țesutul: acestea sunt cele trei meșteșuguri care au ținut Putna în picioare secole la rând.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Context regional", "Influențe și tradiții", "Legătura cu obiectele din casă"],
+        "en": ["Regional context", "Influences and traditions", "Connection to the objects in the house"],
+        "fr": ["Contexte régional", "Influences et traditions", "Lien avec les objets de la maison"],
+        "it": ["Contesto regionale", "Influenze e tradizioni", "Collegamento con gli oggetti della casa"]
+      },
+      "questions": {
+        "ro": ["Ce perioadă din timeline vă stârnește curiozitatea?"],
+        "en": ["Which period on the timeline sparks your curiosity?"],
+        "fr": ["Quelle période de la frise chronologique éveille votre curiosité ?"],
+        "it": ["Quale periodo della linea del tempo suscita la vostra curiosità?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-TIN-03.jpg"
     },
@@ -51,10 +96,25 @@
       "type": "collection",
       "order": 40,
       "estSeconds": 60,
-      "title": { "ro": "Fotografii vechi", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Oameni și gospodărie", "Viața de altădată", "Legătura cu obiectele expuse"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce detaliu observați primul într-o fotografie veche?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Fotografii vechi: familia Bâcu",
+        "en": "Old Photographs: the Bâcu family",
+        "fr": "Vieilles photographies : la famille Bâcu",
+        "it": "Fotografie antiche: la famiglia Bâcu"
+      },
+      "script": { "ro": "Fotografiile pe care le vedeți aparțin familiei Bâcu — Vasile și Glicheria, bunicii generației care a pregătit muzeul. Ei au avut doisprezece copii — o gospodărie adevărată, cu viață multă, muncă multă și iubire multă. Multe dintre aceste fotografii nu au ieșit din casă niciodată. Când echipa de voluntari a început pregătirile pentru muzeu, în primăvara lui 2008, au găsit cutii întregi cu scrisori și fotografii — unele înnegrite de vreme, altele perfect conservate. Fiecare fotografie e un portret de epocă: cum se îmbrăcau, cum stăteau în fața casei, cum priveau la obiectiv cu seriozitatea celor care știu că poza rămâne. Priviți cu atenție — poate recunoașteți obiecte din jurul vostru și în fundalul fotografiilor. O casă și oamenii ei, văzuți de trei ori: odată în fotografie, odată în obiecte, și odată de voi, acum.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Oameni și gospodărie", "Viața de altădată", "Legătura cu obiectele expuse"],
+        "en": ["People and household", "Life of the past", "Connection to the exhibited objects"],
+        "fr": ["Personnes et foyer", "La vie d'autrefois", "Lien avec les objets exposés"],
+        "it": ["Persone e famiglia", "La vita di un tempo", "Collegamento con gli oggetti esposti"]
+      },
+      "questions": {
+        "ro": ["Ce detaliu observați primul într-o fotografie veche?"],
+        "en": ["What detail do you notice first in an old photograph?"],
+        "fr": ["Quel détail remarquez-vous en premier dans une vieille photo ?"],
+        "it": ["Quale dettaglio notate per primo in una vecchia fotografia?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-TIN-04.jpg"
     },
@@ -66,10 +126,25 @@
       "type": "object",
       "order": 110,
       "estSeconds": 120,
-      "title": { "ro": "Războiul de țesut", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Țesutul era esențial", "Muncă de iarnă", "Modele transmise"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce credeți că se țesea cel mai des: pânză pentru haine sau covoare?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Războiul de țesut",
+        "en": "The Loom",
+        "fr": "Le métier à tisser",
+        "it": "Il telaio"
+      },
+      "script": { "ro": "Războiul de țesut pe care îl vedeți a stat ani întregi desfăcut, ascuns sub covoare. Când voluntarii au început să pregătească casa pentru muzeu, în primăvara lui 2008, l-au găsit bârnă cu bârnă, piesă cu piesă — un puzzle din lemn de brad. Nimeni nu mai știa cu siguranță cum se asamblează. Cu răbdare și cu ajutorul celor care mai țineau minte cum arăta un război de țesut în funcțiune, a fost refăcut. Momentul în care a fost pus la loc, spun cei care au participat, a fost cel care a adus cu adevărat viața înapoi în casă. Țesutul era muncă de iarnă: după ce câmpul se liniștea, femeile se așezau la război și țeseau pânzeturi, covoare, ștergare. Toată ziua, câte o linie. Toată iarna, câte o bucată. Tot ce vedeți pe pereți și pe paturi a ieșit din războaie ca acesta.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Țesutul era esențial", "Muncă de iarnă", "Modele transmise"],
+        "en": ["Weaving was essential", "Winter work", "Patterns passed down"],
+        "fr": ["Le tissage était essentiel", "Travail d'hiver", "Motifs transmis de génération en génération"],
+        "it": ["La tessitura era essenziale", "Lavoro invernale", "Motivi tramandati"]
+      },
+      "questions": {
+        "ro": ["Ce credeți că se țesea cel mai des: pânză pentru haine sau covoare?"],
+        "en": ["What do you think was woven most often: fabric for clothes or rugs?"],
+        "fr": ["Qu'est-ce qu'on tissait le plus souvent selon vous : du tissu pour les vêtements ou des tapis ?"],
+        "it": ["Cosa pensate si tessesse più spesso: tessuto per abiti o tappeti?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-01.jpg"
     },
@@ -80,10 +155,25 @@
       "type": "object",
       "order": 120,
       "estSeconds": 75,
-      "title": { "ro": "Soba din cameră", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Căldură iarna", "Spațiu de adunare", "Ritmul serilor"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Vă imaginați cum arăta o seară de iarnă aici?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Soba din cameră",
+        "en": "The Room Stove",
+        "fr": "Le poêle de la chambre",
+        "it": "La stufa della stanza"
+      },
+      "script": { "ro": "Soba din această cameră e de model german — un model adus în Bucovina în perioada stăpânirii habsburgice și adoptat rapid de gospodăriile locale pentru că era mai eficient decât vatra deschisă. Are trei componente principale: plita — suprafața de gătit; rula — cilindrul care distribuia căldura uniform; și cuptorul — spațiul de copt pâinea și prăjiturile. Iarna, în jurul sobei se aduna toată casa. Copiii stăteau lângă ea la teme sau la povești. Mama cocea pâine duminica dimineața. Mirosul de lemn ars și de pâine proaspătă e unul din mirosurile care definesc amintirile celor crescuți în case ca aceasta. Soba ardea câteva ore dimineața și câteva seara — suficient să mențină temperatura confortabilă toată ziua, grație zidurilor groase din bârne de brad.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Căldură iarna", "Spațiu de adunare", "Ritmul serilor"],
+        "en": ["Warmth in winter", "Gathering space", "The rhythm of evenings"],
+        "fr": ["Chaleur en hiver", "Lieu de rassemblement", "Le rythme des soirées"],
+        "it": ["Calore in inverno", "Spazio di riunione", "Il ritmo delle serate"]
+      },
+      "questions": {
+        "ro": ["Vă imaginați cum arăta o seară de iarnă aici?"],
+        "en": ["Can you imagine what a winter evening looked like here?"],
+        "fr": ["Vous imaginez à quoi ressemblait une soirée d'hiver ici ?"],
+        "it": ["Riuscite a immaginare come fosse una serata invernale qui?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-02.jpg"
     },
@@ -94,10 +184,25 @@
       "type": "object",
       "order": 130,
       "estSeconds": 60,
-      "title": { "ro": "Patul tradițional", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Ordine și curățenie", "Textile făcute în casă", "Rol practic și decorativ"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce element decorativ vi se pare cel mai important într-o casă veche?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Patul tradițional",
+        "en": "The Traditional Bed",
+        "fr": "Le lit traditionnel",
+        "it": "Il letto tradizionale"
+      },
+      "script": { "ro": "Patul tradițional bucovinean nu era locul în care se dormea în fiecare noapte — sau cel puțin, nu era prezentat astfel. Era piesa cea mai vizibilă din cameră, îngrămădit cu perne și plapume cusute în casă, aranjat impecabil. Era un semn de ordine și de îngrijire — când intrai în casă și vedeai patul aranjat, știai că gazda e gospodară. Textilele de pe pat — pernele, fețele de pernă, cuvertura — erau aproape toate făcute în casă, fie pe un război de țesut, fie cusute de mână. Mătușa Veronica Bicu a păstrat mulți ani aceste textile cu grijă mare: știa valoarea lor, știa câte ore de muncă stau în spatele fiecărui fir. Priviți cusăturile — nu există două identice. Fiecare e semnătura unui om.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Ordine și curățenie", "Textile făcute în casă", "Rol practic și decorativ"],
+        "en": ["Order and cleanliness", "Homemade textiles", "Practical and decorative role"],
+        "fr": ["Ordre et propreté", "Textiles faits maison", "Rôle pratique et décoratif"],
+        "it": ["Ordine e pulizia", "Tessuti fatti in casa", "Ruolo pratico e decorativo"]
+      },
+      "questions": {
+        "ro": ["Ce element decorativ vi se pare cel mai important într-o casă veche?"],
+        "en": ["What decorative element do you find most important in an old house?"],
+        "fr": ["Quel élément décoratif vous semble le plus important dans une vieille maison ?"],
+        "it": ["Quale elemento decorativo vi sembra più importante in una casa antica?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-03.jpg"
     },
@@ -108,10 +213,25 @@
       "type": "collection",
       "order": 140,
       "estSeconds": 75,
-      "title": { "ro": "Icoane vechi", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Credința în casă", "Colțul de rugăciune", "Sărbători și obiceiuri"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Unde se țineau icoanele în casele bunicilor voștri?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Icoane vechi",
+        "en": "Old Icons",
+        "fr": "Anciennes icônes",
+        "it": "Icone antiche"
+      },
+      "script": { "ro": "Colțul cu icoane era prezent în fiecare cameră a unei case tradiționale — nu ca decor, ci ca axis spiritual al locuinței. Icoanele erau moștenite, nu cumpărate. Treceau de la părinți la copii, de la bunici la nepoți. Unele din icoanele din această casă sunt mai vechi decât casa însăși. Colțul era locul unde se îngenunchea dimineața și seara, unde se aprindea lumânarea de sărbători, unde se ținea apa sfințită de Bobotează. Credința nu era separată de viața practică — era țesută în ritmul zilnic: mâncarea se începea cu o rugăciune, ziua se încheia cu o cruce. Mătușa Veronica era o femeie profund credincioasă, iar prezența acestor icoane în casă era pentru ea firească — nu un gest pentru muzeu, ci o continuare a modului în care casa a trăit întotdeauna.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Credința în casă", "Colțul de rugăciune", "Sărbători și obiceiuri"],
+        "en": ["Faith in the home", "The prayer corner", "Holidays and customs"],
+        "fr": ["La foi dans la maison", "Le coin de prière", "Fêtes et coutumes"],
+        "it": ["La fede in casa", "L'angolo della preghiera", "Festività e usanze"]
+      },
+      "questions": {
+        "ro": ["Unde se țineau icoanele în casele bunicilor voștri?"],
+        "en": ["Where were icons kept in your grandparents' homes?"],
+        "fr": ["Où conservait-on les icônes dans les maisons de vos grands-parents ?"],
+        "it": ["Dove si tenevano le icone nelle case dei vostri nonni?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-04.jpg"
     },
@@ -122,10 +242,25 @@
       "type": "collection",
       "order": 150,
       "estSeconds": 75,
-      "title": { "ro": "Năframe cusute în casă", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Cusături locale", "Fiecare piesă e unică", "Ocazii și utilitate"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce detaliu de pe o cusătură vă atrage privirea prima dată?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Năframe cusute în casă",
+        "en": "Embroidered Headscarves",
+        "fr": "Foulards brodés à la maison",
+        "it": "Fazzoletti ricamati in casa"
+      },
+      "script": { "ro": "Năframele pe care le vedeți — batistele și basmalele cusute — reprezentau o formă de limbaj vizual în Bucovina. Culorile, modelele și tehnica de broderie spuneau lucruri pe care cuvintele nu le rosteau: de unde ești, dacă ești fată sau nevastă, ce sărbătoare e. Fiecare năframă e unică pentru că fiecare mână care a cusut-o a cusut altfel — chiar și urmărind același model. Cusăturile din această colecție sunt în majoritate cu punct încrucișat și cu ilic — tehnici locale, cu motiv geometric sau floral. Le-ar putea face și cineva care a văzut cusând de copil și și-a amintit mișcarea degetelor. Dacă aveți ocazia să le priviți de aproape, căutați marginea — cusăturile de margine sunt de obicei cele mai elaborate și spun cel mai mult despre meștera care le-a lucrat.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Cusături locale", "Fiecare piesă e unică", "Ocazii și utilitate"],
+        "en": ["Local embroidery", "Each piece is unique", "Occasions and utility"],
+        "fr": ["Broderie locale", "Chaque pièce est unique", "Occasions et utilité"],
+        "it": ["Ricamo locale", "Ogni pezzo è unico", "Occasioni e utilità"]
+      },
+      "questions": {
+        "ro": ["Ce detaliu de pe o cusătură vă atrage privirea prima dată?"],
+        "en": ["What detail on an embroidery catches your eye first?"],
+        "fr": ["Quel détail d'une broderie attire-t-il en premier votre regard ?"],
+        "it": ["Quale dettaglio di un ricamo attira per primo la vostra attenzione?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-05.jpg"
     },
@@ -136,10 +271,25 @@
       "type": "object",
       "order": 160,
       "estSeconds": 60,
-      "title": { "ro": "Covor decorativ prins pe grindă", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Vechime (cât casa)", "Rol decorativ", "Păstrarea căldurii"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Unde ați pune un covor decorativ într-o casă de azi?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Covor decorativ prins pe grindă",
+        "en": "Decorative Rug Hung on the Beam",
+        "fr": "Tapis décoratif accroché à la poutre",
+        "it": "Tappeto decorativo appeso alla trave"
+      },
+      "script": { "ro": "Covorul acesta prins de grindă este probabil la fel de vechi ca și casa. În Bucovina, covoarele nu stăteau pe podea — stăteau pe pereți, pe paturi, pe grindă. Aveau rol termic: absorbeau umezeala și izolau de frig. Aveau rol decorativ: aduceau culoare și căldură vizuală. Și aveau rol social: o casă cu covoare frumoase era o casă bine ținută. Modelele din covoare erau mai libere decât cele din cusături — lăsau mai mult loc creativității meșteșugarei. Fondul roșu sau albastru cu motive geometrice e tipic pentru zona Putnei. Covoarele se țeseau iarna și se terminau primăvara — un ciclu anual al femeilor din gospodărie. Acesta a stat la locul lui de peste un secol și jumătate, fără să se miște.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Vechime (cât casa)", "Rol decorativ", "Păstrarea căldurii"],
+        "en": ["Age (as old as the house)", "Decorative role", "Heat retention"],
+        "fr": ["Ancienneté (aussi vieille que la maison)", "Rôle décoratif", "Rétention de la chaleur"],
+        "it": ["Antichità (vecchia quanto la casa)", "Ruolo decorativo", "Conservazione del calore"]
+      },
+      "questions": {
+        "ro": ["Unde ați pune un covor decorativ într-o casă de azi?"],
+        "en": ["Where would you hang a decorative rug in a modern home?"],
+        "fr": ["Où mettriez-vous un tapis décoratif dans une maison d'aujourd'hui ?"],
+        "it": ["Dove mettereste un tappeto decorativo in una casa moderna?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-06.jpg"
     },
@@ -150,10 +300,25 @@
       "type": "object",
       "order": 170,
       "estSeconds": 75,
-      "title": { "ro": "Modele de cusături: Coarnele Berbecului", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Motiv tradițional", "Model simetric", "Transmis din generație"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Cu ce vi se aseamănă motivul: inimă, coarne, romb?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Modele de cusături: Coarnele Berbecului",
+        "en": "Embroidery Patterns: The Ram's Horns",
+        "fr": "Motifs de broderie : les cornes du bélier",
+        "it": "Motivi di ricamo: le corna del montone"
+      },
+      "script": { "ro": "Motivul Coarnele Berbecului — sau, pe alocuri, Coarnele Caprei — e unul din cele mai vechi și răspândite motive decorative din Bucovina. Îl vedeți pe cusături, pe covoare, uneori sculptat în lemn la porți. Este un motiv cu simetrie bilaterală: se citește la fel de la dreapta la stânga. Originea lui e disputată — unii zic că vine din simbolistica păstoritului, că berbecul era cel mai valoros animal din turmă; alții spun că e pur geometric, că simetria lui e simplă și ușor de memorat. Important este că a supraviețuit. L-au cusut mame și l-au recusut fiice care au înlocuit fire rupte sau au reinventat variante. Priviți atent: varianta din această cameră are o ușoară diferență față de cea din camera alăturată. E cusătoarea care și-a lăsat semnătura.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Motiv tradițional", "Model simetric", "Transmis din generație"],
+        "en": ["Traditional motif", "Symmetrical pattern", "Passed down through generations"],
+        "fr": ["Motif traditionnel", "Modèle symétrique", "Transmis de génération en génération"],
+        "it": ["Motivo tradizionale", "Modello simmetrico", "Tramandato di generazione in generazione"]
+      },
+      "questions": {
+        "ro": ["Cu ce vi se aseamănă motivul: inimă, coarne, romb?"],
+        "en": ["What does the motif remind you of: a heart, horns, a diamond?"],
+        "fr": ["À quoi vous fait penser le motif : un cœur, des cornes, un losange ?"],
+        "it": ["A cosa vi ricorda il motivo: un cuore, delle corna, un rombo?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-07.jpg"
     },
@@ -164,10 +329,25 @@
       "type": "collection",
       "order": 180,
       "estSeconds": 45,
-      "title": { "ro": "Obiecte mici (vitrină)", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Lucruri simple, utile", "Viața organizată", "Fiecare obiect avea rol"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Care credeți că era cel mai indispensabil obiect mic dintr-o gospodărie?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Obiecte mici (vitrină)",
+        "en": "Small Objects (display case)",
+        "fr": "Petits objets (vitrine)",
+        "it": "Piccoli oggetti (vetrina)"
+      },
+      "script": { "ro": "Vitrina cu obiecte mici e locul unde povestea casei se concentrează în amănunt. Aici vedeți lucruri care nu sar în ochi: o cheie veche, un ac de lână, o cutie de chibrituri cu etichetă din altă epocă, un nasture din os. Fiecare are o utilitate precisă. O casă tradițională nu păstra nimic fără rost. Spațiul era limitat, banii puțini, obiectele se reparau, nu se aruncau. Cheia aceea a descuiat poate ani de zile ușa cămarii. Acul de lână a cusut poate zeci de cămăși. Nu știm cu certitudine — dar știm că au fost ținute cu grijă, că au supraviețuit timpului, și că acum spun mai mult decât un obiect mare și spectaculos ar putea spune.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Lucruri simple, utile", "Viața organizată", "Fiecare obiect avea rol"],
+        "en": ["Simple, useful things", "An organised life", "Every object had a purpose"],
+        "fr": ["Choses simples et utiles", "Une vie organisée", "Chaque objet avait son rôle"],
+        "it": ["Cose semplici e utili", "Una vita organizzata", "Ogni oggetto aveva un ruolo"]
+      },
+      "questions": {
+        "ro": ["Care credeți că era cel mai indispensabil obiect mic dintr-o gospodărie?"],
+        "en": ["Which small household object do you think was most indispensable?"],
+        "fr": ["Quel petit objet ménager était selon vous le plus indispensable ?"],
+        "it": ["Quale piccolo oggetto domestico pensate fosse più indispensabile?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C1-08.jpg"
     },
@@ -179,10 +359,25 @@
       "type": "room",
       "order": 210,
       "estSeconds": 75,
-      "title": { "ro": "Camera bună: camera de oaspeți", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Nu se dormea aici", "Păstrată mereu în ordine", "Spațiu de primire"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ați auzit de «camera bună» în casele vechi?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Camera bună: camera de oaspeți",
+        "en": "The Good Room: the guest room",
+        "fr": "La belle pièce : la chambre des invités",
+        "it": "La stanza buona: la camera degli ospiti"
+      },
+      "script": { "ro": "Camera bună — sau casa de oaspeți — era o instituție în orice casă tradițională din zona rurală. Nu se dormea în ea în mod obișnuit. Era ținută la rând, cu totul aranjat și neatins, gata oricând să primească un musafir de seamă: preotul, nașul, un funcționar al statului. Că cineva important era așteptat se știa în sat cu câteva zile înainte — și casa se pregătea: se lua praful, se schimbau fețele de pernă, se pregătea masa. Camera bună din Casa Veronica Bicu este mai bogată decorativ decât cea dinspre nord — are mai multe textile, o sobă mai elaborată și un dulap cu obiecte de preț. Această separare a spațiului — cotidian versus ceremonial — spune ceva important: chiar și oamenii simpli aveau demnitate, și aveau un spațiu care o exprima.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Nu se dormea aici", "Păstrată mereu în ordine", "Spațiu de primire"],
+        "en": ["No one slept here", "Always kept tidy", "Receiving space"],
+        "fr": ["On ne dormait pas ici", "Toujours gardée en ordre", "Espace de réception"],
+        "it": ["Nessuno dormiva qui", "Sempre tenuta in ordine", "Spazio di accoglienza"]
+      },
+      "questions": {
+        "ro": ["Ați auzit de «camera bună» în casele vechi?"],
+        "en": ["Have you heard of the 'good room' in old houses?"],
+        "fr": ["Avez-vous entendu parler de la « belle pièce » dans les vieilles maisons ?"],
+        "it": ["Avete sentito parlare della 'stanza buona' nelle case antiche?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-01.jpg"
     },
@@ -193,10 +388,25 @@
       "type": "object",
       "order": 220,
       "estSeconds": 60,
-      "title": { "ro": "Primirea musafirilor", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Rânduială", "Respect", "Rol social"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce înseamnă «a primi musafiri» în cultura satului?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Primirea musafirilor",
+        "en": "Welcoming Guests",
+        "fr": "L'accueil des invités",
+        "it": "L'accoglienza degli ospiti"
+      },
+      "script": { "ro": "Primirea musafirilor în casa tradițională nu era un act spontan — era un ritual cu reguli clare. Musafirul era întâmpinat la poartă, poftit pe prispă, invitat în tindă, și abia după asta în casă. I se oferea apă, apoi ceva de mâncare, și abia la urmă se vorbea de treabă. Gazda nu se scuza niciodată pentru ce are — se oferea cu ce era. «Ce are casa» era o formulă de modestie, dar și de demnitate. Pe masă apăreau mereu lucrurile cele mai bune: vasele din dulap, pâinea proaspătă, borcanul de dulceață ținut pentru ocazii. Această cultură a primirii — care e și astăzi vie în Putna — vine dintr-o înțelegere a timpului diferită: musafirul nu se primea în grabă pentru că nimic important nu se face în grabă.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Rânduială", "Respect", "Rol social"],
+        "en": ["Order and ritual", "Respect", "Social role"],
+        "fr": ["Protocole", "Respect", "Rôle social"],
+        "it": ["Protocollo", "Rispetto", "Ruolo sociale"]
+      },
+      "questions": {
+        "ro": ["Ce înseamnă «a primi musafiri» în cultura satului?"],
+        "en": ["What does 'welcoming guests' mean in village culture?"],
+        "fr": ["Que signifie « recevoir des invités » dans la culture villageoise ?"],
+        "it": ["Cosa significa 'ricevere ospiti' nella cultura del villaggio?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-02.jpg"
     },
@@ -207,10 +417,25 @@
       "type": "object",
       "order": 230,
       "estSeconds": 60,
-      "title": { "ro": "Părintele cu icoana de Crăciun", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Obicei de iarnă", "Binecuvântare", "Comunitate"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Se păstrează și azi obiceiul în zona voastră?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Părintele cu icoana de Crăciun",
+        "en": "The Priest with the Christmas Icon",
+        "fr": "Le prêtre avec l'icône de Noël",
+        "it": "Il sacerdote con l'icona di Natale"
+      },
+      "script": { "ro": "Colinda preotului cu icoana de Crăciun — sau umblatul cu icoana, cum se spune local — era un obicei de iarnă prin care preotul vizita fiecare casă din sat, cu o icoană în mână și cu câteva cuvinte de binecuvântare. Familia ieșea în întâmpinare, se îngenunchea, se săruta icoana. Era un moment de liniște în mijlocul agitației de sărbători. Imaginea fotografiată sau pictată a preotului cu icoana era un obiect de mare preț — ținut lângă icoanele proprii, pe perete. Astăzi, obiceiul umblatului cu icoana se mai păstrează în unele sate din zona Putnei — e una din tradițiile care au supraviețuit colectivizării și modernizării. Supraviețuiesc pentru că oamenii le vor.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Obicei de iarnă", "Binecuvântare", "Comunitate"],
+        "en": ["Winter custom", "Blessing", "Community"],
+        "fr": ["Coutume d'hiver", "Bénédiction", "Communauté"],
+        "it": ["Usanza invernale", "Benedizione", "Comunità"]
+      },
+      "questions": {
+        "ro": ["Se păstrează și azi obiceiul în zona voastră?"],
+        "en": ["Is this custom still preserved in your area today?"],
+        "fr": ["Cette coutume est-elle encore préservée dans votre région aujourd'hui ?"],
+        "it": ["Questa tradizione è ancora preservata nella vostra zona oggi?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-03.jpg"
     },
@@ -221,10 +446,25 @@
       "type": "object",
       "order": 240,
       "estSeconds": 60,
-      "title": { "ro": "Boboteaza în casa tradițională", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Rânduială anuală", "Apă sfințită", "Protecție și credință"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce rol credeți că avea rânduiala Bobotezei pentru o familie?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Boboteaza în casa tradițională",
+        "en": "Epiphany in the Traditional House",
+        "fr": "L'Épiphanie dans la maison traditionnelle",
+        "it": "L'Epifania nella casa tradizionale"
+      },
+      "script": { "ro": "Boboteaza — sărbătorită pe 6 ianuarie — era una din cele mai importante rânduieli ale iernii în casa tradițională bucovineniană. Preotul sfințea apa — la râu sau la fântâna satului — și aducea apă sfințită în fiecare casă. Apa se păstra într-un vas special, ținut la loc de cinste. Se folosea la momente importante: când era cineva bolnav, când se pornea la drum lung, când se punea temelia unei case noi. Crucea trasă cu busuioc pe ușori și pe grinzi la Bobotează rămânea acolo tot anul — nu era ștearsă, era lăsată să se estompeze singură. Această rânduială anuală dădea casei un ritm — un calendar interior care structura viața în jurul marilor momente spirituale, nu al celor administrative.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Rânduială anuală", "Apă sfințită", "Protecție și credință"],
+        "en": ["Annual ritual", "Holy water", "Protection and faith"],
+        "fr": ["Rituel annuel", "Eau bénite", "Protection et foi"],
+        "it": ["Rito annuale", "Acqua benedetta", "Protezione e fede"]
+      },
+      "questions": {
+        "ro": ["Ce rol credeți că avea rânduiala Bobotezei pentru o familie?"],
+        "en": ["What role do you think the Epiphany ritual had for a family?"],
+        "fr": ["Quel rôle pensez-vous que le rituel de l'Épiphanie avait pour une famille ?"],
+        "it": ["Quale ruolo pensate avesse il rito dell'Epifania per una famiglia?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-04.jpg"
     },
@@ -235,10 +475,25 @@
       "type": "object",
       "order": 250,
       "estSeconds": 60,
-      "title": { "ro": "Dulap cu veselă", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Piese «de preț»", "Se foloseau rar", "Arătau statutul și grija"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["În casele de azi, ce păstrăm «pentru musafiri»?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Dulap cu veselă",
+        "en": "Crockery Cabinet",
+        "fr": "Armoire à vaisselle",
+        "it": "Credenza con stoviglie"
+      },
+      "script": { "ro": "Dulapul cu veselă din camera bună era echivalentul casei tradiționale al unui seif — nu pentru bani, ci pentru obiecte de valoare sentimentală și socială. Vesela de preț — farfuriile pictate, ceștile cu flori, carafele de sticlă — se folosea de câteva ori pe an, la ocazii mari. Restul timpului stătea aranjat, vizibil, în dulap. Rolul dulapului nu era doar depozitarea — era și expunerea. Când intrai în camera bună, vedeai dulapul. Și în dulap vedeai cine este familia aceea, ce obiecte a reușit să adune, ce are de arătat. Era o formă de identitate socială. Piesele din acest dulap — unele fabricate la Fabrica Fischer, despre care veți auzi mai departe — reprezentau legătura dintre gospodăria rurală și lumea meșteșugărească și comercială a epocii.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Piese «de preț»", "Se foloseau rar", "Arătau statutul și grija"],
+        "en": ["'Precious' pieces", "Used rarely", "Showed status and care"],
+        "fr": ["Pièces « de valeur »", "Utilisées rarement", "Témoignaient du statut et du soin"],
+        "it": ["Pezzi 'di pregio'", "Usati raramente", "Mostravano lo status e la cura"]
+      },
+      "questions": {
+        "ro": ["În casele de azi, ce păstrăm «pentru musafiri»?"],
+        "en": ["In homes today, what do we keep 'for guests'?"],
+        "fr": ["Dans les maisons d'aujourd'hui, qu'est-ce qu'on garde « pour les invités » ?"],
+        "it": ["Nelle case di oggi, cosa teniamo 'per gli ospiti'?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-05.jpg"
     },
@@ -249,10 +504,25 @@
       "type": "collection",
       "order": 260,
       "estSeconds": 75,
-      "title": { "ro": "Obiecte de sticlă (Fabrica lui Fischer)", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Legătură cu industria locală", "Sticlărie și comerț", "Piese fragile, valoroase"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Cum vi se pare legătura dintre sat și industrie, văzută prin obiectele de sticlă?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Obiecte de sticlă (Fabrica lui Fischer)",
+        "en": "Glass Objects (Fischer's Factory)",
+        "fr": "Objets en verre (usine Fischer)",
+        "it": "Oggetti in vetro (Fabbrica Fischer)"
+      },
+      "script": { "ro": "Fabrica de sticlă a lui Fischer — fondată în zona Bucovinei în a doua jumătate a secolului XIX — a lăsat urme în aproape fiecare casă din regiune. Era o fabrică mare, cu sticlari aduși din Austria și Boemia, care producea atât sticlărie de uz cât și piese decorative. Țăranii bucovineni cumpărau la târguri — la Câmpulung, la Rădăuți — și duceau acasă carafe, pahare, sticle cu dop. Obiecte pe care nu le puteau face ei, dar pe care și le permiteau periodic. Piesele pe care le vedeți în vitrină sunt printre puținele obiecte din această casă care nu au fost produse în gospodărie. Ele spun că o casă rurală din Bucovina nu era izolată de lumea comercială — era conectată, chiar dacă modest, la rețelele de producție și schimb ale epocii.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Legătură cu industria locală", "Sticlărie și comerț", "Piese fragile, valoroase"],
+        "en": ["Connection to local industry", "Glassware and trade", "Fragile, valuable pieces"],
+        "fr": ["Lien avec l'industrie locale", "Verrerie et commerce", "Pièces fragiles et précieuses"],
+        "it": ["Collegamento con l'industria locale", "Vetreria e commercio", "Pezzi fragili e preziosi"]
+      },
+      "questions": {
+        "ro": ["Cum vi se pare legătura dintre sat și industrie, văzută prin obiectele de sticlă?"],
+        "en": ["What do you think of the connection between village and industry, seen through the glass objects?"],
+        "fr": ["Que pensez-vous du lien entre le village et l'industrie, vu à travers les objets en verre ?"],
+        "it": ["Come vi sembra il legame tra villaggio e industria, visto attraverso gli oggetti in vetro?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-06.jpg"
     },
@@ -263,10 +533,25 @@
       "type": "collection",
       "order": 270,
       "estSeconds": 60,
-      "title": { "ro": "Instrumente muzicale", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Muzica în comunitate", "Sărbători și joc", "Memorie și emoție"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce moment al comunității vi se pare cel mai legat de muzică?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Instrumente muzicale",
+        "en": "Musical Instruments",
+        "fr": "Instruments de musique",
+        "it": "Strumenti musicali"
+      },
+      "script": { "ro": "Muzica în Putna nu era divertisment — era structură socială. La clăci, la nunți, la șezători, la hore de duminică, muzica era cea care aduna oamenii și le dădea ritm. Instrumentele din această cameră aparțineau unor oameni care nu se considerau muzicieni de meserie, dar care știau să cânte de la o vârstă fragedă. Se cânta de la ureche, după ce ai ascultat pe alții ani de zile. Repertoriul era local — melodii care nu apar în niciun manual, transmise doar oral, din serile petrecute împreună. Astăzi, Casa Muzeu Bukowina continuă această tradiție: în curtea casei au loc evenimente, concerte și ateliere care aduc muzica tradițională la oameni noi. Instrumentele din vitrină nu sunt piese moarte — sunt parte dintr-un fir care nu s-a rupt.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Muzica în comunitate", "Sărbători și joc", "Memorie și emoție"],
+        "en": ["Music in the community", "Celebrations and dance", "Memory and emotion"],
+        "fr": ["La musique dans la communauté", "Fêtes et danses", "Mémoire et émotion"],
+        "it": ["La musica nella comunità", "Festività e danze", "Memoria ed emozione"]
+      },
+      "questions": {
+        "ro": ["Ce moment al comunității vi se pare cel mai legat de muzică?"],
+        "en": ["What community moment do you find most closely tied to music?"],
+        "fr": ["Quel moment de la communauté vous semble le plus lié à la musique ?"],
+        "it": ["Quale momento della comunità vi sembra più legato alla musica?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C2-07.jpg"
     },
@@ -278,10 +563,25 @@
       "type": "room",
       "order": 310,
       "estSeconds": 45,
-      "title": { "ro": "Bucătăria: locul de lucru al casei", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Gătit și încălzire", "Rânduială zilnică", "Obiecte de uz curent"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Care e primul lucru la care vă gândiți când auziți «bucătărie veche»?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Bucătăria: locul de lucru al casei",
+        "en": "The Kitchen: the working heart of the house",
+        "fr": "La cuisine : le cœur de travail de la maison",
+        "it": "La cucina: il cuore lavorativo della casa"
+      },
+      "script": { "ro": "Bucătăria era inima practică a casei — locul unde ziua începea și se termina. Dimineața, focul se aprindea de la primele ore pentru cafea sau ceai, pentru mămăligă sau terci. Seara, tot bucătăria era ultima care se liniștea, după ce vasele se spălau și se puneau la loc. Spre deosebire de camera bună — care era rezervată — bucătăria era democratică: toată lumea intra, toată lumea ajuta. Copiii cojeau cartofi, bătrânii curățau fasole, bunica frământa pâinea. Era locul de muncă, dar și locul de conversație al casei. Lucrurile din bucătărie urmau o logică a utilității, nu a frumuseții. Fiecare obiect era la îndemână. Fiecare gest era repetat de atâtea ori încât devenise reflex.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Gătit și încălzire", "Rânduială zilnică", "Obiecte de uz curent"],
+        "en": ["Cooking and heating", "Daily routine", "Everyday objects"],
+        "fr": ["Cuisine et chauffage", "Routine quotidienne", "Objets d'usage courant"],
+        "it": ["Cucina e riscaldamento", "Routine quotidiana", "Oggetti di uso corrente"]
+      },
+      "questions": {
+        "ro": ["Care e primul lucru la care vă gândiți când auziți «bucătărie veche»?"],
+        "en": ["What is the first thing you think of when you hear 'old kitchen'?"],
+        "fr": ["Quelle est la première chose à laquelle vous pensez quand vous entendez « vieille cuisine » ?"],
+        "it": ["Qual è la prima cosa a cui pensate quando sentite 'vecchia cucina'?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C3-01.jpg"
     },
@@ -292,10 +592,25 @@
       "type": "object",
       "order": 320,
       "estSeconds": 60,
-      "title": { "ro": "Sobă cu plită", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Gătit pe plită", "Căldură", "Eficiență în gospodărie"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce mâncare credeți că se făcea cel mai des la plită?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Sobă cu plită",
+        "en": "Cooking Stove",
+        "fr": "Cuisinière à feu",
+        "it": "Stufa con piano cottura"
+      },
+      "script": { "ro": "Soba cu plită din bucătărie e mai funcțională decât cea din cameră, dar mai versatilă. Pe plită se gătea zilnic: mămăligă, ciorbe, legume prăjite, mâncare de post. Cuptorul de sub plită era pentru pâine — se cocea o dată pe săptămână, duminica, și mirosul umplea toată casa. Regula de bază a plitei era temperatura: știai după culoarea jarului și după sunetul apei turnate pe placă dacă focul e destul de tare pentru prăjit sau destul de slab pentru copt. Nu existau termometre — exista experiența. Rula — cilindrul lateral al sobei — servea și la ținut cald mâncarea pregătită, ca un bain-marie rudimentar. Soba asta a hrănit generații — și probabil că mâncarea de pe ea a gustat la fel de bine ca oricare.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Gătit pe plită", "Căldură", "Eficiență în gospodărie"],
+        "en": ["Cooking on the stove", "Heat", "Household efficiency"],
+        "fr": ["Cuisine sur le fourneau", "Chaleur", "Efficacité domestique"],
+        "it": ["Cottura sul fornello", "Calore", "Efficienza domestica"]
+      },
+      "questions": {
+        "ro": ["Ce mâncare credeți că se făcea cel mai des la plită?"],
+        "en": ["What food do you think was made most often on the stove?"],
+        "fr": ["Quel plat pensez-vous qu'on préparait le plus souvent sur le fourneau ?"],
+        "it": ["Quale cibo pensate si preparasse più spesso sul fornello?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C3-02.jpg"
     },
@@ -306,10 +621,25 @@
       "type": "object",
       "order": 330,
       "estSeconds": 45,
-      "title": { "ro": "Blidar pentru castroane", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Depozitare la vedere", "Ușor de folosit", "Ordine în bucătărie"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["De ce credeți că vasele stăteau la vedere, nu ascunse?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Blidar pentru castroane",
+        "en": "Open Shelf for Bowls",
+        "fr": "Étagère ouverte pour les bols",
+        "it": "Scaffale aperto per le ciotole"
+      },
+      "script": { "ro": "Blidarul — raftul deschis pentru castroane — pare simplu, dar spune mult. Vasele nu se ascundeau în dulapuri cu uși — stăteau la vedere. Asta înseamnă că erau curate, mereu gata de folosit, și că gazda nu se temea să fie văzute. Era un standard de ordine pe care îl respectai mai ales față de tine însuți. Vasele de pe blid — castroanele de lut, farfuriile smălțuite, oalele de tuci — aveau forme dictate de funcție, nu de modă. Fiecare castron stătea exact pe locul lui. Dacă un vizitator al casei întindea mâna după un castron, îl găsea fără să îl caute — pentru că ordinea era intuitivă. Asta e diferit de ordinea impusă din exterior. Era ordinea trăită din interior.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Depozitare la vedere", "Ușor de folosit", "Ordine în bucătărie"],
+        "en": ["Visible storage", "Easy to reach", "Order in the kitchen"],
+        "fr": ["Rangement visible", "Facile d'accès", "Ordre dans la cuisine"],
+        "it": ["Stoccaggio a vista", "Facile da raggiungere", "Ordine in cucina"]
+      },
+      "questions": {
+        "ro": ["De ce credeți că vasele stăteau la vedere, nu ascunse?"],
+        "en": ["Why do you think the dishes were kept in view, not hidden away?"],
+        "fr": ["Pourquoi pensez-vous que les ustensiles étaient exposés plutôt que cachés ?"],
+        "it": ["Perché pensate che le stoviglie fossero esposte e non nascoste?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C3-03.jpg"
     },
@@ -320,10 +650,25 @@
       "type": "object",
       "order": 340,
       "estSeconds": 45,
-      "title": { "ro": "Dulap pentru vesela de uz zilnic", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Vesela de zi cu zi", "Practic", "Diferență față de «camera bună»"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce diferență vedeți între obiectele «de zi» și cele «de musafiri»?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Dulap pentru vesela de uz zilnic",
+        "en": "Cabinet for Everyday Crockery",
+        "fr": "Armoire pour la vaisselle quotidienne",
+        "it": "Armadietto per le stoviglie di uso quotidiano"
+      },
+      "script": { "ro": "Dacă blidarul era pentru vasele de lucru — cele care se foloseau zilnic — dulapul cu uși era pentru vesela ceva mai bună, dar tot de uz curent. Nu la nivelul dulapului din camera bună — dar un nivel deasupra castroanelor de zi cu zi. Această distincție în trei trepte — obiectele zilnice, cele curente și obiectele de sărbătoare — e o formă de organizare a vieții în jurul ritmului social. Ziua de duminică după-masă cu vecinii cerea altceva decât supa de marți la prânz. Și casa știa asta. Dulapul era închis — vasele se protejau de praf, de umezeală, de accidentele bucătăriei. Era o formă de îngrijire, de anticipare: știi că o să ai nevoie de ele, deci le păstrezi bine.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Vesela de zi cu zi", "Practic", "Diferență față de «camera bună»"],
+        "en": ["Everyday crockery", "Practical", "Contrast with the 'good room'"],
+        "fr": ["Vaisselle du quotidien", "Pratique", "Contraste avec la « belle pièce »"],
+        "it": ["Stoviglie di tutti i giorni", "Pratico", "Contrasto con la 'stanza buona'"]
+      },
+      "questions": {
+        "ro": ["Ce diferență vedeți între obiectele «de zi» și cele «de musafiri»?"],
+        "en": ["What difference do you see between 'everyday' objects and 'guest' objects?"],
+        "fr": ["Quelle différence voyez-vous entre les objets « du quotidien » et ceux « pour les invités » ?"],
+        "it": ["Che differenza vedete tra gli oggetti 'di tutti i giorni' e quelli 'per gli ospiti'?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C3-04.jpg"
     },
@@ -335,10 +680,25 @@
       "type": "room",
       "order": 410,
       "estSeconds": 45,
-      "title": { "ro": "Cămara: depozitul casei", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Stocare", "Organizare", "Resurse pentru iarnă"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce credeți că era cel mai important lucru de păstrat pentru iarnă?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Cămara: depozitul casei",
+        "en": "The Pantry: the house's storage room",
+        "fr": "Le garde-manger : le cellier de la maison",
+        "it": "La dispensa: il deposito della casa"
+      },
+      "script": { "ro": "Cămara era poate cel mai strategic spațiu din casă — locul unde se decidea dacă familia va trece bine iarna sau nu. Se umplea toamna — după ce se terminau recoltele, după clăcile de tăiat porcul, după ce se strângeau fructele și se fierbeau dulcețurile. O cămară bine umplută era o cămară care îți dădea liniște: știai că ai ce mânca. Casa Veronica Bicu era o gospodărie cu câmp și animale — nu una care cumpăra mult de la piață. Autosuficiența nu era o alegere filosofică — era o necesitate practică. Drumul la târg era lung, banii rari. Ce creșteai, mâncai. Ce strângeai toamna, te ținea primăvara. Cămara e locul care face vizibilă această logică — o viață bine administrată, sezon cu sezon.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Stocare", "Organizare", "Resurse pentru iarnă"],
+        "en": ["Storage", "Organisation", "Winter resources"],
+        "fr": ["Stockage", "Organisation", "Ressources pour l'hiver"],
+        "it": ["Stoccaggio", "Organizzazione", "Risorse per l'inverno"]
+      },
+      "questions": {
+        "ro": ["Ce credeți că era cel mai important lucru de păstrat pentru iarnă?"],
+        "en": ["What do you think was the most important thing to keep for winter?"],
+        "fr": ["Qu'est-ce qui était selon vous le plus important à conserver pour l'hiver ?"],
+        "it": ["Cosa pensate fosse la cosa più importante da conservare per l'inverno?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C4-01.jpg"
     },
@@ -349,10 +709,25 @@
       "type": "collection",
       "order": 420,
       "estSeconds": 60,
-      "title": { "ro": "Butoaie de diferite mărimi", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Stocare în volum", "Ingrediente și cereale", "Gospodărie autosuficientă"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce credeți că se păstra cel mai des în butoaie?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Butoaie de diferite mărimi",
+        "en": "Barrels of Different Sizes",
+        "fr": "Tonneaux de différentes tailles",
+        "it": "Botti di diverse dimensioni"
+      },
+      "script": { "ro": "Butoaiele din cămară spun povestea fermentării — procesul prin care o gospodărie tradițională conserva ce nu putea ține proaspăt. Varza murată, castraveții, sfecla, borșul — toate se conservau în butoaie. Unele butoaie erau pentru murat — cu saramură și frunze de hrean; altele pentru fermentat — cu maia sau cu drojdie. Butoaiele se curățau toamna cu apă fierbinte și cu pelin — o plantă amară care dezinfecta lemnul. Mirosul de butoi curat era mirosul toamnei în gospodărie, la fel de caracteristic ca mirosul de fum sau de mere. Dimensiunile butoaielor din față — de la cel mic de zece litri până la cel mare — spun ceva despre cantitățile cu care se lucra: nu pentru o masă, nu pentru o săptămână, ci pentru un sezon întreg.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Stocare în volum", "Ingrediente și cereale", "Gospodărie autosuficientă"],
+        "en": ["Bulk storage", "Ingredients and grains", "Self-sufficient household"],
+        "fr": ["Stockage en vrac", "Ingrédients et céréales", "Foyer autosuffisant"],
+        "it": ["Stoccaggio alla rinfusa", "Ingredienti e cereali", "Famiglia autosufficiente"]
+      },
+      "questions": {
+        "ro": ["Ce credeți că se păstra cel mai des în butoaie?"],
+        "en": ["What do you think was stored most often in barrels?"],
+        "fr": ["Qu'est-ce qu'on conservait le plus souvent dans les tonneaux selon vous ?"],
+        "it": ["Cosa pensate si conservasse più spesso nelle botti?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C4-02.jpg"
     },
@@ -363,10 +738,25 @@
       "type": "collection",
       "order": 430,
       "estSeconds": 45,
-      "title": { "ro": "Recipiente pentru cereale și ingrediente", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Grâne", "Făină/ingredient", "Planificare pe termen lung"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["De ce era vital să ai provizii în casă tot anul?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Recipiente pentru cereale și ingrediente",
+        "en": "Containers for Grains and Ingredients",
+        "fr": "Récipients pour les céréales et les ingrédients",
+        "it": "Contenitori per cereali e ingredienti"
+      },
+      "script": { "ro": "Recipientele pentru cereale și ingrediente uscate — grâne, porumb, fasole, nuci, semințe — urmau o logică proprie. Fiecare avea un raft, un loc, un semn. Știai că borcanul cu capac de pânză e pentru fasole, că cel de lut smălțuit e pentru sare. Nu era scris nicăieri — era ținut minte și transmis. Grânele uscate stăteau în saci de in sau în lăzi de lemn, departe de umezeală și de rozătoare. Pânza de sac se cosea în casă și se repara dacă se rupea. Aceste recipiente nu sunt spectaculoase — dar fiecare din ele reprezintă câteva ore de muncă și o soluție practică la o problemă care se repeta an de an, generație după generație.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Grâne", "Făină/ingredient", "Planificare pe termen lung"],
+        "en": ["Grains", "Flour / ingredient", "Long-term planning"],
+        "fr": ["Céréales", "Farine / ingrédient", "Planification à long terme"],
+        "it": ["Cereali", "Farina / ingrediente", "Pianificazione a lungo termine"]
+      },
+      "questions": {
+        "ro": ["De ce era vital să ai provizii în casă tot anul?"],
+        "en": ["Why was it vital to have supplies at home all year round?"],
+        "fr": ["Pourquoi était-il vital d'avoir des provisions à la maison toute l'année ?"],
+        "it": ["Perché era vitale avere scorte in casa tutto l'anno?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C4-03.jpg"
     },
@@ -377,10 +767,25 @@
       "type": "collection",
       "order": 440,
       "estSeconds": 45,
-      "title": { "ro": "Obiecte de uz casnic voluminoase", "en": "", "fr": "", "it": "" },
-      "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Lucruri mari, utile", "Folosire sezonieră", "Durabilitate"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce obiect mare dintr-o gospodărie credeți că era cel mai greu de înlocuit?"], "en": [], "fr": [], "it": [] },
+      "title": {
+        "ro": "Obiecte de uz casnic voluminoase",
+        "en": "Large Household Objects",
+        "fr": "Grands objets ménagers",
+        "it": "Grandi oggetti domestici"
+      },
+      "script": { "ro": "Obiectele mari din cămară — covata, donița, piua, putinile — sunt cele care spun cel mai clar că o gospodărie tradițională era o întreprindere. Nu un loc de relaxare — un loc de muncă. Covata era pentru frământat pâinea și pentru îmbăiat copiii mici. Donița era pentru cărat apă de la fântână. Putinile erau pentru brânzeturi și unt. Fiecare obiect era mare și greu nu din întâmplare, ci pentru că funcția o cerea. Și fiecare se repara dacă se defecta — nu se arunca. Doagele butoaielor se strângeau înapoi dacă lemnul se zvânta. Manșonul de la coasă se refixa cu o sârmă de fier. Logica era a durabilității maxime și a risipei minime — o logică pe care abia în ultimii ani am început să o redescoperim.", "en": "", "fr": "", "it": "" },
+      "keyPoints": {
+        "ro": ["Lucruri mari, utile", "Folosire sezonieră", "Durabilitate"],
+        "en": ["Large, useful things", "Seasonal use", "Durability"],
+        "fr": ["Grandes choses utiles", "Utilisation saisonnière", "Durabilité"],
+        "it": ["Oggetti grandi e utili", "Uso stagionale", "Durabilità"]
+      },
+      "questions": {
+        "ro": ["Ce obiect mare dintr-o gospodărie credeți că era cel mai greu de înlocuit?"],
+        "en": ["Which large household object do you think was the hardest to replace?"],
+        "fr": ["Quel grand objet ménager était selon vous le plus difficile à remplacer ?"],
+        "it": ["Quale grande oggetto domestico pensate fosse il più difficile da sostituire?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cvb/CVB-C4-04.jpg"
     },
@@ -392,10 +797,25 @@
       "type": "intro",
       "order": 510,
       "estSeconds": 75,
-      "title": { "ro": "Casa Aionitoaie: povestea mutării", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Casa Aionitoaie: povestea mutării",
+        "en": "Casa Aionitoaie: the story of the move",
+        "fr": "Casa Aionitoaie : l'histoire du déménagement",
+        "it": "Casa Aionitoaie: la storia dello spostamento"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Casă recuperată", "Reconstruită în spatele CVB", "Centru de reinterpretare"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["De ce credeți că merită salvată o casă veche, chiar dacă e mutată?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Casă recuperată", "Reconstruită în spatele CVB", "Centru de reinterpretare"],
+        "en": ["A rescued house", "Rebuilt behind CVB", "Reinterpretation centre"],
+        "fr": ["Une maison sauvegardée", "Reconstruite derrière CVB", "Centre de réinterprétation"],
+        "it": ["Una casa recuperata", "Ricostruita dietro il CVB", "Centro di reinterpretazione"]
+      },
+      "questions": {
+        "ro": ["De ce credeți că merită salvată o casă veche, chiar dacă e mutată?"],
+        "en": ["Why do you think it is worth saving an old house, even if it has to be moved?"],
+        "fr": ["Pourquoi pensez-vous qu'il vaut la peine de sauver une vieille maison, même si elle doit être déplacée ?"],
+        "it": ["Perché pensate valga la pena salvare una casa antica, anche se deve essere spostata?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-TIN-01.jpg"
     },
@@ -406,10 +826,25 @@
       "type": "object",
       "order": 520,
       "estSeconds": 60,
-      "title": { "ro": "Clăcile: cum s-a reconstruit casa", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Clăcile: cum s-a reconstruit casa",
+        "en": "Community Work: how the house was rebuilt",
+        "fr": "Les corvées communautaires : comment la maison a été reconstruite",
+        "it": "Il lavoro collettivo: come è stata ricostruita la casa"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Voluntariat", "Cunoștințe + muncă", "Evenimente comunitare"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ați participat vreodată la o clacă sau la un proiect comunitar?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Voluntariat", "Cunoștințe + muncă", "Evenimente comunitare"],
+        "en": ["Volunteering", "Knowledge + labour", "Community events"],
+        "fr": ["Bénévolat", "Savoir + travail", "Événements communautaires"],
+        "it": ["Volontariato", "Conoscenza + lavoro", "Eventi comunitari"]
+      },
+      "questions": {
+        "ro": ["Ați participat vreodată la o clacă sau la un proiect comunitar?"],
+        "en": ["Have you ever taken part in a community work gathering or project?"],
+        "fr": ["Avez-vous déjà participé à une corvée communautaire ou à un projet collectif ?"],
+        "it": ["Avete mai partecipato a un lavoro comunitario o a un progetto collettivo?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-TIN-02.jpg"
     },
@@ -420,10 +855,25 @@
       "type": "collection",
       "order": 530,
       "estSeconds": 60,
-      "title": { "ro": "Mostre de materii prime (interior tradițional)", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Mostre de materii prime (interior tradițional)",
+        "en": "Raw Material Samples (traditional interior)",
+        "fr": "Échantillons de matières premières (intérieur traditionnel)",
+        "it": "Campioni di materie prime (interno tradizionale)"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Materiale naturale", "Tehnici tradiționale", "Legătura cu meșterii"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Care material vi se pare cel mai surprinzător?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Materiale naturale", "Tehnici tradiționale", "Legătura cu meșterii"],
+        "en": ["Natural materials", "Traditional techniques", "Connection to craftspeople"],
+        "fr": ["Matériaux naturels", "Techniques traditionnelles", "Lien avec les artisans"],
+        "it": ["Materiali naturali", "Tecniche tradizionali", "Collegamento con gli artigiani"]
+      },
+      "questions": {
+        "ro": ["Care material vi se pare cel mai surprinzător?"],
+        "en": ["Which material surprises you the most?"],
+        "fr": ["Quel matériau vous surprend le plus ?"],
+        "it": ["Quale materiale vi sorprende di più?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-TIN-03.jpg"
     },
@@ -435,10 +885,25 @@
       "type": "object",
       "order": 610,
       "estSeconds": 75,
-      "title": { "ro": "Sobă bucovineană cu cuptor", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Sobă bucovineană cu cuptor",
+        "en": "Bukovinian Oven-Stove",
+        "fr": "Poêle bucovinien avec four",
+        "it": "Stufa bucoviniana con forno"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Încălzire + gătit", "Specific local", "Centru al camerei"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce avantaj are o sobă cu cuptor față de una simplă?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Încălzire + gătit", "Specific local", "Centru al camerei"],
+        "en": ["Heating + cooking", "Local character", "Centre of the room"],
+        "fr": ["Chauffage + cuisine", "Caractère local", "Centre de la pièce"],
+        "it": ["Riscaldamento + cucina", "Carattere locale", "Centro della stanza"]
+      },
+      "questions": {
+        "ro": ["Ce avantaj are o sobă cu cuptor față de una simplă?"],
+        "en": ["What advantage does an oven-stove have over a plain stove?"],
+        "fr": ["Quel avantage a un poêle avec four par rapport à un simple poêle ?"],
+        "it": ["Quale vantaggio ha una stufa con forno rispetto a una stufa semplice?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C1-01.jpg"
     },
@@ -449,10 +914,25 @@
       "type": "collection",
       "order": 620,
       "estSeconds": 45,
-      "title": { "ro": "Farfurii și căni de lut", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Farfurii și căni de lut",
+        "en": "Clay Plates and Mugs",
+        "fr": "Assiettes et tasses en terre cuite",
+        "it": "Piatti e tazze in terracotta"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Meșteșug", "Util", "Material local"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce vi se pare special la lut față de ceramică modernă?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Meșteșug", "Util", "Material local"],
+        "en": ["Craftsmanship", "Useful", "Local material"],
+        "fr": ["Artisanat", "Utile", "Matériau local"],
+        "it": ["Artigianato", "Utile", "Materiale locale"]
+      },
+      "questions": {
+        "ro": ["Ce vi se pare special la lut față de ceramică modernă?"],
+        "en": ["What do you find special about clay compared to modern ceramics?"],
+        "fr": ["Qu'est-ce qui vous paraît spécial dans la terre cuite par rapport à la céramique moderne ?"],
+        "it": ["Cosa trovate di speciale nella terracotta rispetto alla ceramica moderna?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C1-02.jpg"
     },
@@ -463,10 +943,25 @@
       "type": "object",
       "order": 630,
       "estSeconds": 45,
-      "title": { "ro": "Pat (camera de workshop)", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Pat (camera de workshop)",
+        "en": "Bed (workshop room)",
+        "fr": "Lit (salle d'atelier)",
+        "it": "Letto (stanza laboratorio)"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Interior tradițional", "Funcție practică", "Spațiu folosit azi pentru ateliere"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Cum vi se pare ideea de a ține ateliere într-o casă tradițională?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Interior tradițional", "Funcție practică", "Spațiu folosit azi pentru ateliere"],
+        "en": ["Traditional interior", "Practical function", "Space used today for workshops"],
+        "fr": ["Intérieur traditionnel", "Fonction pratique", "Espace utilisé aujourd'hui pour des ateliers"],
+        "it": ["Interno tradizionale", "Funzione pratica", "Spazio usato oggi per laboratori"]
+      },
+      "questions": {
+        "ro": ["Cum vi se pare ideea de a ține ateliere într-o casă tradițională?"],
+        "en": ["What do you think about the idea of holding workshops in a traditional house?"],
+        "fr": ["Que pensez-vous de l'idée d'organiser des ateliers dans une maison traditionnelle ?"],
+        "it": ["Cosa pensate dell'idea di tenere laboratori in una casa tradizionale?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C1-03.jpg"
     },
@@ -477,10 +972,25 @@
       "type": "object",
       "order": 640,
       "estSeconds": 60,
-      "title": { "ro": "Ladă de zestre", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Ladă de zestre",
+        "en": "Dowry Chest",
+        "fr": "Coffre de dot",
+        "it": "Cassapanca della dote"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Păstrare textile/lucruri de preț", "Simbol de familie", "Transmitere generații"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce credeți că era cel mai important lucru păstrat într-o ladă de zestre?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Păstrare textile/lucruri de preț", "Simbol de familie", "Transmitere generații"],
+        "en": ["Storing textiles / valuables", "Family symbol", "Passed down through generations"],
+        "fr": ["Conservation de textiles / objets précieux", "Symbole familial", "Transmis de génération en génération"],
+        "it": ["Conservazione di tessuti / oggetti di valore", "Simbolo di famiglia", "Tramandato di generazione in generazione"]
+      },
+      "questions": {
+        "ro": ["Ce credeți că era cel mai important lucru păstrat într-o ladă de zestre?"],
+        "en": ["What do you think was the most important thing kept in a dowry chest?"],
+        "fr": ["Qu'est-ce qui était selon vous le plus important dans un coffre de dot ?"],
+        "it": ["Cosa pensate fosse la cosa più importante conservata in una cassapanca della dote?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C1-04.jpg"
     },
@@ -492,10 +1002,25 @@
       "type": "room",
       "order": 710,
       "estSeconds": 60,
-      "title": { "ro": "Cum a fost dezmembrată și reansamblată casa", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Cum a fost dezmembrată și reansamblată casa",
+        "en": "How the House Was Dismantled and Reassembled",
+        "fr": "Comment la maison a été démontée et remontée",
+        "it": "Come la casa è stata smontata e rimontata"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Demontare", "Reansamblare", "Tehnici tradiționale"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["V-ați imaginat vreodată că o casă poate fi «mutată» bucățică cu bucățică?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Demontare", "Reansamblare", "Tehnici tradiționale"],
+        "en": ["Dismantling", "Reassembly", "Traditional techniques"],
+        "fr": ["Démontage", "Remontage", "Techniques traditionnelles"],
+        "it": ["Smontaggio", "Rimontaggio", "Tecniche tradizionali"]
+      },
+      "questions": {
+        "ro": ["V-ați imaginat vreodată că o casă poate fi «mutată» bucățică cu bucățică?"],
+        "en": ["Have you ever imagined that a house could be 'moved' piece by piece?"],
+        "fr": ["Avez-vous déjà imaginé qu'une maison puisse être « déplacée » morceau par morceau ?"],
+        "it": ["Avete mai immaginato che una casa potesse essere 'spostata' pezzo per pezzo?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C2-01.jpg"
     },
@@ -506,10 +1031,25 @@
       "type": "object",
       "order": 720,
       "estSeconds": 60,
-      "title": { "ro": "Etapele demontării", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Etapele demontării",
+        "en": "Stages of Dismantling",
+        "fr": "Les étapes du démontage",
+        "it": "Le fasi dello smontaggio"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Documentare", "Numerotare elemente", "Păstrarea structurii"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce credeți că e cel mai greu: demontarea sau reansamblarea?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Documentare", "Numerotare elemente", "Păstrarea structurii"],
+        "en": ["Documentation", "Numbering elements", "Preserving the structure"],
+        "fr": ["Documentation", "Numérotation des éléments", "Préservation de la structure"],
+        "it": ["Documentazione", "Numerazione degli elementi", "Conservazione della struttura"]
+      },
+      "questions": {
+        "ro": ["Ce credeți că e cel mai greu: demontarea sau reansamblarea?"],
+        "en": ["What do you think is harder: dismantling or reassembling?"],
+        "fr": ["Qu'est-ce qui est le plus difficile selon vous : démonter ou remonter ?"],
+        "it": ["Cosa pensate sia più difficile: smontare o rimontare?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C2-02.jpg"
     },
@@ -520,10 +1060,25 @@
       "type": "object",
       "order": 730,
       "estSeconds": 60,
-      "title": { "ro": "Reansamblarea: etape și nevoi", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Reansamblarea: etape și nevoi",
+        "en": "Reassembly: stages and needs",
+        "fr": "Le remontage : étapes et besoins",
+        "it": "Il rimontaggio: fasi e necessità"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Fundație/poziționare", "Îmbinări", "Refacere elemente"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["De ce e important să refaci o casă în tehnici cât mai apropiate de cele originale?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Fundație/poziționare", "Îmbinări", "Refacere elemente"],
+        "en": ["Foundation / positioning", "Joints", "Restoring elements"],
+        "fr": ["Fondation / positionnement", "Assemblages", "Restauration des éléments"],
+        "it": ["Fondamenta / posizionamento", "Giunti", "Ripristino degli elementi"]
+      },
+      "questions": {
+        "ro": ["De ce e important să refaci o casă în tehnici cât mai apropiate de cele originale?"],
+        "en": ["Why is it important to rebuild a house using techniques as close as possible to the originals?"],
+        "fr": ["Pourquoi est-il important de reconstruire une maison avec des techniques aussi proches que possible des originales ?"],
+        "it": ["Perché è importante ricostruire una casa con tecniche il più possibile vicine a quelle originali?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C2-03.jpg"
     },
@@ -534,10 +1089,25 @@
       "type": "collection",
       "order": 740,
       "estSeconds": 60,
-      "title": { "ro": "Voluntarii (galerie foto)", "en": "", "fr": "", "it": "" },
+      "title": {
+        "ro": "Voluntarii (galerie foto)",
+        "en": "The Volunteers (photo gallery)",
+        "fr": "Les bénévoles (galerie photos)",
+        "it": "I volontari (galleria fotografica)"
+      },
       "script": { "ro": "TODO", "en": "", "fr": "", "it": "" },
-      "keyPoints": { "ro": ["Comunitate", "Efort colectiv", "Învățare prin lucru"], "en": [], "fr": [], "it": [] },
-      "questions": { "ro": ["Ce credeți că îi motivează pe oameni să ajute la astfel de proiecte?"], "en": [], "fr": [], "it": [] },
+      "keyPoints": {
+        "ro": ["Comunitate", "Efort colectiv", "Învățare prin lucru"],
+        "en": ["Community", "Collective effort", "Learning through work"],
+        "fr": ["Communauté", "Effort collectif", "Apprendre en travaillant"],
+        "it": ["Comunità", "Sforzo collettivo", "Imparare attraverso il lavoro"]
+      },
+      "questions": {
+        "ro": ["Ce credeți că îi motivează pe oameni să ajute la astfel de proiecte?"],
+        "en": ["What do you think motivates people to help with projects like this?"],
+        "fr": ["Qu'est-ce qui motive les gens à aider à de tels projets selon vous ?"],
+        "it": ["Cosa pensate motivi le persone ad aiutare in progetti come questo?"]
+      },
       "extra": { "ro": "", "en": "", "fr": "", "it": "" },
       "image": "/images/stops/cai/CAI-C2-04.jpg"
     }

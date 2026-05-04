@@ -2,9 +2,10 @@ import React from 'react';
 import { Play, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import type { Stop } from '../types';
+import type { Stop, StopType } from '../types';
 import { useSettings } from '../context/SettingsContext';
 import { getLocalizedText } from '../hooks/useData';
+import { getUI } from '../i18n/ui';
 
 interface StopCardProps {
   stop: Stop;
@@ -13,43 +14,37 @@ interface StopCardProps {
   isCompleted?: boolean;
 }
 
-export function StopCard({
-  stop,
-  tourId,
-  index,
-  isCompleted = false,
-}: StopCardProps) {
+const typeBadgeStyle: Record<StopType, string> = {
+  intro: 'bg-museum-moss text-museum-cream',
+  room: 'bg-museum-walnut/80 text-museum-cream',
+  object: 'bg-amber-700 text-white',
+  collection: 'bg-slate-600 text-white',
+};
+
+export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardProps) {
   const { language } = useSettings();
+  const ui = getUI(language);
   const title = getLocalizedText(stop.title, language) || '';
   const keyPoints = getLocalizedText(stop.keyPoints, language) || [];
   const description = keyPoints[0] || '';
 
   const formatTime = (seconds: number) => {
-    const mins = Math.round(seconds / 60);
-    return `~${mins} min`;
+    const mins = Math.ceil(seconds / 60);
+    return ui.estTime(mins);
   };
 
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        x: -10,
-      }}
-      animate={{
-        opacity: 1,
-        x: 0,
-      }}
-      transition={{
-        duration: 0.4,
-        delay: index * 0.05,
-      }}
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
     >
       <Link
         to={`/tour/${tourId}/stop/${stop.id}`}
         className="flex items-center gap-4 p-4 bg-museum-cream rounded-xl shadow-warm border border-museum-walnut/5 hover:border-museum-moss/30 hover:shadow-md transition-all duration-300 group active:scale-[0.99]"
       >
         <div className="relative shrink-0">
-          <div className="w-16 h-16 rounded-lg overflow-hidden bg-museum-walnut/10">
+          <div className="w-20 h-20 rounded-lg overflow-hidden bg-museum-walnut/10">
             {stop.image && (
               <img
                 src={stop.image}
@@ -58,13 +53,18 @@ export function StopCard({
               />
             )}
           </div>
+          {/* Stop number badge */}
           <div className="absolute -top-2 -left-2 w-6 h-6 bg-museum-walnut text-museum-cream text-xs font-bold flex items-center justify-center rounded-full shadow-sm border border-museum-cream">
             {index + 1}
+          </div>
+          {/* Stop type badge */}
+          <div className={`absolute -bottom-1 -right-1 text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-md shadow-sm ${typeBadgeStyle[stop.type]}`}>
+            {ui.stopTypeLabel(stop.type)}
           </div>
         </div>
 
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-museum-walnut text-lg leading-tight mb-1 truncate group-hover:text-museum-moss transition-colors">
+          <h4 className="font-semibold text-museum-walnut text-base leading-tight mb-1 truncate group-hover:text-museum-moss transition-colors">
             {title}
           </h4>
           <p className="text-sm text-museum-walnut/70 line-clamp-1">

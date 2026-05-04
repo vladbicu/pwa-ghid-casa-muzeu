@@ -7,42 +7,20 @@
       "houseId": "CVB",
       "order": 1,
       "durationLabel": "30–45 min",
-      "title": { "ro": "Casa Veronica Bicu", "en": "", "fr": "", "it": "" },
+      "title": { "ro": "Casa Veronica Bicu", "en": "Casa Veronica Bicu", "fr": "Casa Veronica Bicu", "it": "Casa Veronica Bicu" },
       "description": {
         "ro": "Tur ghidat prin Casa Veronica Bicu: tindă (hol) + 4 camere, cu colecția etnografică a familiei Bicu.",
-        "en": "",
-        "fr": "",
-        "it": ""
+        "en": "Guided tour of Casa Veronica Bicu: entrance hall + 4 rooms, featuring the Bicu family's ethnographic collection.",
+        "fr": "Visite guidée de la Casa Veronica Bicu : entrée + 4 pièces, avec la collection ethnographique de la famille Bicu.",
+        "it": "Tour guidato di Casa Veronica Bicu: ingresso + 4 stanze, con la collezione etnografica della famiglia Bicu."
       },
       "image": "/images/tours/cvb.jpg",
       "stopIds": [
-        "CVB-TIN-01",
-        "CVB-TIN-02",
-        "CVB-TIN-03",
-        "CVB-TIN-04",
-        "CVB-C1-01",
-        "CVB-C1-02",
-        "CVB-C1-03",
-        "CVB-C1-04",
-        "CVB-C1-05",
-        "CVB-C1-06",
-        "CVB-C1-07",
-        "CVB-C1-08",
-        "CVB-C2-01",
-        "CVB-C2-02",
-        "CVB-C2-03",
-        "CVB-C2-04",
-        "CVB-C2-05",
-        "CVB-C2-06",
-        "CVB-C2-07",
-        "CVB-C3-01",
-        "CVB-C3-02",
-        "CVB-C3-03",
-        "CVB-C3-04",
-        "CVB-C4-01",
-        "CVB-C4-02",
-        "CVB-C4-03",
-        "CVB-C4-04"
+        "CVB-TIN-01","CVB-TIN-02","CVB-TIN-03","CVB-TIN-04",
+        "CVB-C1-01","CVB-C1-02","CVB-C1-03","CVB-C1-04","CVB-C1-05","CVB-C1-06","CVB-C1-07","CVB-C1-08",
+        "CVB-C2-01","CVB-C2-02","CVB-C2-03","CVB-C2-04","CVB-C2-05","CVB-C2-06","CVB-C2-07",
+        "CVB-C3-01","CVB-C3-02","CVB-C3-03","CVB-C3-04",
+        "CVB-C4-01","CVB-C4-02","CVB-C4-03","CVB-C4-04"
       ]
     },
     {
@@ -50,26 +28,18 @@
       "houseId": "CAI",
       "order": 2,
       "durationLabel": "20–30 min",
-      "title": { "ro": "Casa Aionitoaie", "en": "", "fr": "", "it": "" },
+      "title": { "ro": "Casa Aionitoaie", "en": "Casa Aionitoaie", "fr": "Casa Aionitoaie", "it": "Casa Aionitoaie" },
       "description": {
         "ro": "Tur ghidat prin Casa Aionitoaie: tindă (context, materiale, clăci) + 2 camere (workshop și procesul de reconstrucție).",
-        "en": "",
-        "fr": "",
-        "it": ""
+        "en": "Guided tour of Casa Aionitoaie: entrance hall (context, materials, community work) + 2 rooms (workshop and the reconstruction process).",
+        "fr": "Visite guidée de la Casa Aionitoaie : entrée (contexte, matériaux, corvées) + 2 pièces (atelier et processus de reconstruction).",
+        "it": "Tour guidato di Casa Aionitoaie: ingresso (contesto, materiali, lavoro collettivo) + 2 stanze (laboratorio e processo di ricostruzione)."
       },
       "image": "/images/tours/cai.jpg",
       "stopIds": [
-        "CAI-TIN-01",
-        "CAI-TIN-02",
-        "CAI-TIN-03",
-        "CAI-C1-01",
-        "CAI-C1-02",
-        "CAI-C1-03",
-        "CAI-C1-04",
-        "CAI-C2-01",
-        "CAI-C2-02",
-        "CAI-C2-03",
-        "CAI-C2-04"
+        "CAI-TIN-01","CAI-TIN-02","CAI-TIN-03",
+        "CAI-C1-01","CAI-C1-02","CAI-C1-03","CAI-C1-04",
+        "CAI-C2-01","CAI-C2-02","CAI-C2-03","CAI-C2-04"
       ]
     }
   ]

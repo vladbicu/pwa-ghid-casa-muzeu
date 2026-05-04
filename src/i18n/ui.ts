@@ -1,0 +1,101 @@
+import type { Lang, StopType } from '../types';
+
+const stopTypeLabels: Record<Lang, Record<StopType, string>> = {
+  ro: { intro: 'Introducere', room: 'Cameră', object: 'Obiect', collection: 'Colecție' },
+  en: { intro: 'Introduction', room: 'Room', object: 'Object', collection: 'Collection' },
+  fr: { intro: 'Introduction', room: 'Salle', object: 'Objet', collection: 'Collection' },
+  it: { intro: 'Introduzione', room: 'Stanza', object: 'Oggetto', collection: 'Collezione' },
+};
+
+interface UIStrings {
+  stopCounter: (current: number, total: number) => string;
+  back: string;
+  nextStop: string;
+  finishTour: string;
+  keyPoints: string;
+  questions: string;
+  extraDetails: string;
+  stops: string;
+  beginTour: string;
+  continueTour: string;
+  resumeLabel: (stopTitle: string) => string;
+  stopTypeLabel: (type: StopType) => string;
+  estTime: (mins: number) => string;
+  stopNotFound: string;
+  backToTour: string;
+}
+
+const uiStrings: Record<Lang, UIStrings> = {
+  ro: {
+    stopCounter: (c, t) => `Oprire ${c} din ${t}`,
+    back: 'Înapoi',
+    nextStop: 'Următoarea oprire',
+    finishTour: 'Finalizează turul',
+    keyPoints: 'Puncte cheie',
+    questions: 'Întrebări pentru public',
+    extraDetails: 'Extra detalii',
+    stops: 'Opriri',
+    beginTour: 'Începe turul',
+    continueTour: 'Continuă turul',
+    resumeLabel: (title) => `Continuă: ${title}`,
+    stopTypeLabel: (type) => stopTypeLabels.ro[type],
+    estTime: (mins) => `~${mins} min`,
+    stopNotFound: 'Oprirea nu a fost găsită',
+    backToTour: '← Înapoi la tur',
+  },
+  en: {
+    stopCounter: (c, t) => `Stop ${c} of ${t}`,
+    back: 'Back',
+    nextStop: 'Next stop',
+    finishTour: 'Finish tour',
+    keyPoints: 'Key points',
+    questions: 'Questions for the audience',
+    extraDetails: 'Extra details',
+    stops: 'Stops',
+    beginTour: 'Begin tour',
+    continueTour: 'Continue tour',
+    resumeLabel: (title) => `Continue: ${title}`,
+    stopTypeLabel: (type) => stopTypeLabels.en[type],
+    estTime: (mins) => `~${mins} min`,
+    stopNotFound: 'Stop not found',
+    backToTour: '← Back to tour',
+  },
+  fr: {
+    stopCounter: (c, t) => `Arrêt ${c} sur ${t}`,
+    back: 'Retour',
+    nextStop: 'Arrêt suivant',
+    finishTour: 'Terminer la visite',
+    keyPoints: 'Points clés',
+    questions: 'Questions pour le public',
+    extraDetails: 'Détails supplémentaires',
+    stops: 'Arrêts',
+    beginTour: 'Commencer',
+    continueTour: 'Continuer la visite',
+    resumeLabel: (title) => `Reprendre : ${title}`,
+    stopTypeLabel: (type) => stopTypeLabels.fr[type],
+    estTime: (mins) => `~${mins} min`,
+    stopNotFound: 'Arrêt introuvable',
+    backToTour: '← Retour à la visite',
+  },
+  it: {
+    stopCounter: (c, t) => `Tappa ${c} di ${t}`,
+    back: 'Indietro',
+    nextStop: 'Tappa successiva',
+    finishTour: 'Termina il tour',
+    keyPoints: 'Punti chiave',
+    questions: 'Domande per il pubblico',
+    extraDetails: 'Dettagli aggiuntivi',
+    stops: 'Tappe',
+    beginTour: 'Inizia',
+    continueTour: 'Continua il tour',
+    resumeLabel: (title) => `Continua: ${title}`,
+    stopTypeLabel: (type) => stopTypeLabels.it[type],
+    estTime: (mins) => `~${mins} min`,
+    stopNotFound: 'Tappa non trovata',
+    backToTour: '← Torna al tour',
+  },
+};
+
+export function getUI(lang: Lang): UIStrings {
+  return uiStrings[lang];
+}

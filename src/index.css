@@ -5,9 +5,35 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light mode palette (RGB triplets for Tailwind opacity support) */
+  :root {
+    --museum-beige:  250 247 240;   /* #FAF7F0 */
+    --museum-walnut:  44  24  16;   /* #2C1810 */
+    --museum-moss:   107 125  92;   /* #6B7D5C */
+    --museum-cream:  255 252 245;   /* #FFFCF5 */
+    --museum-sand:   240 235 227;   /* #F0EBE3 */
+    --museum-brown:   61  40  23;   /* #3D2817 */
+  }
+
+  /* Dark mode palette */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --museum-beige:   18  10   6;  /* very dark warm bg    */
+      --museum-walnut: 245 240 232;  /* light warm text      */
+      --museum-moss:   143 168 122;  /* brighter green       */
+      --museum-cream:   35  20  12;  /* dark card surface    */
+      --museum-sand:    52  30  18;  /* slightly lighter     */
+      --museum-brown:   52  30  18;
+    }
+  }
+
   body {
     @apply bg-museum-beige text-museum-walnut font-sans antialiased;
-    background-image: radial-gradient(circle at center, #FAF7F0 0%, #F0EBE3 100%);
+    background-image: radial-gradient(
+      circle at center,
+      rgb(var(--museum-beige)) 0%,
+      rgb(var(--museum-sand)) 100%
+    );
     min-height: 100vh;
   }
 
@@ -18,7 +44,7 @@
 
 @layer utilities {
   .text-shadow-sm {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
 
   .wood-grain {
@@ -40,35 +66,18 @@
       );
   }
 
-  .wood-grain-light {
-    background-color: #FAF7F0;
-    background-image:
-      repeating-linear-gradient(
-        45deg,
-        rgba(44, 24, 16, 0.03) 0px,
-        rgba(44, 24, 16, 0.03) 1px,
-        transparent 1px,
-        transparent 10px
-      );
-  }
-
   /* Safe area padding for notched devices */
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
 }
 
-/* Hide scrollbar for clean horizontal scrolling */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Prose styling adjustments */
+/* Prose adjustments */
 .prose {
-  --tw-prose-body: rgb(44 24 16 / 0.8);
-  --tw-prose-headings: rgb(44 24 16);
+  --tw-prose-body: rgb(var(--museum-walnut) / 0.8);
+  --tw-prose-headings: rgb(var(--museum-walnut));
 }

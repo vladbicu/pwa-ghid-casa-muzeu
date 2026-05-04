@@ -4,24 +4,25 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
         museum: {
-          beige: '#FAF7F0',
-          walnut: '#2C1810',
-          moss: '#6B7D5C',
-          cream: '#FFFCF5',
-          sand: '#F0EBE3',
-          brown: '#3D2817',
+          beige: 'rgb(var(--museum-beige) / <alpha-value>)',
+          walnut: 'rgb(var(--museum-walnut) / <alpha-value>)',
+          moss: 'rgb(var(--museum-moss) / <alpha-value>)',
+          cream: 'rgb(var(--museum-cream) / <alpha-value>)',
+          sand: 'rgb(var(--museum-sand) / <alpha-value>)',
+          brown: 'rgb(var(--museum-brown) / <alpha-value>)',
         }
       },
       fontFamily: {
         sans: ['Outfit', 'sans-serif'],
       },
       boxShadow: {
-        'warm': '0 4px 14px 0 rgba(107, 68, 35, 0.15)',
-        'warm-lg': '0 10px 25px -5px rgba(107, 68, 35, 0.2)',
+        'warm': '0 4px 14px 0 rgba(0, 0, 0, 0.12)',
+        'warm-lg': '0 10px 25px -5px rgba(0, 0, 0, 0.18)',
         'inner-wood': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
       }
     },
