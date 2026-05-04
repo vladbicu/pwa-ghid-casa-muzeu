@@ -6,6 +6,7 @@ import { getUI } from '../i18n/ui';
 import { Accordion } from '../components/Accordion';
 import { ArrowLeft, ChevronRight, MessageCircleQuestion, Lightbulb, BookOpen, List, X } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { asset } from '../utils/asset';
 
 const slideVariants = {
   initial: (d: number) => ({
@@ -79,7 +80,7 @@ export function StopPage() {
         <div className="relative h-[40vh] w-full overflow-hidden bg-museum-walnut/20">
           {stop.image && (
             <motion.img
-              src={stop.image}
+              src={asset(stop.image)}
               alt={title}
               style={{ y: imageY }}
               className="absolute inset-0 w-full h-full object-cover scale-110"

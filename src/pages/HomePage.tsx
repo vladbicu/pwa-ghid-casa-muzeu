@@ -53,7 +53,7 @@ export function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-3xl md:text-4xl font-bold text-museum-walnut mb-3"
         >
-          Ghid Casa Muzeu
+          {ui.homeTitle}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export function HomePage() {
           transition={{ delay: 0.1 }}
           className="text-museum-walnut/70 text-lg max-w-2xl"
         >
-          Selectează un tur pentru a începe ghidajul.
+          {ui.selectTour}
         </motion.p>
       </div>
 

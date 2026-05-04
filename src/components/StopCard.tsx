@@ -6,6 +6,7 @@ import type { Stop, StopType } from '../types';
 import { useSettings } from '../context/SettingsContext';
 import { getLocalizedText } from '../hooks/useData';
 import { getUI } from '../i18n/ui';
+import { asset } from '../utils/asset';
 
 interface StopCardProps {
   stop: Stop;
@@ -47,7 +48,7 @@ export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardP
           <div className="w-20 h-20 rounded-lg overflow-hidden bg-museum-walnut/10">
             {stop.image && (
               <img
-                src={stop.image}
+                src={asset(stop.image)}
                 alt={title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />

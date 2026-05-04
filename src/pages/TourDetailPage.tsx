@@ -6,6 +6,7 @@ import { getUI } from '../i18n/ui';
 import { StopCard } from '../components/StopCard';
 import { ArrowLeft, Clock, MapPin, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { asset } from '../utils/asset';
 
 export function TourDetailPage() {
   const { tourId } = useParams();
@@ -46,7 +47,7 @@ export function TourDetailPage() {
         <div className="absolute inset-0 bg-museum-walnut/20">
           {tour.image && (
             <img
-              src={tour.image}
+              src={asset(tour.image)}
               alt={title}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               className="w-full h-full object-cover"

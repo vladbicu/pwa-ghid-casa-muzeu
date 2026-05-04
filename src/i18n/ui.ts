@@ -8,6 +8,8 @@ const stopTypeLabels: Record<Lang, Record<StopType, string>> = {
 };
 
 interface UIStrings {
+  homeTitle: string;
+  selectTour: string;
   stopCounter: (current: number, total: number) => string;
   back: string;
   nextStop: string;
@@ -27,6 +29,8 @@ interface UIStrings {
 
 const uiStrings: Record<Lang, UIStrings> = {
   ro: {
+    homeTitle: 'Ghid Casa Muzeu',
+    selectTour: 'Selectează un tur pentru a începe ghidajul.',
     stopCounter: (c, t) => `Oprire ${c} din ${t}`,
     back: 'Înapoi',
     nextStop: 'Următoarea oprire',
@@ -44,6 +48,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     backToTour: '← Înapoi la tur',
   },
   en: {
+    homeTitle: 'Casa Muzeu Guide',
+    selectTour: 'Select a tour to begin your guided visit.',
     stopCounter: (c, t) => `Stop ${c} of ${t}`,
     back: 'Back',
     nextStop: 'Next stop',
@@ -61,6 +67,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     backToTour: '← Back to tour',
   },
   fr: {
+    homeTitle: 'Guide Casa Muzeu',
+    selectTour: 'Sélectionnez une visite pour commencer le guidage.',
     stopCounter: (c, t) => `Arrêt ${c} sur ${t}`,
     back: 'Retour',
     nextStop: 'Arrêt suivant',
@@ -78,6 +86,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     backToTour: '← Retour à la visite',
   },
   it: {
+    homeTitle: 'Guida Casa Muzeu',
+    selectTour: 'Seleziona un tour per iniziare la guida.',
     stopCounter: (c, t) => `Tappa ${c} di ${t}`,
     back: 'Indietro',
     nextStop: 'Tappa successiva',

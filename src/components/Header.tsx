@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { asset } from '../utils/asset';
 
 export function Header() {
   const [logoError, setLogoError] = useState(false);
@@ -15,7 +16,7 @@ export function Header() {
             </span>
           ) : (
             <img
-              src="/icons/logo.png"
+              src={asset('/icons/logo.png')}
               alt="Casa Muzeu Bukowina"
               onError={() => setLogoError(true)}
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"

@@ -6,6 +6,7 @@ import type { Tour } from '../types';
 import { useSettings } from '../context/SettingsContext';
 import { getLocalizedText, computeTourDuration } from '../hooks/useData';
 import { getUI } from '../i18n/ui';
+import { asset } from '../utils/asset';
 
 interface TourCardProps {
   tour: Tour;
@@ -32,7 +33,7 @@ export function TourCard({ tour, index }: TourCardProps) {
           {/* Background Image */}
           {tour.image && !imgError && (
             <img
-              src={tour.image}
+              src={asset(tour.image)}
               alt={title}
               onError={() => setImgError(true)}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
