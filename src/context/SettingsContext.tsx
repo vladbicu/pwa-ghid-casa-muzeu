@@ -1,13 +1,16 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import type { Lang } from '../types';
 
 interface SettingsContextType {
   language: Lang;
   setLanguage: (lang: Lang) => void;
   availableLanguages: { code: Lang; label: string; available: boolean }[];
+  theme: 'light' | 'dark';
+  setTheme: (theme: 'light' | 'dark') => void;
 }
 
 const LANGUAGE_KEY = 'ghid-language';
+const THEME_KEY = 'ghid-theme';
 
 const availableLanguages: { code: Lang; label: string; available: boolean }[] = [
   { code: 'ro', label: 'Română', available: true },
@@ -29,9 +32,26 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     return 'ro';
   });
 
+  const [theme, setThemeState] = useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored === 'light' || stored === 'dark') return stored;
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
   const setLanguage = (lang: Lang) => {
     setLanguageState(lang);
     localStorage.setItem(LANGUAGE_KEY, lang);
+  };
+
+  const setTheme = (t: 'light' | 'dark') => {
+    setThemeState(t);
+    localStorage.setItem(THEME_KEY, t);
   };
 
   return (
@@ -40,6 +60,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
         language,
         setLanguage,
         availableLanguages,
+        theme,
+        setTheme,
       }}
     >
       {children}

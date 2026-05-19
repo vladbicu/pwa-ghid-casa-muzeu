@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 import toursData from '../data/tours.json';
 import stopsData from '../data/stops.json';
-import type { Tour, Stop, ToursData, StopsData, Lang } from '../types';
+import industryData from '../data/industry.json';
+import type { Tour, Stop, ToursData, StopsData, Lang, IndustrySection, IndustryData } from '../types';
 
 const { tours } = toursData as ToursData;
 const { stops } = stopsData as StopsData;
+const { sections: industrySections } = industryData as IndustryData;
 
 const stopsMap = new Map<string, Stop>(stops.map((s) => [s.id, s]));
 
@@ -96,6 +98,19 @@ export function computeTourDuration(tour: Tour): string {
   const lo = Math.max(1, Math.round(totalMins * 0.8 / 5) * 5);
   const hi = Math.round(totalMins * 1.2 / 5) * 5;
   return `${lo}–${hi} min`;
+}
+
+// --- Industry ---
+
+export function useIndustrySections(): IndustrySection[] {
+  return industrySections;
+}
+
+export function useIndustrySection(sectionId: string | undefined): IndustrySection | undefined {
+  return useMemo(() => {
+    if (!sectionId) return undefined;
+    return industrySections.find((s) => s.id === sectionId);
+  }, [sectionId]);
 }
 
 // --- Resume tour ---

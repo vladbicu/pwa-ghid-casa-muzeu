@@ -12,6 +12,8 @@ import { Navigation } from './components/Navigation';
 import { HomePage } from './pages/HomePage';
 import { TourDetailPage } from './pages/TourDetailPage';
 import { StopPage } from './pages/StopPage';
+import { IndustryHubPage } from './pages/IndustryHubPage';
+import { IndustrySectionPage } from './pages/IndustrySectionPage';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SettingsProvider } from './context/SettingsContext';
@@ -29,6 +31,8 @@ function AppRoutes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/tour/:tourId" element={<TourDetailPage />} />
           <Route path="/tour/:tourId/stop/:stopId" element={<StopPage />} />
+          <Route path="/industry" element={<IndustryHubPage />} />
+          <Route path="/industry/:sectionId" element={<IndustrySectionPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
