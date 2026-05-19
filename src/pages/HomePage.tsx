@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTours, useResumeTour, useTour, useStop, getLocalizedText } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
 import { TourCard } from '../components/TourCard';
-import { Play, ChevronRight } from 'lucide-react';
+import { Play, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { asset } from '../utils/asset';
 
 export function HomePage() {
   const tours = useTours();
   const { language } = useSettings();
   const ui = getUI(language);
+  const [industryImgError, setIndustryImgError] = useState(false);
 
   const resume = useResumeTour();
   const resumeTour = useTour(resume?.tourId);
@@ -65,11 +67,45 @@ export function HomePage() {
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
         {tours.map((tour, index) => (
           <TourCard key={tour.id} tour={tour} index={index} />
         ))}
       </div>
+
+      {/* Industry hub card */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        <Link to="/industry" className="block group relative">
+          <div className="relative h-48 md:h-56 w-full rounded-2xl overflow-hidden shadow-warm-lg transition-transform duration-300 group-hover:-translate-y-1 bg-museum-walnut/20">
+            {!industryImgError && (
+              <img
+                src={asset('/images/industry/lemn/lemn-01.jpg')}
+                alt={ui.industryTitle}
+                onError={() => setIndustryImgError(true)}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-museum-walnut/90 via-museum-walnut/40 to-transparent" />
+            <div className="absolute inset-0 p-6 flex flex-col justify-end text-museum-cream">
+              <div className="transform transition-transform duration-300 group-hover:-translate-y-1">
+                <span className="inline-block bg-museum-moss text-museum-cream text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+                  {ui.studyBadge}
+                </span>
+                <h3 className="text-xl font-bold text-shadow-sm leading-tight mb-0.5">{ui.industryTitle}</h3>
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-museum-cream/70">{ui.industrySubtitle}</p>
+                  <ArrowRight size={16} className="text-museum-cream/70 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-0 border-[6px] border-museum-walnut/20 rounded-2xl pointer-events-none" />
+          </div>
+        </Link>
+      </motion.div>
     </motion.main>
   );
 }

@@ -15,18 +15,19 @@
     --museum-brown:   61  40  23;   /* #3D2817 */
   }
 
-  /* Dark mode palette */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --museum-beige:   18  10   6;  /* very dark warm bg    */
-      --museum-walnut: 245 240 232;  /* light warm text      */
-      --museum-moss:   143 168 122;  /* brighter green       */
-      --museum-cream:   35  20  12;  /* dark card surface    */
-      --museum-sand:    52  30  18;  /* slightly lighter     */
-      --museum-brown:   52  30  18;
-    }
-  }
+  /* Dark mode palette — activated by .dark class on <html> */
+}
 
+html.dark {
+  --museum-beige:   18  10   6;  /* very dark warm bg    */
+  --museum-walnut: 245 240 232;  /* light warm text      */
+  --museum-moss:   143 168 122;  /* brighter green       */
+  --museum-cream:   35  20  12;  /* dark card surface    */
+  --museum-sand:    52  30  18;  /* slightly lighter     */
+  --museum-brown:   52  30  18;
+}
+
+@layer base {
   body {
     @apply bg-museum-beige text-museum-walnut font-sans antialiased;
     background-image: radial-gradient(

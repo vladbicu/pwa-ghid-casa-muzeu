@@ -42,3 +42,26 @@ export interface ToursData {
   tours: Tour[];
 }
 
+export interface IndustryEvent {
+  id: string;
+  year: string;
+  title: Record<Lang, string>;
+  body: Record<Lang, string>;
+  image?: string;
+}
+
+export interface IndustrySection {
+  id: string;
+  order: number;
+  title: Record<Lang, string>;
+  description: Record<Lang, string>;
+  image: string;
+  period: string;
+  events: IndustryEvent[];
+}
+
+export interface IndustryData {
+  version: number;
+  sections: IndustrySection[];
+}
+

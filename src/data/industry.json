@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "sections": [
+    {
+      "id": "lemn",
+      "order": 1,
+      "title": {
+        "ro": "Industria lemnului",
+        "en": "Timber Industry",
+        "fr": "Industrie du bois",
+        "it": "Industria del legno"
+      },
+      "description": {
+        "ro": "Exploatarea și prelucrarea lemnului în Putna, de la primele concesiuni habsburgice ale Fondului Religionar Ortodox până la complexul industrial al familiei Popper și mocănița din pădurile Bucovinei.",
+        "en": "Timber exploitation and processing in Putna, from the first Habsburg concessions of the Orthodox Religious Fund to the Popper family's industrial complex and the narrow-gauge forest railway of Bukovina.",
+        "fr": "L'exploitation et la transformation du bois à Putna, des premières concessions habsbourgeoises du Fonds Religieux Orthodoxe au complexe industriel de la famille Popper et au chemin de fer forestier de Bucovine.",
+        "it": "Lo sfruttamento e la lavorazione del legno a Putna, dalle prime concessioni asburgiche del Fondo Religioso Ortodosso al complesso industriale della famiglia Popper e alla ferrovia forestale della Bucovina."
+      },
+      "image": "/images/industry/lemn/cover.jpg",
+      "period": "1775–1944",
+      "events": [
+        {
+          "id": "lemn-01",
+          "year": "1775",
+          "title": {
+            "ro": "Anexarea Bucovinei și nașterea Fondului Religionar Ortodox",
+            "en": "The Annexation of Bukovina and the birth of the Orthodox Religious Fund",
+            "fr": "L'annexion de la Bucovine et la naissance du Fonds Religieux Orthodoxe",
+            "it": "L'annessione della Bucovina e la nascita del Fondo Religioso Ortodosso"
+          },
+          "body": {
+            "ro": "La 7 mai 1775, Bucovina a fost cedată Imperiului Habsburgic prin Convenția de la Pera, Austria preluând controlul pădurilor virgine din munți ca resursă strategică. Prin decretul imperial din 29 aprilie 1786, a fost înființat Fondul Religionar Ortodox al Bucovinei, care a preluat averile a 27 de mănăstiri moldovenești — inclusiv domeniile Mănăstirii Putna — ajungând să administreze aproximativ 229.000 de hectare de păduri. Putna devine astfel nod central al exploatării sistematice a naturii după principiile silviculturii imperiale.",
+            "en": "On 7 May 1775, Bukovina was ceded to the Habsburg Empire through the Convention of Pera, with Austria taking control of the region's virgin mountain forests as a strategic resource. By imperial decree of 29 April 1786, the Orthodox Religious Fund of Bukovina was established, taking over the assets of 27 Moldavian monasteries — including the Putna Monastery estates — eventually administering some 229,000 hectares of forest. Putna thus became a central node for the systematic exploitation of nature according to imperial silvicultural principles.",
+            "fr": "Le 7 mai 1775, la Bucovine fut cédée à l'Empire habsbourgeois par la Convention de Péra, l'Autriche prenant le contrôle des forêts vierges de montagne comme ressource stratégique. Par décret impérial du 29 avril 1786 fut fondé le Fonds Religieux Orthodoxe de Bucovine, qui prit en charge les biens de 27 monastères moldaves — dont les domaines du monastère de Putna — gérant au total environ 229 000 hectares de forêts. Putna devint ainsi un nœud central de l'exploitation systématique des ressources naturelles selon les principes de la sylviculture impériale.",
+            "it": "Il 7 maggio 1775, la Bucovina fu ceduta all'Impero asburgico tramite la Convenzione di Pera, con l'Austria che prendeva il controllo delle foreste vergini di montagna come risorsa strategica. Con decreto imperiale del 29 aprile 1786 fu istituito il Fondo Religioso Ortodosso della Bucovina, che rilevò i beni di 27 monasteri moldavi — compresi i domini del Monastero di Putna — arrivando ad amministrare circa 229.000 ettari di foreste. Putna divenne così un nodo centrale dello sfruttamento sistematico delle risorse naturali secondo i principi della silvicoltura imperiale."
+          },
+          "image": "/images/industry/lemn/lemn-06.jpg"
+        },
+        {
+          "id": "lemn-02",
+          "year": "1800–1850",
+          "title": {
+            "ro": "Primele joagăre și organizarea exploatărilor forestiere",
+            "en": "The first sawmills and the organisation of forest exploitation",
+            "fr": "Les premières scieries et l'organisation de l'exploitation forestière",
+            "it": "Le prime segherie e l'organizzazione dello sfruttamento forestale"
+          },
+          "body": {
+            "ro": "Fondul Religionar organiza exploatarea pădurilor prin licitații publice câștigate de antreprenori din Rădăuți și Vicov, folosind forță de muncă germană și românească. Ciclul anual era precis: toamna se marcau arborii, iarna se tăiau, primăvara lemnul era transportat cu boi spre depozite, vara ajungea la Rădăuți pe calea apei. Primele documente din presă atestă licitații forestiere în masivele Glodu (1856) și Oglinda (1857), semn al intensificării continue a exploatărilor.",
+            "en": "The Religious Fund organised forest exploitation through public auctions won by entrepreneurs from Rădăuți and Vicov, using both German and Romanian labour. The annual cycle was precise: trees were marked in autumn, felled in winter, transported by oxen to depots in spring, and the timber reached Rădăuți by water in summer. The earliest press records document forest auctions in the Glodu (1856) and Oglinda (1857) massifs, reflecting the continuous intensification of operations.",
+            "fr": "Le Fonds Religieux organisait l'exploitation forestière par adjudications publiques remportées par des entrepreneurs de Rădăuți et Vicov, avec une main-d'oeuvre allemande et roumaine. Le cycle annuel était précis : marquage des arbres en automne, abattage en hiver, transport par boeufs vers les dépôts au printemps, acheminement vers Rădăuți par voie d'eau en été. Les premières mentions dans la presse attestent des adjudications forestières dans les massifs Glodu (1856) et Oglinda (1857), signe de l'intensification continue des exploitations.",
+            "it": "Il Fondo Religioso organizzava lo sfruttamento forestale tramite aste pubbliche vinte da imprenditori di Rădăuți e Vicov, con manodopera tedesca e romena. Il ciclo annuale era preciso: gli alberi venivano contrassegnati in autunno, abbattuti in inverno, trasportati da buoi verso i depositi in primavera, e il legname raggiungeva Rădăuți per via d'acqua in estate. I primi documenti di stampa attestano aste forestali nei massicci Glodu (1856) e Oglinda (1857), a conferma dell'intensificazione continua delle operazioni."
+          },
+          "image": "/images/industry/lemn/lemn-02.jpg"
+        },
+        {
+          "id": "lemn-03",
+          "year": "1898",
+          "title": {
+            "ro": "Mocănița de la Putna — prima cale ferată forestieră mecanizată din nordul Bucovinei",
+            "en": "The Putna forest train — the first mechanised forest railway in northern Bukovina",
+            "fr": "Le train forestier de Putna — le premier chemin de fer forestier mécanisé du nord de la Bucovine",
+            "it": "Il treno forestale di Putna — la prima ferrovia forestale meccanizzata nel nord della Bucovina"
+          },
+          "body": {
+            "ro": "În februarie 1898, Fondul Religionar împreună cu firma Alexander von Popper au finalizat construcția liniei ferate Putna–Oglinda: 10 km pe Valea Putnișoarei, cu ecartament îngust, deservită de două locomotive Krauss din München și 12 vagoane pentru bușteni. Capacitatea de transport era de 30.000–40.000 m³ de lemn pe an — echivalentul a 10.000 de căruțe. Memoria căii ferate a supraviețuit în toponimia locală: Drumul Mocăniței, La Cale.",
+            "en": "In February 1898, the Religious Fund together with Alexander von Popper's firm completed the Putna–Oglinda narrow-gauge railway: 10 km along the Putnișoara Valley, served by two Krauss locomotives from Munich and 12 log wagons. Annual transport capacity was 30,000–40,000 m³ of timber — the equivalent of 10,000 ox-drawn carts. The memory of the railway survived in local place-names: Drumul Mocăniței (the Forest Train Road), La Cale (The Track).",
+            "fr": "En février 1898, le Fonds Religieux et la firme Alexander von Popper achevèrent la construction de la ligne à voie étroite Putna–Oglinda : 10 km le long de la vallée de Putnișoara, desservie par deux locomotives Krauss de Munich et 12 wagons à grumes. La capacité de transport annuelle atteignait 30 000 à 40 000 m³ de bois — l'équivalent de 10 000 charrettes. La mémoire du chemin de fer a survécu dans la toponymie locale : Drumul Mocăniței (la route du petit train), La Cale (la voie).",
+            "it": "Nel febbraio 1898, il Fondo Religioso insieme alla ditta Alexander von Popper completò la ferrovia a scartamento ridotto Putna–Oglinda: 10 km lungo la Valle Putnișoara, servita da due locomotive Krauss di Monaco e 12 carri per tronchi. La capacità di trasporto annuale era di 30.000–40.000 m³ di legname — l'equivalente di 10.000 carri trainati da buoi. Il ricordo della ferrovia è sopravvissuto nella toponomastica locale: Drumul Mocăniței (la strada del trenino), La Cale (il binario)."
+          },
+          "image": "/images/industry/lemn/lemn-04.jpg"
+        },
+        {
+          "id": "lemn-04",
+          "year": "1875–1918",
+          "title": {
+            "ro": "Imperiul forestier al familiei Popper și marele incendiu din 1907",
+            "en": "The Popper family timber empire and the great fire of 1907",
+            "fr": "L'empire forestier de la famille Popper et le grand incendie de 1907",
+            "it": "L'impero forestale della famiglia Popper e il grande incendio del 1907"
+          },
+          "body": {
+            "ro": "Alexander Freiherr Popper von Podhragy a obținut concesiunea forestieră din Putna circa 1895, investind 500.000 de coroane într-un complex cu gater cu aburi, depozite și barăci pentru 200–300 de muncitori. Compania Union AG, care a preluat exploatările după 1900, opera 10 gateruri duble și producea peste 40.000 m³ de cherestea pe an. La 30 martie 1907, un incendiu devastator a mistuit complet fabrica — 23 de funcționari și aproape 500 de muncitori și-au pierdut locurile de muncă, iar economia locală a suferit pierderi de sute de mii de coroane.",
+            "en": "Alexander Freiherr Popper von Podhragy obtained the Putna forest concession around 1895, investing 500,000 crowns in a complex with a steam sawmill, warehouses and barracks for 200–300 workers. The Union AG company, which took over operations after 1900, ran 10 double saws and produced over 40,000 m³ of timber per year. On 30 March 1907 a devastating fire completely destroyed the factory — 23 staff and nearly 500 workers lost their jobs, and the local economy suffered losses of hundreds of thousands of crowns.",
+            "fr": "Alexander Freiherr Popper von Podhragy obtint la concession forestière de Putna vers 1895, investissant 500 000 couronnes dans un complexe comprenant une scierie à vapeur, des entrepôts et des baraquements pour 200 à 300 ouvriers. La société Union AG, qui reprit les opérations après 1900, exploitait 10 scies doubles et produisait plus de 40 000 m³ de bois par an. Le 30 mars 1907, un incendie dévastateur détruisit complètement l'usine — 23 employés et près de 500 ouvriers perdirent leur travail, et l'économie locale subit des pertes de centaines de milliers de couronnes.",
+            "it": "Alexander Freiherr Popper von Podhragy ottenne la concessione forestale di Putna intorno al 1895, investendo 500.000 corone in un complesso con segheria a vapore, magazzini e baracche per 200–300 operai. La società Union AG, che rilevò le operazioni dopo il 1900, gestiva 10 segherie doppie e produceva oltre 40.000 m³ di legname all'anno. Il 30 marzo 1907 un incendio devastante distrusse completamente la fabbrica — 23 impiegati e quasi 500 operai persero il lavoro, e l'economia locale subì perdite di centinaia di migliaia di corone."
+          },
+          "image": "/images/industry/lemn/lemn-01.jpg"
+        },
+        {
+          "id": "lemn-05",
+          "year": "1918–1944",
+          "title": {
+            "ro": "Industria lemnului în România Mare — declin și memorie",
+            "en": "The timber industry in Greater Romania — decline and memory",
+            "fr": "L'industrie du bois dans la Grande Roumanie — déclin et mémoire",
+            "it": "L'industria del legno nella Grande Romania — declino e memoria"
+          },
+          "body": {
+            "ro": "Odată cu unirea Bucovinei cu România (28 noiembrie 1918), exploatările forestiere din Putna au intrat sub administrație românească. Pierderea piețelor habsburgice, lipsa investițiilor și criza economică mondială din 1929 au diminuat treptat activitatea. Pădurile Fondului Religionar continuau să fie administrate, dar la o scară mult mai mică față de apogeu. Un articol din 1939 confirma că Victor Grigorovici, administratorul fabricii de lemn a Fondului Religionar Ortodox Român din Putna, colabora cu industriașul Albert Fischer — mărturie a legăturilor de lungă durată dintre industria forestieră și cea a sticlei.",
+            "en": "With the union of Bukovina with Romania (28 November 1918), the Putna forest operations came under Romanian administration. The loss of Habsburg markets, lack of investment and the global economic crisis of 1929 gradually reduced activity. The Religious Fund's forests continued to be managed, but on a much smaller scale than at their peak. An 1939 article confirmed that Victor Grigorovici, administrator of the Romanian Orthodox Religious Fund's timber factory in Putna, was collaborating with industrialist Albert Fischer — testimony to the long-standing ties between the timber and glassmaking industries.",
+            "fr": "Avec l'union de la Bucovine à la Roumanie (28 novembre 1918), les exploitations forestières de Putna passèrent sous administration roumaine. La perte des marchés habsbourgeois, le manque d'investissements et la crise économique mondiale de 1929 réduisirent progressivement l'activité. Les forêts du Fonds Religieux continuaient d'être gérées, mais à une échelle bien inférieure à leur apogée. Un article de 1939 confirmait que Victor Grigorovici, administrateur de l'usine de bois du Fonds Religieux Orthodoxe Roumain de Putna, collaborait avec l'industriel Albert Fischer — témoignage des liens durables entre l'industrie forestière et celle du verre.",
+            "it": "Con l'unione della Bucovina alla Romania (28 novembre 1918), le operazioni forestali di Putna passarono sotto l'amministrazione romena. La perdita dei mercati asburgici, la mancanza di investimenti e la crisi economica mondiale del 1929 ridussero gradualmente l'attività. Le foreste del Fondo Religioso continuarono ad essere gestite, ma su una scala ben inferiore rispetto all'apice. Un articolo del 1939 confermava che Victor Grigorovici, amministratore della fabbrica di legname del Fondo Religioso Ortodosso Romeno di Putna, collaborava con l'industriale Albert Fischer — testimonianza dei legami duraturi tra l'industria forestale e quella vetraria."
+          },
+          "image": "/images/industry/lemn/lemn-07.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sticla",
+      "order": 2,
+      "title": {
+        "ro": "Industria sticlei",
+        "en": "Glass Industry",
+        "fr": "Industrie du verre",
+        "it": "Industria del vetro"
+      },
+      "description": {
+        "ro": "De la huta de sticlă a coloniștilor boemieni din Karlsberg (1797) la fabrica Friedrich Fischer — singura producătoare de sticlă plană din România Mare după 1919 — și până la meșterul Josef Cretzan, care a dus tradiția sticlăritului din Putna până la Waterford Crystal din Irlanda.",
+        "en": "From the glass hut of the Bohemian colonists at Karlsberg (1797) to the Friedrich Fischer factory — the only producer of flat glass in Greater Romania after 1919 — and to master craftsman Josef Cretzan, who carried the glassmaking tradition from Putna to Waterford Crystal in Ireland.",
+        "fr": "De la hutterie à verre des colons bohémiens de Karlsberg (1797) à la fabrique Friedrich Fischer — seule productrice de verre plat de la Grande Roumanie après 1919 — jusqu'au maître verrier Josef Cretzan, qui porta la tradition de la verrerie de Putna jusqu'à Waterford Crystal en Irlande.",
+        "it": "Dalla vetreria dei coloni boemi di Karlsberg (1797) alla fabbrica Friedrich Fischer — unica produttrice di vetro piano nella Grande Romania dopo il 1919 — fino al maestro vetraio Josef Cretzan, che portò la tradizione vetraria di Putna fino alla Waterford Crystal in Irlanda."
+      },
+      "image": "/images/industry/sticla/cover.jpg",
+      "period": "1797–1944",
+      "events": [
+        {
+          "id": "sticla-01",
+          "year": "1797",
+          "title": {
+            "ro": "Huta de sticlă Karlsberg — prima fabrică din nordul Bucovinei",
+            "en": "The Karlsberg glassworks — the first factory in northern Bukovina",
+            "fr": "La verrerie de Karlsberg — la première fabrique du nord de la Bucovine",
+            "it": "La vetreria di Karlsberg — la prima fabbrica nel nord della Bucovina"
+          },
+          "body": {
+            "ro": "În 1797, administrația habsburgică a fondat la Karlsberg (astăzi Gura Putnei) prima hută de sticlă din nordul Bucovinei, atribuindu-i concesionarilor Jossel Reichenberg și Franz Pauly. Aceștia au adus 15 familii de coloniști germano-boemieni din districtul Prachin — Pădurea Boemiei — specializați în producția industrială de sticlă: geamuri, sticle, pahare. Huta a funcționat trei decenii, primind în 1817 vizita împăratului Franz I, și a fost închisă definitiv la 14 iulie 1827 din cauza epuizării pădurilor locale.",
+            "en": "In 1797, the Habsburg administration founded at Karlsberg (today Gura Putnei) the first glassworks in northern Bukovina, granting the concession to Jossel Reichenberg and Franz Pauly. They brought 15 German-Bohemian settler families from the Prachin district — the Bohemian Forest — specialised in industrial glass production: windowpanes, bottles and glasses. The glassworks operated for three decades, receiving Emperor Franz I on a visit in 1817, and was permanently closed on 14 July 1827 due to the exhaustion of local forests.",
+            "fr": "En 1797, l'administration habsbourgeoise fonda à Karlsberg (aujourd'hui Gura Putnei) la première verrerie du nord de la Bucovine, accordant la concession à Jossel Reichenberg et Franz Pauly. Ils amenèrent 15 familles de colons germano-bohémiens du district de Prachin — la Forêt de Bohême — spécialisés dans la production industrielle de verre : vitrages, bouteilles, verres à boire. La verrerie fonctionna trois décennies, recevant en 1817 la visite de l'empereur Franz Ier, et fut définitivement fermée le 14 juillet 1827 en raison de l'épuisement des forêts locales.",
+            "it": "Nel 1797, l'amministrazione asburgica fondò a Karlsberg (oggi Gura Putnei) la prima vetreria del nord della Bucovina, concedendo la concessione a Jossel Reichenberg e Franz Pauly. Portarono 15 famiglie di coloni germano-boemi dal distretto di Prachin — la Foresta Boema — specializzati nella produzione industriale di vetro: lastre, bottiglie e bicchieri. La vetreria funzionò per tre decenni, ricevendo nel 1817 la visita dell'imperatore Francesco I, e fu definitivamente chiusa il 14 luglio 1827 per l'esaurimento delle foreste locali."
+          },
+          "image": "/images/industry/sticla/sticla-01.jpg"
+        },
+        {
+          "id": "sticla-02",
+          "year": "1906",
+          "title": {
+            "ro": "Friedrich Fischer — renașterea industriei sticlei la Putna",
+            "en": "Friedrich Fischer — the rebirth of the glass industry in Putna",
+            "fr": "Friedrich Fischer — la renaissance de l'industrie du verre à Putna",
+            "it": "Friedrich Fischer — la rinascita dell'industria vetraria a Putna"
+          },
+          "body": {
+            "ro": "În 1906, Friedrich Fischer — dintr-o veche familie de sticlari bucovineni, cu tradiție pe cel puțin patru generații — a fondat o nouă fabrică de sticlă pe malul stâng al râului Putna. Fabrica producea sticlă plană, sticlărie casnică și, din 1923, becuri electrice marca Lumina, 2.000 de bucăți pe zi. Articolul aniversar din 1933 îl caracteriza astfel: temeinicia, corectitudinea și obiectivitatea lui Friedrich Fischer se întruchipează în produsul fabricii sale.",
+            "en": "In 1906, Friedrich Fischer — from an old Bukowinian glassmaking family with a tradition spanning at least four generations — founded a new glass factory on the left bank of the Putna river. The factory produced flat glass, domestic glassware and, from 1923, Lumina brand electric light bulbs — 2,000 a day. The 1933 anniversary article described him thus: the soundness, honesty and objectivity of Friedrich Fischer are embodied in the product of his factory.",
+            "fr": "En 1906, Friedrich Fischer — issu d'une ancienne famille de verriers bukoviniens, avec une tradition d'au moins quatre générations — fonda une nouvelle verrerie sur la rive gauche de la rivière Putna. L'usine produisait du verre plat, de la verrerie domestique et, à partir de 1923, des ampoules électriques de marque Lumina, à raison de 2 000 pièces par jour. L'article anniversaire de 1933 le décrivait ainsi : la solidité, l'honnêteté et l'objectivité de Friedrich Fischer s'incarnent dans le produit de son usine.",
+            "it": "Nel 1906, Friedrich Fischer — proveniente da un'antica famiglia di vetrai bucovinesi, con una tradizione di almeno quattro generazioni — fondò una nuova vetreria sulla riva sinistra del fiume Putna. La fabbrica produceva vetro piano, vetreria domestica e, dal 1923, lampadine elettriche della marca Lumina — 2.000 al giorno. L'articolo anniversario del 1933 lo descriveva così: la solidità, la correttezza e l'obiettività di Friedrich Fischer si incarnano nel prodotto della sua fabbrica."
+          },
+          "image": "/images/industry/sticla/sticla-02.png"
+        },
+        {
+          "id": "sticla-03",
+          "year": "1919",
+          "title": {
+            "ro": "Reconstrucția postbelică — singura fabrică de sticlă din România Mare",
+            "en": "Post-war reconstruction — the only glass factory in Greater Romania",
+            "fr": "La reconstruction d'après-guerre — la seule verrerie de la Grande Roumanie",
+            "it": "La ricostruzione postbellica — l'unica vetreria della Grande Romania"
+          },
+          "body": {
+            "ro": "Fabrica de sticlă a fost distrusă în timpul Primului Război Mondial, când Bucovina a fost teatru de operațiuni militare. Friedrich Fischer a reconstruit-o rapid dupa unirea cu Romania, astfel incat in aprilie 1919, comisia tehnica a inginerului I. P. Gigurtu, trimisa de Ministerul Comertului si Industriei de la Bucuresti, constata ca fabrica era functionala si era singura producatoare de sticla plana din intreaga Romania Mare, cu o capacitate anuala de 600.000 m². Sub conducerea fiului sau Albert, fabrica a angajat pana la 500 de muncitori, sustinand peste 600 de familii din localitate.",
+            "en": "The glassworks was destroyed during the First World War, when Bukovina became a theatre of military operations. Friedrich Fischer rebuilt it rapidly after the union with Romania, so that by April 1919 the technical commission of engineer I. P. Gigurtu, sent by the Ministry of Commerce and Industry in Bucharest, found the factory operational — and the only producer of flat glass in the whole of Greater Romania, with an annual capacity of 600,000 m². Under the management of his son Albert, the factory employed up to 500 workers, supporting over 600 local families.",
+            "fr": "La verrerie fut détruite pendant la Première Guerre mondiale, lorsque la Bucovine devint un théâtre d'opérations militaires. Friedrich Fischer la reconstruisit rapidement après l'union avec la Roumanie, de sorte qu'en avril 1919, la commission technique de l'ingénieur I. P. Gigurtu, envoyée par le ministère du Commerce et de l'Industrie de Bucarest, constata que l'usine était opérationnelle — et la seule productrice de verre plat de toute la Grande Roumanie, avec une capacité annuelle de 600 000 m². Sous la direction de son fils Albert, l'usine employa jusqu'à 500 ouvriers, faisant vivre plus de 600 familles locales.",
+            "it": "La vetreria fu distrutta durante la Prima guerra mondiale, quando la Bucovina divenne teatro di operazioni militari. Friedrich Fischer la ricostruì rapidamente dopo l'unione con la Romania, tanto che nell'aprile 1919 la commissione tecnica dell'ingegner I. P. Gigurtu, inviata dal Ministero del Commercio e dell'Industria di Bucarest, constatava che la fabbrica era operativa — e l'unica produttrice di vetro piano in tutta la Grande Romania, con una capacità annuale di 600.000 m². Sotto la direzione del figlio Albert, la fabbrica impiegò fino a 500 operai, sostenendo oltre 600 famiglie locali."
+          }
+        },
+        {
+          "id": "sticla-04",
+          "year": "~1930",
+          "title": {
+            "ro": "Becurile Lumina și vizita regelui Carol al II-lea",
+            "en": "The Lumina light bulbs and the visit of King Carol II",
+            "fr": "Les ampoules Lumina et la visite du roi Carol II",
+            "it": "Le lampadine Lumina e la visita del re Carol II"
+          },
+          "body": {
+            "ro": "Fabrica Fischer producea becuri electrice sub marca Lumina, din Putna, 2.000 de becuri pe zi, comercializate in toata Romania si exportate. In 1935, cu ocazia manevrelor militare din Bucovina, regele Carol al II-lea a vizitat fabrica, iar Albert Fischer i-a oferit suveranului un set de pahare de cristal. Ministrul Nistor, prezent la ceremonial, a declarat: Familia Fischer lucreaza in sticlarie de generatii si reprezinta o traditie de excelenta in industria de sticla a Bucovinei. Fabrica era membra a cartelului national Serin A.G.",
+            "en": "The Fischer factory produced Lumina brand electric light bulbs from Putna — 2,000 a day — sold throughout Romania and exported abroad. In 1935, during military manoeuvres in Bukovina, King Carol II visited the factory and Albert Fischer presented the sovereign with a set of crystal glasses. Minister Nistor, present at the ceremony, declared: The Fischer family has worked in glassmaking for generations and represents a tradition of excellence in Bukowinian glass industry. The factory was a member of the national cartel Serin A.G.",
+            "fr": "La fabrique Fischer produisait des ampoules électriques de marque Lumina, à Putna — 2 000 par jour — commercialisées dans toute la Roumanie et exportées à l'étranger. En 1935, à l'occasion des manoeuvres militaires en Bucovine, le roi Carol II visita l'usine et Albert Fischer offrit au souverain un service de verres en cristal. Le ministre Nistor, présent à la cérémonie, déclara : La famille Fischer travaille dans la verrerie depuis des générations et représente une tradition d'excellence dans l'industrie verrière de Bucovine. L'usine était membre du cartel national Serin A.G.",
+            "it": "La fabbrica Fischer produceva lampadine elettriche della marca Lumina, a Putna — 2.000 al giorno — vendute in tutta la Romania ed esportate all'estero. Nel 1935, in occasione delle manovre militari in Bucovina, il re Carol II visitò la fabbrica e Albert Fischer offrì al sovrano un servizio di bicchieri di cristallo. Il ministro Nistor, presente alla cerimonia, dichiarò: La famiglia Fischer lavora nella vetreria da generazioni e rappresenta una tradizione di eccellenza nell'industria vetraria della Bucovina. La fabbrica era membro del cartello nazionale Serin A.G."
+          },
+          "image": "/images/industry/sticla/sticla-04.png"
+        },
+        {
+          "id": "sticla-05",
+          "year": "1925–1944",
+          "title": {
+            "ro": "Incendii, declin și familia Cretzan — de la Putna la Waterford Crystal",
+            "en": "Fires, decline and the Cretzan family — from Putna to Waterford Crystal",
+            "fr": "Incendies, déclin et la famille Cretzan — de Putna à Waterford Crystal",
+            "it": "Incendi, declino e la famiglia Cretzan — da Putna a Waterford Crystal"
+          },
+          "body": {
+            "ro": "Pe 21 februarie 1925, explozia unui gazometru a distrus cuptoarele si atelierele, cu pagube de peste 7 milioane lei. Fabrica s-a refacut partial, dar cu un singur cuptor si 100-150 de muncitori in loc de 300. Un al doilea incendiu in iunie 1940 si evacuarea germanilor bucovineni (Heim ins Reich, septembrie 1940) au privat fabrica de muncitorii calificati. Dintre acestia, Josef Cretzan, fiul mestrului sticlar Franz Terme adus din Boemia in 1908, a ajuns sa lucreze 37 de ani la Waterford Crystal din Irlanda, unde a primit titlul de Master of Masters — maestrul maestrilor — ducand traditia din Putna pana in coltul opus al Europei.",
+            "en": "On 21 February 1925, a gasometer explosion destroyed the furnace halls and workshops, causing damages of over 7 million lei. The factory partially recovered, but with a single furnace and 100–150 workers instead of 300. A second fire in June 1940 and the evacuation of Bukowinian Germans (Heim ins Reich, September 1940) deprived the factory of its skilled workers. Among them, Josef Cretzan — son of Bohemian master glassblower Franz Terme, who arrived in Putna in 1908 — went on to work 37 years at Waterford Crystal in Ireland, where he received the title of Master of Masters, carrying the Putna tradition to the opposite corner of Europe.",
+            "fr": "Le 21 février 1925, l'explosion d'un gazomètre détruisit les salles des fours et les ateliers, causant des dommages de plus de 7 millions de lei. L'usine se remit partiellement, mais avec un seul four et 100 à 150 ouvriers au lieu de 300. Un second incendie en juin 1940 et l'évacuation des Allemands bukoviniens (Heim ins Reich, septembre 1940) privèrent l'usine de ses ouvriers qualifiés. Parmi eux, Josef Cretzan — fils du maître verrier bohémien Franz Terme arrivé à Putna en 1908 — travailla ensuite 37 ans à Waterford Crystal en Irlande, où il reçut le titre de Master of Masters, portant la tradition de Putna jusqu'au coin opposé de l'Europe.",
+            "it": "Il 21 febbraio 1925, l'esplosione di un gassometro distrusse le sale dei forni e i laboratori, causando danni per oltre 7 milioni di lei. La fabbrica si riprese parzialmente, ma con un solo forno e 100–150 operai invece di 300. Un secondo incendio nel giugno 1940 e l'evacuazione dei tedeschi bucovinesi (Heim ins Reich, settembre 1940) privarono la fabbrica dei suoi operai specializzati. Tra questi, Josef Cretzan — figlio del maestro vetraio boemo Franz Terme, arrivato a Putna nel 1908 — lavorò poi 37 anni alla Waterford Crystal in Irlanda, dove ricevette il titolo di Master of Masters, portando la tradizione di Putna nell'angolo opposto dell'Europa."
+          },
+          "image": "/images/industry/sticla/sticla-03.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "ciment",
+      "order": 3,
+      "title": {
+        "ro": "Industria cimentului",
+        "en": "Cement Industry",
+        "fr": "Industrie du ciment",
+        "it": "Industria del cemento"
+      },
+      "description": {
+        "ro": "Fabrica de ciment Portland a lui Emanuel Axelrad — prima din Bucovina, certificata de laboratorul imperial din Viena, cu productie de 10 vagoane pe zi la apogeu — si ruinele ei, care au marcat peisajul Putnei pana in zilele noastre.",
+        "en": "Emanuel Axelrad's Portland cement factory — the first in Bukovina, certified by the imperial laboratory in Vienna, producing 10 wagons a day at its peak — and its ruins, which marked the landscape of Putna until recent times.",
+        "fr": "La cimenterie Portland d'Emanuel Axelrad — la premiere de Bucovine, certifiee par le laboratoire imperial de Vienne, avec une production de 10 wagons par jour a son apogee — et ses ruines, qui ont marque le paysage de Putna jusqu'a nos jours.",
+        "it": "La fabbrica di cemento Portland di Emanuel Axelrad — la prima in Bucovina, certificata dal laboratorio imperiale di Vienna, con una produzione di 10 vagoni al giorno al suo apice — e le sue rovine, che hanno segnato il paesaggio di Putna fino ai giorni nostri."
+      },
+      "image": "/images/industry/ciment/cover.jpg",
+      "period": "1898–1944",
+      "events": [
+        {
+          "id": "ciment-01",
+          "year": "1898–1902",
+          "title": {
+            "ro": "Emanuel Axelrad — prima fabrică de ciment Portland din Bucovina",
+            "en": "Emanuel Axelrad — the first Portland cement factory in Bukovina",
+            "fr": "Emanuel Axelrad — la premiere cimenterie Portland de Bucovine",
+            "it": "Emanuel Axelrad — la prima fabbrica di cemento Portland della Bucovina"
+          },
+          "body": {
+            "ro": "Intre 1898 si 1902, industriasul evreu Emanuel Axelrad din Cernauti a fondat la Putna prima fabrica de ciment hidraulic din Bucovina, valorificand calcarul de calitate superioara din carierele locale si argila din malurile raului Putna. Cimentul era certificat de laboratorul imperial din Viena si promovat prin agentia Leon Schrenzel din Cernauti. La apogeu, fabrica producea 10 vagoane de ciment pe zi si dispunea de 42 de lampi cu arc electric — o instalatie mai moderna decat cea din Cernauti, cum nota cu admiratie presa vremii.",
+            "en": "Between 1898 and 1902, the Jewish entrepreneur Emanuel Axelrad from Czernowitz founded at Putna the first hydraulic cement factory in Bukovina, exploiting high-quality limestone from local quarries and clay from the banks of the Putna river. The cement was certified by the imperial laboratory in Vienna and promoted through the Leon Schrenzel agency in Czernowitz. At its peak the factory produced 10 wagons of cement a day and was equipped with 42 arc lamps — an installation more modern than that of Czernowitz itself, as the press noted with admiration.",
+            "fr": "Entre 1898 et 1902, l'entrepreneur juif Emanuel Axelrad de Czernowitz fonda a Putna la premiere cimenterie hydraulique de Bucovine, exploitant le calcaire de haute qualite des carrieres locales et l'argile des berges de la riviere Putna. Le ciment etait certifie par le laboratoire imperial de Vienne et commercialise par l'agence Leon Schrenzel a Czernowitz. A son apogee, l'usine produisait 10 wagons de ciment par jour et etait equipee de 42 lampes a arc — une installation plus moderne que celle de Czernowitz meme, comme le soulignait la presse avec admiration.",
+            "it": "Tra il 1898 e il 1902, l'imprenditore ebreo Emanuel Axelrad di Czernowitz fondo a Putna la prima fabbrica di cemento idraulico della Bucovina, sfruttando il calcare di alta qualita delle cave locali e l'argilla delle rive del fiume Putna. Il cemento era certificato dal laboratorio imperiale di Vienna e commercializzato tramite l'agenzia Leon Schrenzel di Czernowitz. Al suo apice la fabbrica produceva 10 vagoni di cemento al giorno ed era dotata di 42 lampade ad arco — un impianto piu moderno di quello di Czernowitz stesso, come notava con ammirazione la stampa."
+          },
+          "image": "/images/industry/ciment/ciment-02.jpg"
+        },
+        {
+          "id": "ciment-02",
+          "year": "1900–1918",
+          "title": {
+            "ro": "Axelrad — fabrica, criza si succesorii",
+            "en": "Axelrad — the factory, the crisis and the successors",
+            "fr": "Axelrad — l'usine, la crise et les successeurs",
+            "it": "Axelrad — la fabbrica, la crisi e i successori"
+          },
+          "body": {
+            "ro": "In 1903, parlamentarul Nikolaj Wassilko mentiona in Camera de la Viena cazul lui Axelrad ca exemplu de antreprenor care investise sute de mii de guldeni fara sprijin institutional. Pe 1 decembrie 1907, Axelrad a murit de atac cerebral la 51 de ani, lasand fabrica in criza: capitalul social a fost redus de la 1.350.000 la 720.004 coroane din cauza disputelor succesorale. Dupa Primul Razboi Mondial, fabrica a continuat sub administratie romaneasca, condusa de inginerul Friedensohn, dar la capacitate redusa. Un articol din 1912 confirma ca fabrica de ciment si fabrica Fischer de sticla impreuna dadeau de lucru la peste 300 de muncitori.",
+            "en": "In 1903, parliamentarian Nikolaj Wassilko mentioned in the Vienna Chamber the case of Axelrad as an example of an entrepreneur who had invested hundreds of thousands of gulden without institutional support. On 1 December 1907, Axelrad died of a stroke at the age of 51, leaving the factory in crisis: share capital was reduced from 1,350,000 to 720,004 crowns due to inheritance disputes. After the First World War the factory continued under Romanian administration, managed by engineer Friedensohn, but at reduced capacity. A 1912 article confirmed that the cement factory and the Fischer glassworks together employed over 300 workers.",
+            "fr": "En 1903, le parlementaire Nikolaj Wassilko mentionna a la Chambre de Vienne le cas d'Axelrad comme exemple d'entrepreneur ayant investi des centaines de milliers de florins sans soutien institutionnel. Le 1er decembre 1907, Axelrad mourut d'un accident vasculaire cerebral a 51 ans, laissant l'usine en crise : le capital social fut reduit de 1 350 000 a 720 004 couronnes en raison de litiges successoraux. Apres la Premiere Guerre mondiale, l'usine continua sous administration roumaine, dirigee par l'ingenieur Friedensohn, mais a capacite reduite. Un article de 1912 confirmait que la cimenterie et la verrerie Fischer employaient ensemble plus de 300 ouvriers.",
+            "it": "Nel 1903, il parlamentare Nikolaj Wassilko menziono alla Camera di Vienna il caso di Axelrad come esempio di imprenditore che aveva investito centinaia di migliaia di fiorini senza supporto istituzionale. Il 1 dicembre 1907, Axelrad mori di ictus a 51 anni, lasciando la fabbrica in crisi: il capitale sociale fu ridotto da 1.350.000 a 720.004 corone a causa di dispute ereditarie. Dopo la Prima guerra mondiale la fabbrica continuo sotto amministrazione romena, gestita dall'ingegnere Friedensohn, ma a capacita ridotta. Un articolo del 1912 confermava che la fabbrica di cemento e la vetreria Fischer davano lavoro insieme a oltre 300 operai."
+          },
+          "image": "/images/industry/ciment/ciment-01.png"
+        },
+        {
+          "id": "ciment-03",
+          "year": "1918–1944",
+          "title": {
+            "ro": "Declinul si distrugerea in al Doilea Razboi Mondial",
+            "en": "Decline and destruction in the Second World War",
+            "fr": "Declin et destruction pendant la Seconde Guerre mondiale",
+            "it": "Declino e distruzione nella Seconda guerra mondiale"
+          },
+          "body": {
+            "ro": "In perioada interbelica, fabrica de ciment a functionat cu dificultate, afectata de pierderea pietelor habsburgice si de criza din 1929. In vara lui 1944, luptele pentru eliberarea nordului Bucovinei de sub ocupatia germano-romana au distrus in mare parte instalatiile industriale din Putna. Dupa razboi, nicio industrie semnificativa nu a mai fost refacuta. Zona fostei fabrici a ramas in memoria colectiva sub denumirea de In Ciment, iar un mic restaurant cu acelasi nume a functionat acolo pana in prima jumatate a anilor 2010.",
+            "en": "During the interwar period the cement factory operated with difficulty, affected by the loss of Habsburg markets and the 1929 crisis. In the summer of 1944, the fighting for the liberation of northern Bukovina from German-Romanian occupation largely destroyed Putna's industrial installations. After the war, no significant industry was rebuilt. The area of the former factory remained in collective memory under the name In Ciment (In the Cement), and a small restaurant of the same name operated there until the first half of the 2010s.",
+            "fr": "Durant l'entre-deux-guerres, la cimenterie fonctionna difficilement, affectee par la perte des marches habsbourgeois et la crise de 1929. A l'ete 1944, les combats pour la liberation du nord de la Bucovine de l'occupation germano-roumaine detruisirent en grande partie les installations industrielles de Putna. Apres la guerre, aucune industrie significative ne fut reconstruite. La zone de l'ancienne usine resta dans la memoire collective sous le nom de In Ciment (Dans le Ciment), et un petit restaurant du meme nom y fonctionna jusqu'a la premiere moitie des annees 2010.",
+            "it": "Nel periodo interbellico la fabbrica di cemento funziono con difficolta, colpita dalla perdita dei mercati asburgici e dalla crisi del 1929. Nell'estate del 1944, i combattimenti per la liberazione del nord della Bucovina dall'occupazione tedesco-romena distrussero in gran parte gli impianti industriali di Putna. Dopo la guerra nessuna industria significativa fu ricostruita. La zona dell'ex fabbrica rimase nella memoria collettiva con il nome di In Ciment (Nel Cemento), e un piccolo ristorante con lo stesso nome vi funziono fino alla prima meta degli anni 2010."
+          }
+        },
+        {
+          "id": "ciment-04",
+          "year": "azi",
+          "title": {
+            "ro": "Ruinele — ultimul simbol al epocii industriale",
+            "en": "The ruins — the last symbol of the industrial era",
+            "fr": "Les ruines — le dernier symbole de l'ere industrielle",
+            "it": "Le rovine — l'ultimo simbolo dell'era industriale"
+          },
+          "body": {
+            "ro": "Dupa decenii de abandon, turnul fabricii de ciment a ramas singurul element vizibil al trecutului industrial al Putnei — o silueta de beton deasupra livezilor si a caselor. In prima jumatate a anilor 2010, turnul a fost demolat, inchizand simbolic un capitol al istoriei locale. Astazi, doar fundatii discrete, fragmente de caramida si carierele abandonate de pe dealuri mai amintesc de existenta celor doua fabrici. Intre ele, toponimele supravietuiesc: In Ciment, La Fabrica, Dealul Hutei.",
+            "en": "After decades of abandonment, the cement factory tower remained the only visible element of Putna's industrial past — a concrete silhouette above orchards and houses. In the first half of the 2010s the tower was demolished, symbolically closing a chapter of local history. Today only discrete foundations, fragments of brick and the abandoned quarries on the hillsides still recall the existence of the two factories. Among them, the place-names survive: In Ciment (In the Cement), La Fabrica (At the Factory), Dealul Hutei (Glass Furnace Hill).",
+            "fr": "Apres des decennies d'abandon, la tour de la cimenterie resta le seul element visible du passe industriel de Putna — une silhouette de beton au-dessus des vergers et des maisons. Dans la premiere moitie des annees 2010, la tour fut demolie, fermant symboliquement un chapitre de l'histoire locale. Aujourd'hui, seules des fondations discretes, des fragments de briques et les carrieres abandonnees sur les collines rappellent encore l'existence des deux usines. Parmi elles, les toponymes survivent : In Ciment, La Fabrica, Dealul Hutei.",
+            "it": "Dopo decenni di abbandono, la torre della fabbrica di cemento rimase l'unico elemento visibile del passato industriale di Putna — una sagoma di cemento sopra i frutteti e le case. Nella prima meta degli anni 2010 la torre fu demolita, chiudendo simbolicamente un capitolo della storia locale. Oggi solo fondamenta discrete, frammenti di mattoni e le cave abbandonate sulle colline ricordano ancora l'esistenza delle due fabbriche. Tra loro, i toponimi sopravvivono: In Ciment, La Fabrica, Dealul Hutei."
+          },
+          "image": "/images/industry/ciment/ciment-03.jpeg"
+        }
+      ]
+    }
+  ]
+}

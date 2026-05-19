@@ -10,6 +10,11 @@ const stopTypeLabels: Record<Lang, Record<StopType, string>> = {
 interface UIStrings {
   homeTitle: string;
   selectTour: string;
+  industryTitle: string;
+  industrySubtitle: string;
+  studyBadge: string;
+  backToIndustry: string;
+  timeline: string;
   stopCounter: (current: number, total: number) => string;
   back: string;
   nextStop: string;
@@ -31,6 +36,11 @@ const uiStrings: Record<Lang, UIStrings> = {
   ro: {
     homeTitle: 'Ghid Casa Muzeu',
     selectTour: 'Selectează un tur pentru a începe ghidajul.',
+    industryTitle: 'Industria din Putna',
+    industrySubtitle: 'Studiu 1775–1944',
+    studyBadge: 'Studiu academic',
+    backToIndustry: '← Înapoi la industrie',
+    timeline: 'Cronologie',
     stopCounter: (c, t) => `Oprire ${c} din ${t}`,
     back: 'Înapoi',
     nextStop: 'Următoarea oprire',
@@ -50,6 +60,11 @@ const uiStrings: Record<Lang, UIStrings> = {
   en: {
     homeTitle: 'Casa Muzeu Guide',
     selectTour: 'Select a tour to begin your guided visit.',
+    industryTitle: 'Industry in Putna',
+    industrySubtitle: 'Study 1775–1944',
+    studyBadge: 'Academic Study',
+    backToIndustry: '← Back to Industry',
+    timeline: 'Timeline',
     stopCounter: (c, t) => `Stop ${c} of ${t}`,
     back: 'Back',
     nextStop: 'Next stop',
@@ -69,6 +84,11 @@ const uiStrings: Record<Lang, UIStrings> = {
   fr: {
     homeTitle: 'Guide Casa Muzeu',
     selectTour: 'Sélectionnez une visite pour commencer le guidage.',
+    industryTitle: "L'industrie à Putna",
+    industrySubtitle: 'Étude 1775–1944',
+    studyBadge: 'Étude académique',
+    backToIndustry: "← Retour à l'industrie",
+    timeline: 'Chronologie',
     stopCounter: (c, t) => `Arrêt ${c} sur ${t}`,
     back: 'Retour',
     nextStop: 'Arrêt suivant',
@@ -88,6 +108,11 @@ const uiStrings: Record<Lang, UIStrings> = {
   it: {
     homeTitle: 'Guida Casa Muzeu',
     selectTour: 'Seleziona un tour per iniziare la guida.',
+    industryTitle: "L'industria a Putna",
+    industrySubtitle: 'Studio 1775–1944',
+    studyBadge: 'Studio accademico',
+    backToIndustry: "← Torna all'industria",
+    timeline: 'Cronologia',
     stopCounter: (c, t) => `Tappa ${c} di ${t}`,
     back: 'Indietro',
     nextStop: 'Tappa successiva',
