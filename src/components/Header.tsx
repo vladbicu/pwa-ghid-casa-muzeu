@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useSettings } from '../context/SettingsContext';
+import { useTenant } from '../config/TenantContext';
 import { asset } from '../utils/asset';
 
 export function Header() {
   const [logoError, setLogoError] = useState(false);
   const { theme, setTheme } = useSettings();
+  const tenant = useTenant();
 
   return (
     <header className="sticky top-0 z-50 bg-museum-beige/90 backdrop-blur-sm border-b border-museum-walnut/10 px-6 py-4">
@@ -15,12 +17,12 @@ export function Header() {
         <Link to="/" className="flex items-center gap-3 group">
           {logoError ? (
             <span className="text-lg font-bold text-museum-walnut tracking-tight">
-              Casa Muzeu Bukowina
+              {tenant.name}
             </span>
           ) : (
             <img
-              src={asset('/icons/logo.png')}
-              alt="Casa Muzeu Bukowina"
+              src={asset(tenant.logo)}
+              alt={tenant.name}
               onError={() => setLogoError(true)}
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
