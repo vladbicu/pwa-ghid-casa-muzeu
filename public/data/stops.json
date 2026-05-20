@@ -336,6 +336,23 @@
       "themes": [
         "meserii",
         "viata-zilnica"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "/images/stops/cvb/CVB-C1-01.jpg"
+        },
+        {
+          "type": "youtube",
+          "url": "PLACEHOLDER_VIDEO_ID",
+          "thumbnail": "/images/stops/cvb/CVB-C1-01.jpg",
+          "caption": {
+            "ro": "Demonstrație de țesut la Casa Muzeu Bukowina",
+            "en": "Weaving demonstration at Casa Muzeu Bukowina",
+            "fr": "Démonstration de tissage à la Casa Muzeu Bukowina",
+            "it": "Dimostrazione di tessitura alla Casa Muzeu Bukowina"
+          }
+        }
       ]
     },
     {
@@ -1278,6 +1295,23 @@
       "shortCode": 19,
       "themes": [
         "viata-zilnica"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "/images/stops/cvb/CVB-C2-07.jpg"
+        },
+        {
+          "type": "youtube",
+          "url": "PLACEHOLDER_VIDEO_ID",
+          "thumbnail": "/images/stops/cvb/CVB-C2-07.jpg",
+          "caption": {
+            "ro": "Instrumente muzicale tradiționale la Casa Muzeu Bukowina",
+            "en": "Traditional musical instruments at Casa Muzeu Bukowina",
+            "fr": "Instruments de musique traditionnels à la Casa Muzeu Bukowina",
+            "it": "Strumenti musicali tradizionali alla Casa Muzeu Bukowina"
+          }
+        }
       ]
     },
     {

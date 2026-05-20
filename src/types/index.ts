@@ -4,6 +4,14 @@ export type HouseId = "CVB" | "CAI";
 
 export type StopType = "intro" | "room" | "object" | "collection";
 
+export interface StopMedia {
+  type: 'image' | 'video-local' | 'youtube';
+  url: string;
+  thumbnail?: string;
+  caption?: Record<Lang, string>;
+  duration?: number;
+}
+
 export interface Theme {
   id: string;
   title: Record<Lang, string>;
@@ -27,6 +35,7 @@ export interface Stop {
   estSeconds: number;
   shortCode?: number;
   themes?: string[];
+  media?: StopMedia[];
   title: Record<Lang, string>;
   script: Record<Lang, string>;
   keyPoints: Record<Lang, string[]>;

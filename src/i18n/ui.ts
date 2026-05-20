@@ -45,6 +45,8 @@ interface UIStrings {
   thematicTours: string;
   thematicBadge: string;
   stopsCount: (n: number) => string;
+  videoUnavailableOffline: string;
+  watchVideo: string;
 }
 
 const uiStrings: Record<Lang, UIStrings> = {
@@ -86,6 +88,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     thematicTours: 'Explorează pe temă',
     thematicBadge: 'Tur tematic',
     stopsCount: (n) => `${n} opriri`,
+    videoUnavailableOffline: 'Video disponibil online',
+    watchVideo: 'Redă video',
   },
   en: {
     homeTitle: 'Casa Muzeu Guide',
@@ -125,6 +129,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     thematicTours: 'Explore by theme',
     thematicBadge: 'Thematic tour',
     stopsCount: (n) => `${n} stops`,
+    videoUnavailableOffline: 'Video available online',
+    watchVideo: 'Play video',
   },
   fr: {
     homeTitle: 'Guide Casa Muzeu',
@@ -164,6 +170,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     thematicTours: 'Explorer par thème',
     thematicBadge: 'Visite thématique',
     stopsCount: (n) => `${n} arrêts`,
+    videoUnavailableOffline: 'Vidéo disponible en ligne',
+    watchVideo: 'Lire la vidéo',
   },
   it: {
     homeTitle: 'Guida Casa Muzeu',
@@ -203,6 +211,8 @@ const uiStrings: Record<Lang, UIStrings> = {
     thematicTours: 'Esplora per tema',
     thematicBadge: 'Tour tematico',
     stopsCount: (n) => `${n} tappe`,
+    videoUnavailableOffline: 'Video disponibile online',
+    watchVideo: 'Riproduci video',
   },
 };
 

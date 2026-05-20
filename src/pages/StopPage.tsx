@@ -7,6 +7,8 @@ import { Accordion } from '../components/Accordion';
 import { ArrowLeft, ChevronRight, MessageCircleQuestion, Lightbulb, BookOpen, List, X } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { asset } from '../utils/asset';
+import { MediaGallery } from '../components/media/MediaGallery';
+import { useTenant } from '../config/TenantContext';
 
 const slideVariants = {
   initial: (d: number) => ({
@@ -23,6 +25,7 @@ const slideVariants = {
 export function StopPage() {
   const { tourId, stopId } = useParams();
   const { language, viewMode } = useSettings();
+  const tenant = useTenant();
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const themeId = searchParams.get('theme') ?? undefined;
@@ -131,7 +134,16 @@ export function StopPage() {
       >
         {/* Immersive Hero */}
         <div className="relative h-[40vh] w-full overflow-hidden bg-museum-walnut/20">
-          {stop.image && (
+          {stop.media && stop.media.length > 0 ? (
+            <div className="absolute inset-0">
+              <MediaGallery
+                media={stop.media}
+                lang={language}
+                fallbackImage={stop.image}
+                videoEnabled={tenant.features.videoStops}
+              />
+            </div>
+          ) : stop.image ? (
             <motion.img
               src={asset(stop.image)}
               alt={title}
@@ -139,8 +151,8 @@ export function StopPage() {
               className="absolute inset-0 w-full h-full object-cover scale-110"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
-          )}
-          <div className="absolute inset-0 bg-black/20" />
+          ) : null}
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
           {stop.shortCode !== undefined && (
             <div className="absolute bottom-4 right-4 z-10 bg-museum-walnut/80 backdrop-blur-md text-museum-cream font-mono font-bold text-lg px-3 py-1 rounded-lg">
