@@ -30,6 +30,10 @@ interface UIStrings {
   estTime: (mins: number) => string;
   stopNotFound: string;
   backToTour: string;
+  findPageTitle: string;
+  findPageSubtitle: string;
+  findCodeNotFound: string;
+  findNav: string;
 }
 
 const uiStrings: Record<Lang, UIStrings> = {
@@ -56,6 +60,10 @@ const uiStrings: Record<Lang, UIStrings> = {
     estTime: (mins) => `~${mins} min`,
     stopNotFound: 'Oprirea nu a fost găsită',
     backToTour: '← Înapoi la tur',
+    findPageTitle: 'Caută după cod',
+    findPageSubtitle: 'Introdu codul de pe etichetă',
+    findCodeNotFound: 'Cod negăsit',
+    findNav: 'Cod',
   },
   en: {
     homeTitle: 'Casa Muzeu Guide',
@@ -80,6 +88,10 @@ const uiStrings: Record<Lang, UIStrings> = {
     estTime: (mins) => `~${mins} min`,
     stopNotFound: 'Stop not found',
     backToTour: '← Back to tour',
+    findPageTitle: 'Find by code',
+    findPageSubtitle: 'Enter the code from the label',
+    findCodeNotFound: 'Code not found',
+    findNav: 'Code',
   },
   fr: {
     homeTitle: 'Guide Casa Muzeu',
@@ -104,6 +116,10 @@ const uiStrings: Record<Lang, UIStrings> = {
     estTime: (mins) => `~${mins} min`,
     stopNotFound: 'Arrêt introuvable',
     backToTour: '← Retour à la visite',
+    findPageTitle: 'Chercher par code',
+    findPageSubtitle: "Entrez le code de l'étiquette",
+    findCodeNotFound: 'Code introuvable',
+    findNav: 'Code',
   },
   it: {
     homeTitle: 'Guida Casa Muzeu',
@@ -128,6 +144,10 @@ const uiStrings: Record<Lang, UIStrings> = {
     estTime: (mins) => `~${mins} min`,
     stopNotFound: 'Tappa non trovata',
     backToTour: '← Torna al tour',
+    findPageTitle: 'Cerca per codice',
+    findPageSubtitle: "Inserisci il codice dall'etichetta",
+    findCodeNotFound: 'Codice non trovato',
+    findNav: 'Codice',
   },
 };
 

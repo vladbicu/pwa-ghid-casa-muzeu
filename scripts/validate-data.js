@@ -61,6 +61,26 @@ for (const section of industryData.sections) {
       errors.push(`Industry section "${section.id}" missing title.${lang}`);
     }
   }
+  if (section.shortCode !== undefined) {
+    if (!Number.isInteger(section.shortCode) || section.shortCode <= 0) {
+      errors.push(`Industry section "${section.id}" shortCode must be a positive integer`);
+    } else if (seenShortCodes.has(section.shortCode)) {
+      errors.push(
+        `Duplicate shortCode ${section.shortCode}: "${section.id}" and "${seenShortCodes.get(section.shortCode)}"`,
+      );
+    } else {
+      seenShortCodes.set(section.shortCode, section.id);
+    }
+  }
+}
+
+// --- Validate shortCode integrity on stops ---
+for (const stop of stopsData.stops) {
+  if (stop.shortCode !== undefined) {
+    if (!Number.isInteger(stop.shortCode) || stop.shortCode <= 0) {
+      errors.push(`Stop "${stop.id}" shortCode must be a positive integer`);
+    }
+  }
 }
 
 // --- Report ---

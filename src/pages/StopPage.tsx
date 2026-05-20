@@ -105,6 +105,12 @@ export function StopPage() {
           )}
           <div className="absolute inset-0 bg-black/20" />
 
+          {stop.shortCode !== undefined && (
+            <div className="absolute bottom-4 right-4 z-10 bg-museum-walnut/80 backdrop-blur-md text-museum-cream font-mono font-bold text-lg px-3 py-1 rounded-lg">
+              # {stop.shortCode}
+            </div>
+          )}
+
           <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-start z-10">
             <Link
               to={`/tour/${tourId}`}

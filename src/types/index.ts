@@ -11,6 +11,7 @@ export interface Stop {
   type: StopType;
   order: number;
   estSeconds: number;
+  shortCode?: number;
   title: Record<Lang, string>;
   script: Record<Lang, string>;
   keyPoints: Record<Lang, string[]>;
@@ -53,6 +54,7 @@ export interface IndustryEvent {
 export interface IndustrySection {
   id: string;
   order: number;
+  shortCode?: number;
   title: Record<Lang, string>;
   description: Record<Lang, string>;
   image: string;

@@ -208,3 +208,24 @@ export function saveResume(tourId: string, stopId: string) {
 export function clearResume() {
   localStorage.removeItem(RESUME_KEY);
 }
+
+// --- Code-based lookup (used by FindPage) ---
+
+export function findStopByCode(
+  code: number,
+  stops: Stop[],
+  tours: Tour[],
+): { stop: Stop; tourId: string } | null {
+  const stop = stops.find((s) => s.shortCode === code);
+  if (!stop) return null;
+  const tour = tours.find((t) => t.stopIds.includes(stop.id));
+  if (!tour) return null;
+  return { stop, tourId: tour.id };
+}
+
+export function findSectionByCode(
+  code: number,
+  sections: IndustrySection[],
+): IndustrySection | null {
+  return sections.find((s) => s.shortCode === code) ?? null;
+}

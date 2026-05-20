@@ -1,15 +1,21 @@
 import React from 'react';
-import { Home } from 'lucide-react';
+import { Home, Hash } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTenant } from '../config/TenantContext';
+import { useSettings } from '../context/SettingsContext';
+import { getUI } from '../i18n/ui';
 
 export function Navigation() {
+  const tenant = useTenant();
+  const { language } = useSettings();
+  const ui = getUI(language);
+
   const navItems = [
-    {
-      icon: Home,
-      label: 'Tururi',
-      path: '/',
-    },
+    { icon: Home, label: 'Tururi', path: '/' },
+    ...(tenant.features.shortCodes
+      ? [{ icon: Hash, label: ui.findNav, path: '/find' }]
+      : []),
   ];
 
   return (
@@ -19,6 +25,7 @@ export function Navigation() {
           <NavLink
             key={item.label}
             to={item.path}
+            end={item.path === '/'}
             className={({ isActive }) => `
               relative flex flex-col items-center justify-center w-16 h-full gap-1 transition-colors duration-300
               ${isActive ? 'text-museum-moss' : 'text-museum-walnut/60 hover:text-museum-walnut/80'}
@@ -30,11 +37,7 @@ export function Navigation() {
                   <motion.div
                     layoutId="nav-indicator"
                     className="absolute -top-2 w-8 h-1 bg-museum-moss rounded-full"
-                    transition={{
-                      type: 'spring',
-                      stiffness: 300,
-                      damping: 30,
-                    }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
                 <item.icon size={24} strokeWidth={isActive ? 2.5 : 2} />

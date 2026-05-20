@@ -14,6 +14,7 @@ import { TourDetailPage } from './pages/TourDetailPage';
 import { StopPage } from './pages/StopPage';
 import { IndustryHubPage } from './pages/IndustryHubPage';
 import { IndustrySectionPage } from './pages/IndustrySectionPage';
+import { FindPage } from './pages/FindPage';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SettingsProvider } from './context/SettingsContext';
@@ -33,6 +34,7 @@ function AppRoutes() {
           <Route path="/tour/:tourId/stop/:stopId" element={<StopPage />} />
           <Route path="/industry" element={<IndustryHubPage />} />
           <Route path="/industry/:sectionId" element={<IndustrySectionPage />} />
+          <Route path="/find" element={<FindPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

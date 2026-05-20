@@ -104,7 +104,8 @@
           },
           "image": "/images/industry/lemn/lemn-07.jpg"
         }
-      ]
+      ],
+      "shortCode": 50
     },
     {
       "id": "sticla",
@@ -208,7 +209,8 @@
           },
           "image": "/images/industry/sticla/sticla-03.jpeg"
         }
-      ]
+      ],
+      "shortCode": 51
     },
     {
       "id": "ciment",
@@ -295,7 +297,8 @@
           },
           "image": "/images/industry/ciment/ciment-03.jpeg"
         }
-      ]
+      ],
+      "shortCode": 52
     }
   ]
 }
