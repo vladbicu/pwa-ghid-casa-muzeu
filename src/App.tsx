@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
   useMatch,
+  useNavigate,
 } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Header } from './components/Header';
@@ -15,19 +16,36 @@ import { StopPage } from './pages/StopPage';
 import { IndustryHubPage } from './pages/IndustryHubPage';
 import { IndustrySectionPage } from './pages/IndustrySectionPage';
 import { FindPage } from './pages/FindPage';
+import { IntroPage, INTRO_SEEN_KEY } from './pages/IntroPage';
 import { AdminQRPage } from './pages/admin/AdminQRPage';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SettingsProvider } from './context/SettingsContext';
+import { useTenant } from './config/TenantContext';
 
 function AppRoutes() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isStopPage = useMatch('/tour/:tourId/stop/:stopId');
+  const isIntroPage = useMatch('/intro');
   const direction = (location.state as { direction?: number } | null)?.direction ?? 0;
+  const tenant = useTenant();
+
+  useEffect(() => {
+    if (
+      tenant.features.contextIntro &&
+      location.pathname === '/' &&
+      !localStorage.getItem(INTRO_SEEN_KEY)
+    ) {
+      navigate('/intro', { replace: true });
+    }
+  }, []);
+
+  const hideChrome = !!(isStopPage || isIntroPage);
 
   return (
     <>
-      {!isStopPage && <Header />}
+      {!hideChrome && <Header />}
       <AnimatePresence mode="wait" custom={direction} initial={false}>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<HomePage />} />
@@ -36,11 +54,12 @@ function AppRoutes() {
           <Route path="/industry" element={<IndustryHubPage />} />
           <Route path="/industry/:sectionId" element={<IndustrySectionPage />} />
           <Route path="/find" element={<FindPage />} />
+          <Route path="/intro" element={<IntroPage />} />
           <Route path="/admin/qr" element={<AdminQRPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
-      {!isStopPage && <Navigation />}
+      {!hideChrome && <Navigation />}
     </>
   );
 }

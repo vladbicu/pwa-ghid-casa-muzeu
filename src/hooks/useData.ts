@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useTenant } from '../config/TenantContext';
-import type { Tour, Stop, ToursData, StopsData, Lang, IndustrySection, IndustryData } from '../types';
+import type { Tour, Stop, ToursData, StopsData, Lang, IndustrySection, IndustryData, IntroSlide, IntroData } from '../types';
 
 // In-memory cache: path → parsed JSON
 const dataCache = new Map<string, unknown>();
@@ -228,4 +228,9 @@ export function findSectionByCode(
   sections: IndustrySection[],
 ): IndustrySection | null {
   return sections.find((s) => s.shortCode === code) ?? null;
+}
+
+export function useIntroSlides(): { data: IntroSlide[] | null; loading: boolean } {
+  const { data, loading } = useAsyncData<IntroData>('intro');
+  return { data: data?.slides ?? null, loading };
 }

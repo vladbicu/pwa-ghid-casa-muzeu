@@ -39,6 +39,9 @@ interface UIStrings {
   switchToGuide: string;
   switchToTourist: string;
   guideQuestions: string;
+  skipIntro: string;
+  startVisit: string;
+  aboutBukovina: string;
 }
 
 const uiStrings: Record<Lang, UIStrings> = {
@@ -74,6 +77,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     switchToGuide: 'Comută la modul ghid',
     switchToTourist: 'Comută la modul vizitator',
     guideQuestions: 'Întrebări pentru public',
+    skipIntro: 'Sari',
+    startVisit: 'Începe vizita',
+    aboutBukovina: 'Despre Bucovina',
   },
   en: {
     homeTitle: 'Casa Muzeu Guide',
@@ -107,6 +113,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     switchToGuide: 'Switch to guide mode',
     switchToTourist: 'Switch to visitor mode',
     guideQuestions: 'Questions for the audience',
+    skipIntro: 'Skip',
+    startVisit: 'Start visit',
+    aboutBukovina: 'About Bukovina',
   },
   fr: {
     homeTitle: 'Guide Casa Muzeu',
@@ -140,6 +149,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     switchToGuide: 'Passer en mode guide',
     switchToTourist: 'Passer en mode visiteur',
     guideQuestions: 'Questions pour le public',
+    skipIntro: 'Passer',
+    startVisit: 'Commencer la visite',
+    aboutBukovina: 'À propos de la Bucovine',
   },
   it: {
     homeTitle: 'Guida Casa Muzeu',
@@ -173,6 +185,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     switchToGuide: 'Passa alla modalità guida',
     switchToTourist: 'Passa alla modalità visitatore',
     guideQuestions: 'Domande per il pubblico',
+    skipIntro: 'Salta',
+    startVisit: 'Inizia la visita',
+    aboutBukovina: 'Sulla Bucovina',
   },
 };
 

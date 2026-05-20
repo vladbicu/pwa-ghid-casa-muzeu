@@ -67,3 +67,16 @@ export interface IndustryData {
   sections: IndustrySection[];
 }
 
+export interface IntroSlide {
+  id: string;
+  icon: string;
+  image: string;
+  title: Record<Lang, string>;
+  body: Record<Lang, string>;
+}
+
+export interface IntroData {
+  version: number;
+  slides: IntroSlide[];
+}
+

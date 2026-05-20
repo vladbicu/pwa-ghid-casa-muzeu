@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "slides": [
+    {
+      "id": "geography",
+      "icon": "Map",
+      "image": "/images/intro/bucovina-map.jpg",
+      "title": {
+        "ro": "Bucovina pe harta Europei",
+        "en": "Bukovina on the map of Europe",
+        "fr": "La Bucovine sur la carte de l'Europe",
+        "it": "La Bucovina sulla mappa d'Europa"
+      },
+      "body": {
+        "ro": "În 1775, Imperiul Habsburgic a preluat Bucovina de la Imperiul Otoman. Timp de 143 de ani, această regiune montană din nord-estul Europei a trăit sub administrație austriacă — cu drumuri, căi ferate, fabrici și legi occidentale. În 1918, Bucovina de Sud s-a unit cu România. Nordul a intrat în componența Ucrainei după 1940. Putna se află azi în sudul Bucovinei, în România.",
+        "en": "In 1775, the Habsburg Empire took Bukovina from the Ottoman Empire. For 143 years, this mountain region in north-eastern Europe lived under Austrian administration — with roads, railways, factories and Western laws. In 1918, Southern Bukovina united with Romania. The north became part of Ukraine after 1940. Putna is today in southern Bukovina, in Romania.",
+        "fr": "En 1775, l'Empire habsbourgeois prit la Bucovine à l'Empire ottoman. Pendant 143 ans, cette région montagneuse du nord-est de l'Europe vécut sous administration autrichienne — avec des routes, des chemins de fer, des usines et des lois occidentales. En 1918, la Bucovine du Sud s'unit à la Roumanie. Le nord intégra l'Ukraine après 1940. Putna se trouve aujourd'hui dans le sud de la Bucovine, en Roumanie.",
+        "it": "Nel 1775, l'Impero asburgico prese la Bucovina dall'Impero ottomano. Per 143 anni, questa regione montuosa del nord-est Europa visse sotto amministrazione austriaca — con strade, ferrovie, fabbriche e leggi occidentali. Nel 1918, la Bucovina del Sud si unì alla Romania. Il nord divenne parte dell'Ucraina dopo il 1940. Putna si trova oggi nel sud della Bucovina, in Romania."
+      }
+    },
+    {
+      "id": "diversity",
+      "icon": "Users",
+      "image": "/images/intro/diversitate.jpg",
+      "title": {
+        "ro": "Un loc, mai multe lumi",
+        "en": "One place, many worlds",
+        "fr": "Un lieu, plusieurs mondes",
+        "it": "Un luogo, molti mondi"
+      },
+      "body": {
+        "ro": "Habsburgii au colonizat Bucovina cu germani, polonezi și ucraineni, în timp ce comunitățile evreiești și armene se ocupau cu comerțul. Românii ortodocși, coloniștii germani catolici, evreii și ucrainenii au trăit cot la cot în același sat — uneori pe aceeași stradă. Aceasta nu e o poveste simplă despre un singur popor, ci despre cum oameni foarte diferiți au construit împreună ceva durabil.",
+        "en": "The Habsburgs colonised Bukovina with Germans, Poles and Ukrainians, while Jewish and Armenian communities handled trade. Orthodox Romanians, Catholic German colonists, Jews and Ukrainians lived side by side in the same village — sometimes on the same street. This is not a simple story about a single people, but about how very different people built something lasting together.",
+        "fr": "Les Habsbourgs colonisèrent la Bucovine avec des Allemands, des Polonais et des Ukrainiens, tandis que les communautés juives et arméniennes s'occupaient du commerce. Roumains orthodoxes, colons allemands catholiques, Juifs et Ukrainiens vécurent côte à côte dans le même village — parfois dans la même rue. Ce n'est pas une histoire simple sur un seul peuple, mais sur la façon dont des gens très différents ont construit ensemble quelque chose de durable.",
+        "it": "Gli Asburgo colonizzarono la Bucovina con tedeschi, polacchi e ucraini, mentre le comunità ebraiche e armene si occupavano del commercio. Romeni ortodossi, coloni tedeschi cattolici, ebrei e ucraini vissero fianco a fianco nello stesso villaggio — a volte nella stessa strada. Questa non è una storia semplice su un unico popolo, ma su come persone molto diverse abbiano costruito insieme qualcosa di duraturo."
+      }
+    },
+    {
+      "id": "monastery",
+      "icon": "Church",
+      "image": "/images/intro/manastire-putna.jpg",
+      "title": {
+        "ro": "Mănăstirea și fabrica",
+        "en": "The monastery and the factory",
+        "fr": "Le monastère et l'usine",
+        "it": "Il monastero e la fabbrica"
+      },
+      "body": {
+        "ro": "Putna e cunoscută pentru mănăstirea ctitorită de Ștefan cel Mare în 1466 — locul de odihnă al celui mai important domnitor medieval român. Dar lângă această mănăstire, habsburgii au construit fabrici de sticlă, gatere cu aburi și o cale ferată forestieră. Fondul Religionar Ortodox — instituție care administra averile mănăstirilor — a finanțat tot acest complex industrial. Credința și industria nu s-au exclus: s-au susținut reciproc.",
+        "en": "Putna is known for the monastery founded by Stephen the Great in 1466 — the resting place of the most important medieval Romanian ruler. But next to this monastery, the Habsburgs built glassworks, steam sawmills and a forest railway. The Orthodox Religious Fund — an institution managing monastery assets — financed this entire industrial complex. Faith and industry did not exclude each other: they sustained each other.",
+        "fr": "Putna est connue pour le monastère fondé par Étienne le Grand en 1466 — le lieu de repos du plus important souverain médiéval roumain. Mais à côté de ce monastère, les Habsbourgs construisirent des verreries, des scieries à vapeur et un chemin de fer forestier. Le Fonds Religieux Orthodoxe — institution gérant les biens des monastères — finança tout ce complexe industriel. La foi et l'industrie ne s'excluaient pas : elles se soutenaient mutuellement.",
+        "it": "Putna è nota per il monastero fondato da Stefano il Grande nel 1466 — il luogo di riposo del più importante sovrano medievale romeno. Ma accanto a questo monastero, gli Asburgo costruirono vetrerie, segherie a vapore e una ferrovia forestale. Il Fondo Religioso Ortodosso — istituzione che gestiva i beni dei monasteri — finanziò l'intero complesso industriale. Fede e industria non si escludevano: si sostenevano a vicenda."
+      }
+    },
+    {
+      "id": "houses",
+      "icon": "Home",
+      "image": "/images/intro/casa-muzeu.jpg",
+      "title": {
+        "ro": "Casele și oamenii lor",
+        "en": "The houses and their people",
+        "fr": "Les maisons et leurs habitants",
+        "it": "Le case e le loro persone"
+      },
+      "body": {
+        "ro": "Casele pe care le vei vizita nu sunt reconstituiri. Sunt case reale, cu obiecte reale, locuite de oameni reali până de curând. Casa Veronica Bicu a fost construită în 1854 de Niculai Bâcu — șase generații au trăit în ea. Obiectele pe care le vei vedea nu au ieșit din casă niciodată. Via Transilvanica, traseul de trekking care traversează România de la nord la sud, trece chiar pe lângă aceste case.",
+        "en": "The houses you will visit are not reconstructions. They are real houses, with real objects, inhabited by real people until recently. Casa Veronica Bicu was built in 1854 by Niculai Bâcu — six generations lived in it. The objects you will see have never left the house. Via Transilvanica, the trekking route that crosses Romania from north to south, passes right by these houses.",
+        "fr": "Les maisons que vous visiterez ne sont pas des reconstitutions. Ce sont de vraies maisons, avec de vrais objets, habitées par de vraies personnes jusqu'à récemment. La Casa Veronica Bicu a été construite en 1854 par Niculai Bâcu — six générations y ont vécu. Les objets que vous verrez n'ont jamais quitté la maison. La Via Transilvanica, l'itinéraire de randonnée qui traverse la Roumanie du nord au sud, passe juste à côté de ces maisons.",
+        "it": "Le case che visiterai non sono ricostruzioni. Sono case reali, con oggetti reali, abitate da persone reali fino a poco tempo fa. Casa Veronica Bicu fu costruita nel 1854 da Niculai Bâcu — sei generazioni vi vissero. Gli oggetti che vedrai non hanno mai lasciato la casa. La Via Transilvanica, il percorso di trekking che attraversa la Romania da nord a sud, passa proprio accanto a queste case."
+      }
+    }
+  ]
+}
