@@ -15,6 +15,7 @@ import { StopPage } from './pages/StopPage';
 import { IndustryHubPage } from './pages/IndustryHubPage';
 import { IndustrySectionPage } from './pages/IndustrySectionPage';
 import { FindPage } from './pages/FindPage';
+import { AdminQRPage } from './pages/admin/AdminQRPage';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SettingsProvider } from './context/SettingsContext';
@@ -35,6 +36,7 @@ function AppRoutes() {
           <Route path="/industry" element={<IndustryHubPage />} />
           <Route path="/industry/:sectionId" element={<IndustrySectionPage />} />
           <Route path="/find" element={<FindPage />} />
+          <Route path="/admin/qr" element={<AdminQRPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
