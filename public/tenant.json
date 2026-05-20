@@ -1,0 +1,37 @@
+{
+  "id": "casa-muzeu-bukowina",
+  "name": "Casa Muzeu Bukowina",
+  "shortName": "Ghid Muzeu",
+  "logo": "/icons/logo.png",
+  "baseUrl": "/ghid/",
+  "colors": {
+    "primary": "#2C1810",
+    "secondary": "#6B7D5C",
+    "accent": "#F0EBE3",
+    "background": "#FAF7F0",
+    "surface": "#FFFCF5",
+    "text": "#2C1810"
+  },
+  "defaultLanguage": "ro",
+  "availableLanguages": ["ro", "en", "fr", "it"],
+  "features": {
+    "shortCodes": true,
+    "guidMode": true,
+    "thematicTours": true,
+    "videoStops": true,
+    "contextIntro": true,
+    "industrySection": true
+  },
+  "contact": {
+    "website": "https://casabukowina.ro",
+    "address": "Putna, județul Suceava, România"
+  },
+  "meta": {
+    "description": {
+      "ro": "Ghid digital pentru vizitarea Casei Muzeu Bukowina din Putna",
+      "en": "Digital guide for visiting Casa Muzeu Bukowina in Putna",
+      "fr": "Guide numérique pour visiter la Casa Muzeu Bukowina à Putna",
+      "it": "Guida digitale per visitare la Casa Muzeu Bukowina a Putna"
+    }
+  }
+}

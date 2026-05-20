@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import type { Lang } from '../types';
+import { useTenant } from '../config/TenantContext';
 
 interface SettingsContextType {
   language: Lang;
@@ -12,24 +13,32 @@ interface SettingsContextType {
 const LANGUAGE_KEY = 'ghid-language';
 const THEME_KEY = 'ghid-theme';
 
-const availableLanguages: { code: Lang; label: string; available: boolean }[] = [
-  { code: 'ro', label: 'Română', available: true },
-  { code: 'en', label: 'English', available: true },
-  { code: 'fr', label: 'Français', available: true },
-  { code: 'it', label: 'Italiano', available: true },
-];
+const LANGUAGE_LABELS: Record<Lang, string> = {
+  ro: 'Română',
+  en: 'English',
+  fr: 'Français',
+  it: 'Italiano',
+};
 
 const SettingsContext = createContext<SettingsContextType | null>(null);
 
 export function SettingsProvider({ children }: { children: ReactNode }) {
+  const { availableLanguages: tenantLangs, defaultLanguage } = useTenant();
+
+  const availableLanguages = tenantLangs.map((code) => ({
+    code,
+    label: LANGUAGE_LABELS[code],
+    available: true,
+  }));
+
   const [language, setLanguageState] = useState<Lang>(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem(LANGUAGE_KEY);
-      if (stored && ['ro', 'en', 'fr', 'it'].includes(stored)) {
+      if (stored && tenantLangs.includes(stored as Lang)) {
         return stored as Lang;
       }
     }
-    return 'ro';
+    return defaultLanguage;
   });
 
   const [theme, setThemeState] = useState<'light' | 'dark'>(() => {

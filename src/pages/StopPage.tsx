@@ -27,10 +27,10 @@ export function StopPage() {
   const direction = (location.state as { direction?: number } | null)?.direction ?? 0;
   const ui = getUI(language);
 
-  const tour = useTour(tourId);
-  const stop = useStop(stopId);
+  const { data: tour, loading: tourLoading } = useTour(tourId);
+  const { data: stop, loading: stopLoading } = useStop(stopId);
   const stopIndex = useStopIndex(tour, stopId);
-  const allStops = useStopsForTour(tour);
+  const { data: allStops } = useStopsForTour(tour);
 
   const [jumperOpen, setJumperOpen] = useState(false);
 
@@ -40,6 +40,22 @@ export function StopPage() {
   useEffect(() => {
     if (tourId && stopId) saveResume(tourId, stopId);
   }, [tourId, stopId]);
+
+  if (tourLoading || stopLoading) {
+    return (
+      <div className="min-h-screen bg-museum-beige">
+        <div className="animate-pulse bg-museum-walnut/10 h-[40vh]" />
+        <div className="relative -mt-12 px-4 md:px-8 max-w-3xl mx-auto">
+          <div className="bg-museum-cream rounded-2xl p-6 space-y-4">
+            <div className="animate-pulse bg-museum-walnut/10 rounded-xl h-10 w-2/3" />
+            <div className="animate-pulse bg-museum-walnut/10 rounded-xl h-4 w-full" />
+            <div className="animate-pulse bg-museum-walnut/10 rounded-xl h-4 w-full" />
+            <div className="animate-pulse bg-museum-walnut/10 rounded-xl h-4 w-2/3" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!tour || !stop || stopIndex === -1) {
     return (

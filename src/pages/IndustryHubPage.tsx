@@ -8,7 +8,7 @@ import { getUI } from '../i18n/ui';
 import { IndustrySectionCard } from '../components/IndustrySectionCard';
 
 export function IndustryHubPage() {
-  const sections = useIndustrySections();
+  const { data: sections, loading } = useIndustrySections();
   const { language } = useSettings();
   const ui = getUI(language);
 
@@ -55,13 +55,21 @@ export function IndustryHubPage() {
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {sections
-          .sort((a, b) => a.order - b.order)
-          .map((section, index) => (
-            <IndustrySectionCard key={section.id} section={section} index={index} />
+      {loading ? (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-48" />
           ))}
-      </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {sections
+            .sort((a, b) => a.order - b.order)
+            .map((section, index) => (
+              <IndustrySectionCard key={section.id} section={section} index={index} />
+            ))}
+        </div>
+      )}
     </motion.main>
   );
 }

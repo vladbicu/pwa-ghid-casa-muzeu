@@ -13,8 +13,22 @@ export function TourDetailPage() {
   const { language } = useSettings();
   const ui = getUI(language);
 
-  const tour = useTour(tourId);
-  const stops = useStopsForTour(tour);
+  const { data: tour, loading: tourLoading } = useTour(tourId);
+  const { data: stops, loading: stopsLoading } = useStopsForTour(tour);
+
+  if (tourLoading) {
+    return (
+      <div className="pb-24 bg-museum-beige min-h-screen">
+        <div className="animate-pulse bg-museum-walnut/10 h-[40vh] min-h-[300px]" />
+        <div className="max-w-4xl mx-auto px-4 md:px-8 mt-6 space-y-4">
+          <div className="animate-pulse bg-museum-walnut/10 rounded-xl h-10 w-2/3" />
+          {[0, 1, 2, 3, 4].map((i) => (
+            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-20" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   if (!tour) {
     return (
@@ -75,7 +89,7 @@ export function TourDetailPage() {
                 <Clock size={14} /> {tour.durationLabel}
               </span>
               <span className="flex items-center gap-1 bg-museum-cream px-3 py-1 rounded-full shadow-sm">
-                <MapPin size={14} /> {stops.length} {ui.stops}
+                <MapPin size={14} /> {stopsLoading ? '…' : stops.length} {ui.stops}
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold text-museum-walnut mb-2">{title}</h1>
@@ -101,23 +115,31 @@ export function TourDetailPage() {
           )}
         </div>
 
-        {roomGroups.map((group) => (
-          <div key={group.roomId} className="mb-6">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-museum-walnut/40 mb-3 px-1">
-              {group.roomName}
-            </h3>
-            <div className="space-y-3">
-              {group.stops.map((stop) => (
-                <StopCard
-                  key={stop.id}
-                  stop={stop}
-                  tourId={tour.id}
-                  index={stopIndexMap.get(stop.id) ?? 0}
-                />
-              ))}
-            </div>
+        {stopsLoading ? (
+          <div className="space-y-3">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-20" />
+            ))}
           </div>
-        ))}
+        ) : (
+          roomGroups.map((group) => (
+            <div key={group.roomId} className="mb-6">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-museum-walnut/40 mb-3 px-1">
+                {group.roomName}
+              </h3>
+              <div className="space-y-3">
+                {group.stops.map((stop) => (
+                  <StopCard
+                    key={stop.id}
+                    stop={stop}
+                    tourId={tour.id}
+                    index={stopIndexMap.get(stop.id) ?? 0}
+                  />
+                ))}
+              </div>
+            </div>
+          ))
+        )}
       </main>
     </motion.div>
   );

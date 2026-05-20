@@ -9,14 +9,14 @@ import { motion } from 'framer-motion';
 import { asset } from '../utils/asset';
 
 export function HomePage() {
-  const tours = useTours();
+  const { data: tours, loading } = useTours();
   const { language } = useSettings();
   const ui = getUI(language);
   const [industryImgError, setIndustryImgError] = useState(false);
 
   const resume = useResumeTour();
-  const resumeTour = useTour(resume?.tourId);
-  const resumeStop = useStop(resume?.stopId);
+  const { data: resumeTour } = useTour(resume?.tourId);
+  const { data: resumeStop } = useStop(resume?.stopId);
   const resumeStopTitle = resumeStop ? getLocalizedText(resumeStop.title, language) || '' : '';
 
   return (
@@ -67,11 +67,19 @@ export function HomePage() {
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
-        {tours.map((tour, index) => (
-          <TourCard key={tour.id} tour={tour} index={index} />
-        ))}
-      </div>
+      {loading ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-64 md:h-80" />
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
+          {(tours ?? []).map((tour, index) => (
+            <TourCard key={tour.id} tour={tour} index={index} />
+          ))}
+        </div>
+      )}
 
       {/* Industry hub card */}
       <motion.div
