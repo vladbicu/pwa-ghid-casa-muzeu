@@ -22,7 +22,7 @@ const slideVariants = {
 
 export function StopPage() {
   const { tourId, stopId } = useParams();
-  const { language } = useSettings();
+  const { language, viewMode } = useSettings();
   const location = useLocation();
   const direction = (location.state as { direction?: number } | null)?.direction ?? 0;
   const ui = getUI(language);
@@ -138,72 +138,149 @@ export function StopPage() {
         {/* Content Card */}
         <div className="relative -mt-12 px-4 md:px-8 max-w-3xl mx-auto z-20">
           <div className="bg-museum-cream rounded-2xl shadow-warm-lg p-6 md:p-10 border border-museum-walnut/5">
-            {/* Title + est time */}
+            {/* Title row */}
             <div className="flex items-start justify-between gap-4 mb-6">
               <h1 className="text-3xl md:text-4xl font-bold text-museum-walnut leading-tight">
                 {title}
               </h1>
-              <span className="shrink-0 text-sm text-museum-walnut/50 bg-museum-sand px-3 py-1 rounded-full mt-1 whitespace-nowrap">
-                {ui.estTime(estMins)}
-              </span>
+              <div className="flex flex-col items-end gap-1.5 shrink-0 mt-1">
+                {viewMode === 'tourist' && (
+                  <span className="text-sm text-museum-walnut/50 bg-museum-sand px-3 py-1 rounded-full whitespace-nowrap">
+                    {ui.estTime(estMins)}
+                  </span>
+                )}
+                {viewMode === 'guide' && stop.shortCode !== undefined && (
+                  <span className="font-mono font-bold text-museum-walnut bg-museum-walnut/20 text-sm px-3 py-1 rounded-lg">
+                    # {stop.shortCode}
+                  </span>
+                )}
+              </div>
             </div>
 
-            {/* Script Text */}
-            {script && script !== 'TODO' && (
-              <div className="prose prose-lg prose-stone text-museum-walnut/80 mb-8 leading-relaxed">
-                <div className="flex items-start gap-3 mb-4">
-                  <BookOpen size={24} className="text-museum-moss shrink-0 mt-1" />
-                  <p className="first-letter:text-4xl first-letter:font-bold first-letter:text-museum-moss first-letter:mr-1 first-letter:float-left whitespace-pre-wrap">
-                    {script}
-                  </p>
-                </div>
-              </div>
-            )}
+            <AnimatePresence mode="wait">
+              {viewMode === 'tourist' ? (
+                <motion.div
+                  key="tourist"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {/* Script Text */}
+                  {script && script !== 'TODO' && (
+                    <div className="prose prose-lg prose-stone text-museum-walnut/80 mb-8 leading-relaxed">
+                      <div className="flex items-start gap-3 mb-4">
+                        <BookOpen size={24} className="text-museum-moss shrink-0 mt-1" />
+                        <p className="first-letter:text-4xl first-letter:font-bold first-letter:text-museum-moss first-letter:mr-1 first-letter:float-left whitespace-pre-wrap">
+                          {script}
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
-            {/* Key Points */}
-            {keyPoints.length > 0 && (
-              <div className="mb-6">
-                <h3 className="flex items-center gap-2 text-lg font-semibold text-museum-walnut mb-3">
-                  <Lightbulb size={20} className="text-museum-moss" />
-                  {ui.keyPoints}
-                </h3>
-                <ul className="space-y-2">
-                  {keyPoints.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-museum-walnut/80">
-                      <span className="w-2 h-2 rounded-full bg-museum-moss mt-2 shrink-0" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+                  {/* Key Points */}
+                  {keyPoints.length > 0 && (
+                    <div className="mb-6">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-museum-walnut mb-3">
+                        <Lightbulb size={20} className="text-museum-moss" />
+                        {ui.keyPoints}
+                      </h3>
+                      <ul className="space-y-2">
+                        {keyPoints.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-museum-walnut/80">
+                            <span className="w-2 h-2 rounded-full bg-museum-moss mt-2 shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-            {/* Questions */}
-            {questions.length > 0 && (
-              <div className="mb-6">
-                <h3 className="flex items-center gap-2 text-lg font-semibold text-museum-walnut mb-3">
-                  <MessageCircleQuestion size={20} className="text-museum-moss" />
-                  {ui.questions}
-                </h3>
-                <ul className="space-y-2">
-                  {questions.map((question, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-museum-walnut/80 bg-museum-sand/50 p-3 rounded-lg">
-                      <span className="font-semibold text-museum-moss shrink-0">{idx + 1}.</span>
-                      <span>{question}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+                  {/* Questions */}
+                  {questions.length > 0 && (
+                    <div className="mb-6">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-museum-walnut mb-3">
+                        <MessageCircleQuestion size={20} className="text-museum-moss" />
+                        {ui.questions}
+                      </h3>
+                      <ul className="space-y-2">
+                        {questions.map((question, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-museum-walnut/80 bg-museum-sand/50 p-3 rounded-lg">
+                            <span className="font-semibold text-museum-moss shrink-0">{idx + 1}.</span>
+                            <span>{question}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-            {/* Extra Details */}
-            {extra && (
-              <div className="mb-6">
-                <Accordion title={ui.extraDetails} teaser={extra.split('\n')[0]?.substring(0, 120)}>
-                  <p className="text-museum-walnut/80 whitespace-pre-wrap">{extra}</p>
-                </Accordion>
-              </div>
-            )}
+                  {/* Extra Details */}
+                  {extra && (
+                    <div className="mb-6">
+                      <Accordion title={ui.extraDetails} teaser={extra.split('\n')[0]?.substring(0, 120)}>
+                        <p className="text-museum-walnut/80 whitespace-pre-wrap">{extra}</p>
+                      </Accordion>
+                    </div>
+                  )}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="guide"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {/* Key Points — guide mode */}
+                  {keyPoints.length > 0 && (
+                    <div className="mb-6">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-museum-walnut mb-3">
+                        <Lightbulb size={20} className="text-museum-moss" />
+                        {ui.keyPoints}
+                      </h3>
+                      <ul className="space-y-2">
+                        {keyPoints.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-museum-walnut/80 bg-museum-sand/50 p-3 rounded-lg">
+                            <span className="w-2 h-2 rounded-full bg-museum-moss mt-2.5 shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Questions — guide mode */}
+                  {questions.length > 0 && (
+                    <div className="mb-6 bg-museum-moss/10 rounded-xl p-4 border-l-[3px] border-museum-moss">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-museum-walnut mb-3">
+                        <MessageCircleQuestion size={20} className="text-museum-moss" />
+                        {ui.guideQuestions}
+                      </h3>
+                      <ul className="space-y-3">
+                        {questions.map((question, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-museum-walnut/80">
+                            <MessageCircleQuestion size={16} className="text-museum-moss shrink-0 mt-0.5" />
+                            <span>
+                              <span className="font-semibold text-museum-moss mr-1">{idx + 1}.</span>
+                              {question}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Extra Details — still in accordion */}
+                  {extra && (
+                    <div className="mb-6">
+                      <Accordion title={ui.extraDetails} teaser={extra.split('\n')[0]?.substring(0, 120)}>
+                        <p className="text-museum-walnut/80 whitespace-pre-wrap">{extra}</p>
+                      </Accordion>
+                    </div>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Navigation */}
             <div className="flex items-center justify-between pt-8 border-t border-museum-walnut/10">

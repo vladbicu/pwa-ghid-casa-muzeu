@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, CheckCircle2 } from 'lucide-react';
+import { Play, CheckCircle2, MessageCircleQuestion } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Stop, StopType } from '../types';
@@ -23,10 +23,11 @@ const typeBadgeStyle: Record<StopType, string> = {
 };
 
 export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardProps) {
-  const { language } = useSettings();
+  const { language, viewMode } = useSettings();
   const ui = getUI(language);
   const title = getLocalizedText(stop.title, language) || '';
   const keyPoints = getLocalizedText(stop.keyPoints, language) || [];
+  const questions = getLocalizedText(stop.questions, language) || [];
   const description = keyPoints[0] || '';
 
   const formatTime = (seconds: number) => {
@@ -62,6 +63,13 @@ export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardP
           <div className={`absolute -bottom-1 -right-1 text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-md shadow-sm ${typeBadgeStyle[stop.type]}`}>
             {ui.stopTypeLabel(stop.type)}
           </div>
+          {/* Questions badge — guide mode only */}
+          {viewMode === 'guide' && questions.length > 0 && (
+            <div className="absolute -top-1 -right-1 flex items-center gap-0.5 bg-museum-moss text-museum-cream text-[10px] font-bold px-1.5 py-0.5 rounded-md shadow-sm">
+              <MessageCircleQuestion size={10} />
+              {questions.length}
+            </div>
+          )}
         </div>
 
         <div className="flex-1 min-w-0">

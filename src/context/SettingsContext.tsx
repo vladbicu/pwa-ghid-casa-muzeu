@@ -8,10 +8,13 @@ interface SettingsContextType {
   availableLanguages: { code: Lang; label: string; available: boolean }[];
   theme: 'light' | 'dark';
   setTheme: (theme: 'light' | 'dark') => void;
+  viewMode: 'tourist' | 'guide';
+  setViewMode: (mode: 'tourist' | 'guide') => void;
 }
 
 const LANGUAGE_KEY = 'ghid-language';
 const THEME_KEY = 'ghid-theme';
+const VIEW_MODE_KEY = 'ghid-view-mode';
 
 const LANGUAGE_LABELS: Record<Lang, string> = {
   ro: 'Română',
@@ -49,6 +52,14 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     return 'light';
   });
 
+  const [viewMode, setViewModeState] = useState<'tourist' | 'guide'>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem(VIEW_MODE_KEY);
+      if (stored === 'tourist' || stored === 'guide') return stored;
+    }
+    return 'tourist';
+  });
+
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
@@ -63,6 +74,11 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(THEME_KEY, t);
   };
 
+  const setViewMode = (mode: 'tourist' | 'guide') => {
+    setViewModeState(mode);
+    localStorage.setItem(VIEW_MODE_KEY, mode);
+  };
+
   return (
     <SettingsContext.Provider
       value={{
@@ -71,6 +87,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
         availableLanguages,
         theme,
         setTheme,
+        viewMode,
+        setViewMode,
       }}
     >
       {children}

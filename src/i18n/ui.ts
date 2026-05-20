@@ -34,6 +34,11 @@ interface UIStrings {
   findPageSubtitle: string;
   findCodeNotFound: string;
   findNav: string;
+  touristMode: string;
+  guideMode: string;
+  switchToGuide: string;
+  switchToTourist: string;
+  guideQuestions: string;
 }
 
 const uiStrings: Record<Lang, UIStrings> = {
@@ -64,6 +69,11 @@ const uiStrings: Record<Lang, UIStrings> = {
     findPageSubtitle: 'Introdu codul de pe etichetă',
     findCodeNotFound: 'Cod negăsit',
     findNav: 'Cod',
+    touristMode: 'Vizitator',
+    guideMode: 'Ghid',
+    switchToGuide: 'Comută la modul ghid',
+    switchToTourist: 'Comută la modul vizitator',
+    guideQuestions: 'Întrebări pentru public',
   },
   en: {
     homeTitle: 'Casa Muzeu Guide',
@@ -92,6 +102,11 @@ const uiStrings: Record<Lang, UIStrings> = {
     findPageSubtitle: 'Enter the code from the label',
     findCodeNotFound: 'Code not found',
     findNav: 'Code',
+    touristMode: 'Visitor',
+    guideMode: 'Guide',
+    switchToGuide: 'Switch to guide mode',
+    switchToTourist: 'Switch to visitor mode',
+    guideQuestions: 'Questions for the audience',
   },
   fr: {
     homeTitle: 'Guide Casa Muzeu',
@@ -120,6 +135,11 @@ const uiStrings: Record<Lang, UIStrings> = {
     findPageSubtitle: "Entrez le code de l'étiquette",
     findCodeNotFound: 'Code introuvable',
     findNav: 'Code',
+    touristMode: 'Visiteur',
+    guideMode: 'Guide',
+    switchToGuide: 'Passer en mode guide',
+    switchToTourist: 'Passer en mode visiteur',
+    guideQuestions: 'Questions pour le public',
   },
   it: {
     homeTitle: 'Guida Casa Muzeu',
@@ -148,6 +168,11 @@ const uiStrings: Record<Lang, UIStrings> = {
     findPageSubtitle: "Inserisci il codice dall'etichetta",
     findCodeNotFound: 'Codice non trovato',
     findNav: 'Codice',
+    touristMode: 'Visitatore',
+    guideMode: 'Guida',
+    switchToGuide: 'Passa alla modalità guida',
+    switchToTourist: 'Passa alla modalità visitatore',
+    guideQuestions: 'Domande per il pubblico',
   },
 };
 
