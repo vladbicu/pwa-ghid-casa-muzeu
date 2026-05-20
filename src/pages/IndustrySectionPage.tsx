@@ -10,10 +10,23 @@ import { asset } from '../utils/asset';
 
 export function IndustrySectionPage() {
   const { sectionId } = useParams<{ sectionId: string }>();
-  const section = useIndustrySection(sectionId);
+  const { data: section, loading } = useIndustrySection(sectionId);
   const { language } = useSettings();
   const ui = getUI(language);
   const [imgError, setImgError] = useState(false);
+
+  if (loading) {
+    return (
+      <div className="pb-24">
+        <div className="animate-pulse bg-museum-walnut/10 h-52 md:h-64" />
+        <div className="max-w-2xl mx-auto px-4 pt-6 space-y-4">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-24" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   if (!section) {
     return (

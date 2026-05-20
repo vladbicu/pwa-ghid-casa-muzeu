@@ -1,56 +1,150 @@
-import { useMemo } from 'react';
-import toursData from '../data/tours.json';
-import stopsData from '../data/stops.json';
-import industryData from '../data/industry.json';
+import { useState, useEffect, useMemo } from 'react';
+import { useTenant } from '../config/TenantContext';
 import type { Tour, Stop, ToursData, StopsData, Lang, IndustrySection, IndustryData } from '../types';
 
-const { tours } = toursData as ToursData;
-const { stops } = stopsData as StopsData;
-const { sections: industrySections } = industryData as IndustryData;
+// In-memory cache: path → parsed JSON
+const dataCache = new Map<string, unknown>();
 
-const stopsMap = new Map<string, Stop>(stops.map((s) => [s.id, s]));
+// Module-level stopsMap — populated as side effect of fetching stops,
+// so computeTourDuration works without needing stops passed explicitly.
+let stopsMap = new Map<string, Stop>();
 
-export function useTours() {
-  return tours;
+async function fetchData<T>(path: string, baseUrl: string): Promise<T> {
+  if (dataCache.has(path)) {
+    return dataCache.get(path) as T;
+  }
+  const res = await fetch(`${baseUrl}data/${path}.json`);
+  if (!res.ok) {
+    throw new Error(`Failed to load "${path}": HTTP ${res.status}`);
+  }
+  const data = (await res.json()) as T;
+  dataCache.set(path, data);
+  if (path === 'stops') {
+    stopsMap = new Map((data as unknown as StopsData).stops.map((s) => [s.id, s]));
+  }
+  return data;
 }
 
-export function useTour(tourId: string | undefined) {
-  return useMemo(() => {
-    if (!tourId) return null;
-    return tours.find((t) => t.id === tourId) || null;
-  }, [tourId]);
+interface AsyncState<T> {
+  data: T | null;
+  loading: boolean;
+  error: string | null;
 }
 
-export function useStops() {
-  return stops;
+function useAsyncData<T>(path: string): AsyncState<T> {
+  const { baseUrl } = useTenant();
+  const [state, setState] = useState<AsyncState<T>>(() => ({
+    data: dataCache.has(path) ? (dataCache.get(path) as T) : null,
+    loading: !dataCache.has(path),
+    error: null,
+  }));
+
+  useEffect(() => {
+    if (dataCache.has(path)) {
+      setState({ data: dataCache.get(path) as T, loading: false, error: null });
+      return;
+    }
+    let cancelled = false;
+    fetchData<T>(path, baseUrl)
+      .then((data) => {
+        if (!cancelled) setState({ data, loading: false, error: null });
+      })
+      .catch((err) => {
+        if (!cancelled) setState({ data: null, loading: false, error: String(err) });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [path, baseUrl]);
+
+  return state;
 }
 
-export function useStopsForTour(tour: Tour | null | undefined) {
-  return useMemo(() => {
-    if (!tour) return [];
-    return tour.stopIds
-      .map((id) => stopsMap.get(id))
-      .filter((s): s is Stop => s !== undefined);
-  }, [tour]);
+// --- Data hooks ---
+
+export function useTours(): { data: Tour[] | null; loading: boolean; error: string | null } {
+  const { data, loading, error } = useAsyncData<ToursData>('tours');
+  return { data: data?.tours ?? null, loading, error };
 }
 
-export function useStop(stopId: string | undefined) {
-  return useMemo(() => {
-    if (!stopId) return null;
-    return stopsMap.get(stopId) || null;
-  }, [stopId]);
+export function useTour(id: string | undefined): { data: Tour | null; loading: boolean } {
+  const { data: toursData, loading } = useAsyncData<ToursData>('tours');
+  const data = useMemo(() => {
+    if (!id || !toursData) return null;
+    return toursData.tours.find((t) => t.id === id) ?? null;
+  }, [toursData, id]);
+  return { data, loading };
 }
 
-export function useStopIndex(tour: Tour | null | undefined, stopId: string | undefined) {
+export function useStops(): { data: Stop[] | null; loading: boolean } {
+  const { data, loading } = useAsyncData<StopsData>('stops');
+  return { data: data?.stops ?? null, loading };
+}
+
+export function useStop(id: string | undefined): { data: Stop | null; loading: boolean } {
+  const { data: stopsData, loading } = useAsyncData<StopsData>('stops');
+  const data = useMemo(() => {
+    if (!id || !stopsData) return null;
+    return stopsData.stops.find((s) => s.id === id) ?? null;
+  }, [stopsData, id]);
+  return { data, loading: !!id && loading };
+}
+
+export function useStopsForTour(tour: Tour | null): { data: Stop[]; loading: boolean } {
+  const { data: stopsData, loading } = useAsyncData<StopsData>('stops');
+  const data = useMemo(() => {
+    if (!tour || !stopsData) return [];
+    const map = new Map(stopsData.stops.map((s) => [s.id, s]));
+    return tour.stopIds.map((id) => map.get(id)).filter((s): s is Stop => s !== undefined);
+  }, [stopsData, tour]);
+  return { data, loading: !!tour && loading };
+}
+
+export function useIndustrySections(): { data: IndustrySection[]; loading: boolean } {
+  const { data: industryData, loading } = useAsyncData<IndustryData>('industry');
+  return { data: industryData?.sections ?? [], loading };
+}
+
+export function useIndustrySection(
+  id: string | undefined,
+): { data: IndustrySection | null; loading: boolean } {
+  const { data: industryData, loading } = useAsyncData<IndustryData>('industry');
+  const data = useMemo(() => {
+    if (!id || !industryData) return null;
+    return industryData.sections.find((s) => s.id === id) ?? null;
+  }, [industryData, id]);
+  return { data, loading: !!id && loading };
+}
+
+// --- Utility hooks (unchanged) ---
+
+export function useStopIndex(
+  tour: Tour | null | undefined,
+  stopId: string | undefined,
+): number {
   return useMemo(() => {
     if (!tour || !stopId) return -1;
     return tour.stopIds.indexOf(stopId);
   }, [tour, stopId]);
 }
 
+export function useResumeTour(): ResumeState | null {
+  return useMemo(() => {
+    const stored = localStorage.getItem(RESUME_KEY);
+    if (!stored) return null;
+    try {
+      return JSON.parse(stored) as ResumeState;
+    } catch {
+      return null;
+    }
+  }, []);
+}
+
+// --- Pure utility functions (unchanged) ---
+
 export function getLocalizedText<T>(
   record: Record<Lang, T> | undefined,
-  lang: Lang
+  lang: Lang,
 ): T | undefined {
   if (!record) return undefined;
   const value = record[lang];
@@ -59,8 +153,6 @@ export function getLocalizedText<T>(
   }
   return value ?? record['ro'];
 }
-
-// --- Room grouping ---
 
 function getRoomName(roomId: string): string {
   if (roomId.endsWith('-TIN')) return 'Tindă';
@@ -88,29 +180,16 @@ export function groupStopsByRoom(stops: Stop[]): RoomGroup[] {
   }));
 }
 
-// --- Dynamic duration ---
-
+// Falls back to tour.durationLabel while stopsMap is not yet loaded.
 export function computeTourDuration(tour: Tour): string {
+  if (stopsMap.size === 0) return tour.durationLabel;
   const totalSeconds = tour.stopIds
     .map((id) => stopsMap.get(id)?.estSeconds ?? 0)
     .reduce((sum, s) => sum + s, 0);
   const totalMins = Math.round(totalSeconds / 60);
-  const lo = Math.max(1, Math.round(totalMins * 0.8 / 5) * 5);
-  const hi = Math.round(totalMins * 1.2 / 5) * 5;
+  const lo = Math.max(1, Math.round((totalMins * 0.8) / 5) * 5);
+  const hi = Math.round((totalMins * 1.2) / 5) * 5;
   return `${lo}–${hi} min`;
-}
-
-// --- Industry ---
-
-export function useIndustrySections(): IndustrySection[] {
-  return industrySections;
-}
-
-export function useIndustrySection(sectionId: string | undefined): IndustrySection | undefined {
-  return useMemo(() => {
-    if (!sectionId) return undefined;
-    return industrySections.find((s) => s.id === sectionId);
-  }, [sectionId]);
 }
 
 // --- Resume tour ---
@@ -128,16 +207,4 @@ export function saveResume(tourId: string, stopId: string) {
 
 export function clearResume() {
   localStorage.removeItem(RESUME_KEY);
-}
-
-export function useResumeTour(): ResumeState | null {
-  return useMemo(() => {
-    const stored = localStorage.getItem(RESUME_KEY);
-    if (!stored) return null;
-    try {
-      return JSON.parse(stored) as ResumeState;
-    } catch {
-      return null;
-    }
-  }, []);
 }
