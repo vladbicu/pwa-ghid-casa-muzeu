@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useTour, useStopsForTour, getLocalizedText, groupStopsByRoom } from '../hooks/useData';
+import { useTour, useStopsForTour, getLocalizedText, groupStopsByRoom, useThemes } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
 import { StopCard } from '../components/StopCard';
-import { ArrowLeft, Clock, MapPin, Play } from 'lucide-react';
+import { ArrowLeft, Clock, MapPin, Play, Layers, BookOpen, Scissors, Coffee, Heart, Building2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { asset } from '../utils/asset';
+
+const themeIconMap: Record<string, React.ElementType> = {
+  BookOpen, Scissors, Coffee, Heart, Building2,
+};
 
 export function TourDetailPage() {
   const { tourId } = useParams();
   const { language } = useSettings();
   const ui = getUI(language);
+  const [selectedThemeId, setSelectedThemeId] = useState<string | null>(null);
 
   const { data: tour, loading: tourLoading } = useTour(tourId);
-  const { data: stops, loading: stopsLoading } = useStopsForTour(tour);
+  const { data: allStopsForTour, loading: stopsLoading } = useStopsForTour(tour);
+  const { data: themes } = useThemes();
 
   if (tourLoading) {
     return (
@@ -43,10 +49,21 @@ export function TourDetailPage() {
 
   const title = getLocalizedText(tour.title, language) || '';
   const description = getLocalizedText(tour.description, language) || '';
-  const firstStopId = tour.stopIds[0];
+
+  const relevantThemes = themes.filter((theme) =>
+    allStopsForTour.some((stop) => stop.themes?.includes(theme.id))
+  );
+
+  const stops = selectedThemeId
+    ? allStopsForTour.filter((stop) => stop.themes?.includes(selectedThemeId))
+    : allStopsForTour;
 
   const stopIndexMap = new Map(stops.map((stop, index) => [stop.id, index]));
   const roomGroups = groupStopsByRoom(stops);
+  const firstStopId = stops[0]?.id;
+  const beginTourUrl = firstStopId
+    ? `/tour/${tour.id}/stop/${firstStopId}${selectedThemeId ? `?theme=${selectedThemeId}` : ''}`
+    : null;
 
   return (
     <motion.div
@@ -102,11 +119,53 @@ export function TourDetailPage() {
 
       {/* Content */}
       <main className="max-w-4xl mx-auto px-4 md:px-8 mt-6">
+        {/* Theme selector */}
+        {!stopsLoading && relevantThemes.length > 0 && (
+          <div className="overflow-x-auto pb-2 -mx-4 px-4 mb-5">
+            <div className="flex gap-2 w-max">
+              <button
+                onClick={() => setSelectedThemeId(null)}
+                className={`flex flex-col items-center gap-2 px-4 py-3 rounded-xl border min-w-[88px] transition-all ${
+                  selectedThemeId === null
+                    ? 'bg-museum-walnut text-museum-cream border-museum-walnut'
+                    : 'bg-museum-cream text-museum-walnut border-museum-walnut/10 hover:border-museum-moss/30'
+                }`}
+              >
+                <Layers size={20} />
+                <span className="text-xs font-medium leading-tight text-center">{ui.completeTour}</span>
+              </button>
+
+              {relevantThemes.map((theme) => {
+                const Icon = themeIconMap[theme.icon] ?? Layers;
+                const themeTitle = getLocalizedText(theme.title, language) ?? theme.id;
+                const count = allStopsForTour.filter((s) => s.themes?.includes(theme.id)).length;
+                const isActive = selectedThemeId === theme.id;
+                return (
+                  <button
+                    key={theme.id}
+                    onClick={() => setSelectedThemeId(theme.id)}
+                    className={`flex flex-col items-center gap-2 px-4 py-3 rounded-xl border min-w-[88px] transition-all ${
+                      isActive
+                        ? 'border-2 text-museum-cream'
+                        : 'bg-museum-cream text-museum-walnut border-museum-walnut/10 hover:border-museum-moss/30'
+                    }`}
+                    style={isActive ? { backgroundColor: theme.color, borderColor: theme.color } : {}}
+                  >
+                    <Icon size={20} style={{ color: isActive ? 'white' : theme.color }} />
+                    <span className="text-xs font-medium leading-tight text-center">{themeTitle}</span>
+                    <span className="text-[10px] opacity-60">{ui.stopsCount(count)}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold text-museum-walnut">{ui.stops}</h2>
-          {firstStopId && (
+          {beginTourUrl && (
             <Link
-              to={`/tour/${tour.id}/stop/${firstStopId}`}
+              to={beginTourUrl}
               state={{ direction: 1 }}
               className="flex items-center gap-2 bg-museum-moss text-museum-cream px-5 py-2.5 rounded-full font-semibold shadow-warm hover:bg-museum-moss/90 transition-colors active:scale-95"
             >
@@ -134,6 +193,7 @@ export function TourDetailPage() {
                     stop={stop}
                     tourId={tour.id}
                     index={stopIndexMap.get(stop.id) ?? 0}
+                    themeId={selectedThemeId ?? undefined}
                   />
                 ))}
               </div>
