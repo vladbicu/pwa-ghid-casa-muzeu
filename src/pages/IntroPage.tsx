@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Map, Users, Church, Home, ArrowRight } from 'lucide-react';
 import { useIntroSlides } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
@@ -8,7 +8,7 @@ import { getUI } from '../i18n/ui';
 import { asset } from '../utils/asset';
 import type { IntroSlide } from '../types';
 
-const INTRO_SEEN_KEY = 'ghid-intro-seen';
+export const INTRO_SEEN_KEY = 'ghid-intro-seen';
 
 const iconMap: Record<string, React.ElementType> = {
   Map,
@@ -17,45 +17,41 @@ const iconMap: Record<string, React.ElementType> = {
   Home,
 };
 
-const slideVariants = {
-  enter: (dir: number) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
-  center: { x: 0, opacity: 1 },
-  exit: (dir: number) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0 }),
-};
-
-function SlideContent({ slide, language }: { slide: IntroSlide; language: string }) {
+function TimelineEntry({ slide, language, index }: { slide: IntroSlide; language: string; index: number }) {
   const Icon = iconMap[slide.icon] ?? Map;
   const title = (slide.title as Record<string, string>)[language] ?? slide.title.ro;
   const body = (slide.body as Record<string, string>)[language] ?? slide.body.ro;
 
   return (
-    <div className="relative w-full h-full flex flex-col justify-end">
-      {/* Background image */}
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, delay: index * 0.1 }}
+      className="relative pl-8"
+    >
+      {/* Dot on the timeline line */}
+      <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-museum-moss border-2 border-museum-beige" />
+
+      {/* Icon + title */}
+      <div className="flex items-center gap-2 mb-2">
+        <Icon size={18} className="text-museum-moss shrink-0" />
+        <h2 className="font-semibold text-museum-walnut text-lg leading-tight">{title}</h2>
+      </div>
+
+      {/* Body */}
+      <p className="text-museum-walnut/70 text-sm leading-relaxed">{body}</p>
+
+      {/* Image */}
       {slide.image && (
         <img
           src={asset(slide.image)}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="mt-3 w-full rounded-xl object-cover"
+          style={{ maxHeight: 192 }}
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
       )}
-
-      {/* Top gradient for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-museum-walnut/40 via-transparent to-museum-walnut/80" />
-
-      {/* Text content */}
-      <div className="relative z-10 p-8 pb-24">
-        <div className="flex items-center gap-2 mb-3">
-          <Icon size={28} className="text-museum-cream/70 shrink-0" />
-        </div>
-        <h2 className="text-[28px] font-bold text-museum-cream leading-tight mb-4 max-w-[60%]">
-          {title}
-        </h2>
-        <p className="text-base text-museum-cream/85 leading-relaxed max-w-lg">
-          {body}
-        </p>
-      </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -64,91 +60,55 @@ export function IntroPage() {
   const { language } = useSettings();
   const ui = getUI(language);
   const { data: slides, loading } = useIntroSlides();
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
 
-  const finish = () => {
+  useEffect(() => {
     localStorage.setItem(INTRO_SEEN_KEY, '1');
-    navigate('/');
-  };
+  }, []);
 
-  const goTo = (index: number) => {
-    setDirection(index > current ? 1 : -1);
-    setCurrent(index);
-  };
-
-  const handleDragEnd = (_: unknown, info: { offset: { x: number } }) => {
-    if (!slides) return;
-    if (info.offset.x < -50 && current < slides.length - 1) {
-      goTo(current + 1);
-    } else if (info.offset.x > 50 && current > 0) {
-      goTo(current - 1);
-    }
-  };
-
-  if (loading || !slides || slides.length === 0) {
-    return <div className="min-h-screen bg-museum-walnut" />;
+  if (loading || !slides) {
+    return <div className="min-h-screen bg-museum-beige" />;
   }
 
-  const isLast = current === slides.length - 1;
-
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-museum-walnut">
-      {/* Skip / Start button */}
-      <div className="absolute top-6 right-6 z-30">
-        <button
-          onClick={finish}
-          className={`font-medium transition-all flex items-center gap-1 ${
-            isLast
-              ? 'text-museum-cream text-base'
-              : 'text-museum-cream/70 text-sm hover:text-museum-cream'
-          }`}
-        >
-          {isLast ? (
-            <>
-              {ui.startVisit} <ArrowRight size={16} />
-            </>
-          ) : (
-            ui.skipIntro
-          )}
-        </button>
+    <motion.main
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.25 }}
+      className="pb-24 pt-6 px-4 md:px-8 max-w-2xl mx-auto"
+    >
+      {/* Page header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-1">
+          <h1 className="text-2xl font-bold text-museum-walnut">{ui.aboutBukovina}</h1>
+          <span className="text-xs font-bold text-museum-walnut/50 bg-museum-sand px-2 py-0.5 rounded-full">
+            1775–1918
+          </span>
+        </div>
+        <p className="text-museum-walnut/60 text-sm">{ui.bukovinaSubtitle}</p>
       </div>
 
-      {/* Slides */}
-      <AnimatePresence custom={direction} initial={false}>
-        <motion.div
-          key={current}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.35, ease: 'easeInOut' }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.1}
-          onDragEnd={handleDragEnd}
-          className="absolute inset-0 cursor-grab active:cursor-grabbing"
-        >
-          <SlideContent slide={slides[current]} language={language} />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Dots */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => goTo(idx)}
-            aria-label={`Slide ${idx + 1}`}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              idx === current ? 'bg-museum-cream w-5' : 'bg-museum-cream/40'
-            }`}
-          />
+      {/* Timeline */}
+      <div className="relative border-l-2 border-museum-walnut/15 ml-3 space-y-10 mb-12">
+        {slides.map((slide, idx) => (
+          <TimelineEntry key={slide.id} slide={slide} language={language} index={idx} />
         ))}
       </div>
-    </div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: slides.length * 0.1 + 0.2 }}
+        className="flex justify-center"
+      >
+        <button
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2 bg-museum-walnut text-museum-cream px-6 py-3 rounded-full font-semibold shadow-warm hover:bg-museum-walnut/90 active:scale-95 transition-all"
+        >
+          {ui.startVisit} <ArrowRight size={16} />
+        </button>
+      </motion.div>
+    </motion.main>
   );
 }
-
-export { INTRO_SEEN_KEY };

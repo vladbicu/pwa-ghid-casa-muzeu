@@ -47,6 +47,7 @@ interface UIStrings {
   stopsCount: (n: number) => string;
   videoUnavailableOffline: string;
   watchVideo: string;
+  bukovinaSubtitle: string;
 }
 
 const uiStrings: Record<Lang, UIStrings> = {
@@ -90,6 +91,7 @@ const uiStrings: Record<Lang, UIStrings> = {
     stopsCount: (n) => `${n} opriri`,
     videoUnavailableOffline: 'Video disponibil online',
     watchVideo: 'Redă video',
+    bukovinaSubtitle: 'Contextul istoric al Bucovinei',
   },
   en: {
     homeTitle: 'Casa Muzeu Guide',
@@ -131,6 +133,7 @@ const uiStrings: Record<Lang, UIStrings> = {
     stopsCount: (n) => `${n} stops`,
     videoUnavailableOffline: 'Video available online',
     watchVideo: 'Play video',
+    bukovinaSubtitle: 'Historical context of Bukovina',
   },
   fr: {
     homeTitle: 'Guide Casa Muzeu',
@@ -172,6 +175,7 @@ const uiStrings: Record<Lang, UIStrings> = {
     stopsCount: (n) => `${n} arrêts`,
     videoUnavailableOffline: 'Vidéo disponible en ligne',
     watchVideo: 'Lire la vidéo',
+    bukovinaSubtitle: 'Contexte historique de la Bucovine',
   },
   it: {
     homeTitle: 'Guida Casa Muzeu',
@@ -213,6 +217,7 @@ const uiStrings: Record<Lang, UIStrings> = {
     stopsCount: (n) => `${n} tappe`,
     videoUnavailableOffline: 'Video disponibile online',
     watchVideo: 'Riproduci video',
+    bukovinaSubtitle: 'Contesto storico della Bucovina',
   },
 };
 

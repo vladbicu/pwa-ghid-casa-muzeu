@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Moon, Users, User, Info } from 'lucide-react';
+import { Sun, Moon, Users, User } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useSettings } from '../context/SettingsContext';
 import { useTenant } from '../config/TenantContext';
@@ -62,16 +62,6 @@ export function Header() {
                 <span className="hidden sm:inline">{ui.guideMode}</span>
               </button>
             </div>
-          )}
-          {tenant.features.contextIntro && (
-            <Link
-              to="/intro"
-              aria-label={ui.aboutBukovina}
-              title={ui.aboutBukovina}
-              className="p-2 rounded-lg text-museum-walnut/60 hover:text-museum-walnut hover:bg-museum-walnut/8 transition-colors"
-            >
-              <Info size={18} />
-            </Link>
           )}
           <button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

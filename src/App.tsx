@@ -28,7 +28,6 @@ function AppRoutes() {
   const location = useLocation();
   const navigate = useNavigate();
   const isStopPage = useMatch('/tour/:tourId/stop/:stopId');
-  const isIntroPage = useMatch('/intro');
   const direction = (location.state as { direction?: number } | null)?.direction ?? 0;
   const tenant = useTenant();
 
@@ -42,7 +41,7 @@ function AppRoutes() {
     }
   }, []);
 
-  const hideChrome = !!(isStopPage || isIntroPage);
+  const hideChrome = !!isStopPage;
 
   return (
     <>

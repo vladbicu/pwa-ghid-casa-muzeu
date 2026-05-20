@@ -139,6 +139,7 @@ export function HomePage() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
+        className="mb-4"
       >
         <Link to="/industry" className="block group relative">
           <div className="relative h-48 md:h-56 w-full rounded-2xl overflow-hidden shadow-warm-lg transition-transform duration-300 group-hover:-translate-y-1 bg-museum-walnut/20">
@@ -167,6 +168,48 @@ export function HomePage() {
           </div>
         </Link>
       </motion.div>
+
+      {/* Bucovina context tile */}
+      {tenant.features.contextIntro && (
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <Link to="/intro" className="block group relative">
+            <div className="relative h-40 md:h-48 w-full rounded-2xl overflow-hidden shadow-warm-lg transition-transform duration-300 group-hover:-translate-y-1 bg-museum-walnut/30">
+              <BukovinaImage />
+              <div className="absolute inset-0 bg-gradient-to-t from-museum-walnut/90 via-museum-walnut/40 to-transparent" />
+              <div className="absolute inset-0 p-6 flex flex-col justify-end text-museum-cream">
+                <div className="transform transition-transform duration-300 group-hover:-translate-y-1">
+                  <span className="inline-block bg-museum-walnut/60 text-museum-cream/90 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+                    1775–1918
+                  </span>
+                  <h3 className="text-xl font-bold text-shadow-sm leading-tight mb-0.5">{ui.aboutBukovina}</h3>
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-museum-cream/70">{ui.bukovinaSubtitle}</p>
+                    <ArrowRight size={16} className="text-museum-cream/70 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute inset-0 border-[6px] border-museum-walnut/20 rounded-2xl pointer-events-none" />
+            </div>
+          </Link>
+        </motion.div>
+      )}
     </motion.main>
+  );
+}
+
+function BukovinaImage() {
+  const [err, setErr] = useState(false);
+  if (err) return null;
+  return (
+    <img
+      src={asset('/images/intro/bucovina-map.jpg')}
+      alt=""
+      onError={() => setErr(true)}
+      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
   );
 }
