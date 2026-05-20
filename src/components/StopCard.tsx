@@ -13,6 +13,7 @@ interface StopCardProps {
   tourId: string;
   index: number;
   isCompleted?: boolean;
+  themeId?: string;
 }
 
 const typeBadgeStyle: Record<StopType, string> = {
@@ -22,7 +23,7 @@ const typeBadgeStyle: Record<StopType, string> = {
   collection: 'bg-slate-600 text-white',
 };
 
-export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardProps) {
+export function StopCard({ stop, tourId, index, isCompleted = false, themeId }: StopCardProps) {
   const { language, viewMode } = useSettings();
   const ui = getUI(language);
   const title = getLocalizedText(stop.title, language) || '';
@@ -35,6 +36,10 @@ export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardP
     return ui.estTime(mins);
   };
 
+  const stopUrl = themeId
+    ? `/tour/${tourId}/stop/${stop.id}?theme=${themeId}`
+    : `/tour/${tourId}/stop/${stop.id}`;
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -10 }}
@@ -42,7 +47,7 @@ export function StopCard({ stop, tourId, index, isCompleted = false }: StopCardP
       transition={{ duration: 0.4, delay: index * 0.05 }}
     >
       <Link
-        to={`/tour/${tourId}/stop/${stop.id}`}
+        to={stopUrl}
         className="flex items-center gap-4 p-4 bg-museum-cream rounded-xl shadow-warm border border-museum-walnut/5 hover:border-museum-moss/30 hover:shadow-md transition-all duration-300 group active:scale-[0.99]"
       >
         <div className="relative shrink-0">

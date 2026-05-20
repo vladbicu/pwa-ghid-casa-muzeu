@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "themes": [
+    {
+      "id": "istorie",
+      "icon": "BookOpen",
+      "color": "#6B4423",
+      "title": {
+        "ro": "Istorie & Context",
+        "en": "History & Context",
+        "fr": "Histoire & Contexte",
+        "it": "Storia & Contesto"
+      },
+      "description": {
+        "ro": "Contextul istoric al Bucovinei habsburgice și poveștile familiei Bâcu.",
+        "en": "The historical context of Habsburg Bukovina and the stories of the Bâcu family.",
+        "fr": "Le contexte historique de la Bucovine habsbourgeoise et les histoires de la famille Bâcu.",
+        "it": "Il contesto storico della Bucovina asburgica e le storie della famiglia Bâcu."
+      }
+    },
+    {
+      "id": "meserii",
+      "icon": "Scissors",
+      "color": "#2D5016",
+      "title": {
+        "ro": "Meșteșuguri",
+        "en": "Traditional Crafts",
+        "fr": "Artisanat traditionnel",
+        "it": "Artigianato tradizionale"
+      },
+      "description": {
+        "ro": "Tehnicile manuale care au definit gospodăria bucovineană: țesut, cusut, ceramică.",
+        "en": "The manual techniques that defined the Bukovinian household: weaving, sewing, ceramics.",
+        "fr": "Les techniques manuelles qui ont défini le foyer bucovinien : tissage, couture, céramique.",
+        "it": "Le tecniche manuali che hanno definito la famiglia bucoviniana: tessitura, cucito, ceramica."
+      }
+    },
+    {
+      "id": "viata-zilnica",
+      "icon": "Coffee",
+      "color": "#8B4513",
+      "title": {
+        "ro": "Viața de zi cu zi",
+        "en": "Everyday Life",
+        "fr": "La vie quotidienne",
+        "it": "La vita quotidiana"
+      },
+      "description": {
+        "ro": "Ritmul casei: bucătăria, cămara, soba, patul — o zi obișnuită în Putna de altădată.",
+        "en": "The rhythm of the house: kitchen, pantry, stove, bed — an ordinary day in the Putna of the past.",
+        "fr": "Le rythme de la maison : cuisine, garde-manger, poêle, lit — une journée ordinaire dans la Putna d'autrefois.",
+        "it": "Il ritmo della casa: cucina, dispensa, stufa, letto — una giornata ordinaria nella Putna di un tempo."
+      }
+    },
+    {
+      "id": "credinta",
+      "icon": "Heart",
+      "color": "#1a3a5c",
+      "title": {
+        "ro": "Credință & Ritual",
+        "en": "Faith & Ritual",
+        "fr": "Foi & Rituel",
+        "it": "Fede & Rituale"
+      },
+      "description": {
+        "ro": "Icoanele, Boboteaza, preotul cu icoana — dimensiunea spirituală a vieții la Putna.",
+        "en": "Icons, Epiphany, the priest with the icon — the spiritual dimension of life in Putna.",
+        "fr": "Les icônes, l'Épiphanie, le prêtre avec l'icône — la dimension spirituelle de la vie à Putna.",
+        "it": "Icone, Epifania, il sacerdote con l'icona — la dimensione spirituale della vita a Putna."
+      }
+    },
+    {
+      "id": "arhitectura",
+      "icon": "Building2",
+      "color": "#4a4a4a",
+      "title": {
+        "ro": "Arhitectura casei",
+        "en": "House Architecture",
+        "fr": "Architecture de la maison",
+        "it": "Architettura della casa"
+      },
+      "description": {
+        "ro": "Tinda, camera bună, bucătăria, cămara — cum e gândită o casă tradițională bucovineană.",
+        "en": "The hallway, the good room, the kitchen, the pantry — how a traditional Bukovinian house is conceived.",
+        "fr": "Le couloir, la belle pièce, la cuisine, le garde-manger — comment est conçue une maison bucovinienne traditionnelle.",
+        "it": "L'ingresso, la stanza buona, la cucina, la dispensa — come è concepita una casa tradizionale bucoviniana."
+      }
+    }
+  ]
+}

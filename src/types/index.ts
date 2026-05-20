@@ -4,6 +4,20 @@ export type HouseId = "CVB" | "CAI";
 
 export type StopType = "intro" | "room" | "object" | "collection";
 
+export interface Theme {
+  id: string;
+  title: Record<Lang, string>;
+  description: Record<Lang, string>;
+  icon: string;
+  color: string;
+  stopCount?: number;
+}
+
+export interface ThemesData {
+  version: number;
+  themes: Theme[];
+}
+
 export interface Stop {
   id: string;
   houseId: HouseId;
@@ -12,6 +26,7 @@ export interface Stop {
   order: number;
   estSeconds: number;
   shortCode?: number;
+  themes?: string[];
   title: Record<Lang, string>;
   script: Record<Lang, string>;
   keyPoints: Record<Lang, string[]>;

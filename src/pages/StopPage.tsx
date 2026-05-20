@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
-import { useTour, useStop, useStopIndex, useStopsForTour, getLocalizedText, saveResume } from '../hooks/useData';
+import { useParams, Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useTour, useStop, useStopIndex, useStopsForTour, getLocalizedText, saveResume, useThemes, useThematicStops, useTours, useStops } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
 import { Accordion } from '../components/Accordion';
@@ -24,6 +24,8 @@ export function StopPage() {
   const { tourId, stopId } = useParams();
   const { language, viewMode } = useSettings();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const themeId = searchParams.get('theme') ?? undefined;
   const direction = (location.state as { direction?: number } | null)?.direction ?? 0;
   const ui = getUI(language);
 
@@ -31,6 +33,16 @@ export function StopPage() {
   const { data: stop, loading: stopLoading } = useStop(stopId);
   const stopIndex = useStopIndex(tour, stopId);
   const { data: allStops } = useStopsForTour(tour);
+
+  // Thematic navigation context
+  const { data: allToursData } = useTours();
+  const { data: allStopsData } = useStops();
+  const { stops: thematicStops, tourMap: thematicTourMap } = useThematicStops(
+    themeId ?? '',
+    allToursData ?? [],
+    allStopsData ?? [],
+  );
+  const thematicIndex = themeId ? thematicStops.findIndex((s) => s.id === stopId) : -1;
 
   const [jumperOpen, setJumperOpen] = useState(false);
 
@@ -70,9 +82,34 @@ export function StopPage() {
     );
   }
 
-  const prevStopId = stopIndex > 0 ? tour.stopIds[stopIndex - 1] : null;
-  const nextStopId = stopIndex < tour.stopIds.length - 1 ? tour.stopIds[stopIndex + 1] : null;
-  const totalStops = tour.stopIds.length;
+  const isThematic = themeId && thematicIndex !== -1;
+
+  const prevStopId = isThematic
+    ? (thematicIndex > 0 ? thematicStops[thematicIndex - 1].id : null)
+    : (stopIndex > 0 ? tour.stopIds[stopIndex - 1] : null);
+
+  const nextStopId = isThematic
+    ? (thematicIndex < thematicStops.length - 1 ? thematicStops[thematicIndex + 1].id : null)
+    : (stopIndex < tour.stopIds.length - 1 ? tour.stopIds[stopIndex + 1] : null);
+
+  const totalStops = isThematic ? thematicStops.length : tour.stopIds.length;
+  const currentStopIndex = isThematic ? thematicIndex : stopIndex;
+
+  const prevTourId = isThematic && prevStopId
+    ? (thematicTourMap.get(prevStopId) ?? tourId)
+    : tourId;
+  const nextTourId = isThematic && nextStopId
+    ? (thematicTourMap.get(nextStopId) ?? tourId)
+    : tourId;
+
+  const backUrl = isThematic ? `/tour/thematic/${themeId}` : `/tour/${tourId}`;
+
+  const prevUrl = prevStopId
+    ? `/tour/${prevTourId}/stop/${prevStopId}${themeId ? `?theme=${themeId}` : ''}`
+    : null;
+  const nextUrl = nextStopId
+    ? `/tour/${nextTourId}/stop/${nextStopId}${themeId ? `?theme=${themeId}` : ''}`
+    : null;
   const estMins = Math.ceil(stop.estSeconds / 60);
 
   const title = getLocalizedText(stop.title, language) || '';
@@ -113,7 +150,7 @@ export function StopPage() {
 
           <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-start z-10">
             <Link
-              to={`/tour/${tourId}`}
+              to={backUrl}
               aria-label={ui.back}
               className="p-3 bg-museum-walnut/80 backdrop-blur-md text-museum-cream rounded-full hover:bg-museum-walnut transition-colors shadow-lg"
             >
@@ -122,7 +159,7 @@ export function StopPage() {
 
             <div className="flex items-center gap-2">
               <div className="bg-museum-walnut/80 backdrop-blur-md text-museum-cream px-4 py-2 rounded-full font-medium shadow-lg text-sm">
-                {ui.stopCounter(stopIndex + 1, totalStops)}
+                {ui.stopCounter(currentStopIndex + 1, totalStops)}
               </div>
               <button
                 onClick={() => setJumperOpen(true)}
@@ -284,9 +321,9 @@ export function StopPage() {
 
             {/* Navigation */}
             <div className="flex items-center justify-between pt-8 border-t border-museum-walnut/10">
-              {prevStopId ? (
+              {prevUrl ? (
                 <Link
-                  to={`/tour/${tourId}/stop/${prevStopId}`}
+                  to={prevUrl}
                   state={{ direction: -1 }}
                   className="text-museum-walnut/60 hover:text-museum-walnut font-medium flex items-center gap-2 transition-colors"
                 >
@@ -296,9 +333,9 @@ export function StopPage() {
                 <div />
               )}
 
-              {nextStopId ? (
+              {nextUrl ? (
                 <Link
-                  to={`/tour/${tourId}/stop/${nextStopId}`}
+                  to={nextUrl}
                   state={{ direction: 1 }}
                   className="bg-museum-walnut text-museum-cream px-6 py-3 rounded-full font-semibold shadow-warm hover:bg-museum-walnut/90 transition-all flex items-center gap-2 hover:gap-3"
                 >
@@ -306,7 +343,7 @@ export function StopPage() {
                 </Link>
               ) : (
                 <Link
-                  to={`/tour/${tourId}`}
+                  to={backUrl}
                   className="bg-museum-moss text-museum-cream px-6 py-3 rounded-full font-semibold shadow-warm hover:bg-museum-moss/90 transition-all"
                 >
                   {ui.finishTour}
@@ -320,7 +357,7 @@ export function StopPage() {
         <div className="fixed bottom-0 left-0 right-0 h-1.5 bg-museum-sand/80 z-30">
           <div
             className="h-full bg-museum-moss transition-all duration-300"
-            style={{ width: `${((stopIndex + 1) / totalStops) * 100}%` }}
+            style={{ width: `${((currentStopIndex + 1) / totalStops) * 100}%` }}
           />
         </div>
       </motion.div>

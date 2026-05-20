@@ -42,6 +42,9 @@ interface UIStrings {
   skipIntro: string;
   startVisit: string;
   aboutBukovina: string;
+  thematicTours: string;
+  thematicBadge: string;
+  stopsCount: (n: number) => string;
 }
 
 const uiStrings: Record<Lang, UIStrings> = {
@@ -80,6 +83,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     skipIntro: 'Sari',
     startVisit: 'Începe vizita',
     aboutBukovina: 'Despre Bucovina',
+    thematicTours: 'Explorează pe temă',
+    thematicBadge: 'Tur tematic',
+    stopsCount: (n) => `${n} opriri`,
   },
   en: {
     homeTitle: 'Casa Muzeu Guide',
@@ -116,6 +122,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     skipIntro: 'Skip',
     startVisit: 'Start visit',
     aboutBukovina: 'About Bukovina',
+    thematicTours: 'Explore by theme',
+    thematicBadge: 'Thematic tour',
+    stopsCount: (n) => `${n} stops`,
   },
   fr: {
     homeTitle: 'Guide Casa Muzeu',
@@ -152,6 +161,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     skipIntro: 'Passer',
     startVisit: 'Commencer la visite',
     aboutBukovina: 'À propos de la Bucovine',
+    thematicTours: 'Explorer par thème',
+    thematicBadge: 'Visite thématique',
+    stopsCount: (n) => `${n} arrêts`,
   },
   it: {
     homeTitle: 'Guida Casa Muzeu',
@@ -188,6 +200,9 @@ const uiStrings: Record<Lang, UIStrings> = {
     skipIntro: 'Salta',
     startVisit: 'Inizia la visita',
     aboutBukovina: 'Sulla Bucovina',
+    thematicTours: 'Esplora per tema',
+    thematicBadge: 'Tour tematico',
+    stopsCount: (n) => `${n} tappe`,
   },
 };
 

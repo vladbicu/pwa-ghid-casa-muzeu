@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useTenant } from '../config/TenantContext';
-import type { Tour, Stop, ToursData, StopsData, Lang, IndustrySection, IndustryData, IntroSlide, IntroData } from '../types';
+import type { Tour, Stop, ToursData, StopsData, Lang, IndustrySection, IndustryData, IntroSlide, IntroData, Theme, ThemesData } from '../types';
 
 // In-memory cache: path → parsed JSON
 const dataCache = new Map<string, unknown>();
@@ -233,4 +233,33 @@ export function findSectionByCode(
 export function useIntroSlides(): { data: IntroSlide[] | null; loading: boolean } {
   const { data, loading } = useAsyncData<IntroData>('intro');
   return { data: data?.slides ?? null, loading };
+}
+
+export function useThemes(): { data: Theme[]; loading: boolean } {
+  const { data, loading } = useAsyncData<ThemesData>('themes');
+  return { data: data?.themes ?? [], loading };
+}
+
+export function useThematicStops(
+  themeId: string,
+  allTours: Tour[],
+  allStops: Stop[],
+): { stops: Stop[]; tourMap: Map<string, string> } {
+  return useMemo(() => {
+    const filtered = allStops
+      .filter((s) => s.themes?.includes(themeId))
+      .sort((a, b) => {
+        const houseOrder = a.houseId === b.houseId ? 0 : a.houseId === 'CVB' ? -1 : 1;
+        return houseOrder !== 0 ? houseOrder : a.order - b.order;
+      });
+
+    const tourMap = new Map<string, string>();
+    for (const tour of allTours) {
+      for (const stopId of tour.stopIds) {
+        tourMap.set(stopId, tour.id);
+      }
+    }
+
+    return { stops: filtered, tourMap };
+  }, [themeId, allTours, allStops]);
 }

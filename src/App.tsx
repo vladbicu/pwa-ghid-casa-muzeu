@@ -17,6 +17,7 @@ import { IndustryHubPage } from './pages/IndustryHubPage';
 import { IndustrySectionPage } from './pages/IndustrySectionPage';
 import { FindPage } from './pages/FindPage';
 import { IntroPage, INTRO_SEEN_KEY } from './pages/IntroPage';
+import { ThematicTourPage } from './pages/ThematicTourPage';
 import { AdminQRPage } from './pages/admin/AdminQRPage';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -49,6 +50,7 @@ function AppRoutes() {
       <AnimatePresence mode="wait" custom={direction} initial={false}>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/tour/thematic/:themeId" element={<ThematicTourPage />} />
           <Route path="/tour/:tourId" element={<TourDetailPage />} />
           <Route path="/tour/:tourId/stop/:stopId" element={<StopPage />} />
           <Route path="/industry" element={<IndustryHubPage />} />
