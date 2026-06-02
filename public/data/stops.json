@@ -63,7 +63,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-TIN-01.jpg",
+      "image": "/images/mock/dji_fly_20240424_160400_357_1713963869708_photo_optimized.jpg",
       "shortCode": 1,
       "themes": [
         "arhitectura"
@@ -130,7 +130,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-TIN-02.jpg",
+      "image": "/images/mock/poze-curatenie-muzeu-2008-tinda.JPG",
       "shortCode": 2,
       "themes": [
         "arhitectura"
@@ -197,7 +197,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-TIN-03.jpg",
+      "image": "/images/mock/bunica-emilia-bicu-in-2008-la-transformarea-casei-in-muzeu.JPG",
       "shortCode": 3,
       "themes": [
         "istorie"
@@ -264,7 +264,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-TIN-04.jpg",
+      "image": "/images/mock/vasile-bacu.png",
       "shortCode": 4,
       "themes": [
         "istorie"
@@ -331,7 +331,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-01.jpg",
+      "image": "/images/mock/Casa muzeu Putna-180.jpg",
       "shortCode": 5,
       "themes": [
         "meserii",
@@ -340,12 +340,12 @@
       "media": [
         {
           "type": "image",
-          "url": "/images/stops/cvb/CVB-C1-01.jpg"
+          "url": "/images/mock/Casa muzeu Putna-180.jpg"
         },
         {
           "type": "youtube",
           "url": "PLACEHOLDER_VIDEO_ID",
-          "thumbnail": "/images/stops/cvb/CVB-C1-01.jpg",
+          "thumbnail": "/images/mock/Casa muzeu Putna-180.jpg",
           "caption": {
             "ro": "Demonstrație de țesut la Casa Muzeu Bukowina",
             "en": "Weaving demonstration at Casa Muzeu Bukowina",
@@ -416,7 +416,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-02.jpg",
+      "image": "/images/mock/Casa muzeu Putna-181.jpg",
       "shortCode": 6,
       "themes": [
         "viata-zilnica",
@@ -484,7 +484,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-03.jpg",
+      "image": "/images/mock/poze-curatenie-muzeu-2008-camara.JPG",
       "shortCode": 7,
       "themes": [
         "viata-zilnica"
@@ -551,7 +551,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-04.jpg",
+      "image": "/images/mock/Casa muzeu Putna-183.jpg",
       "shortCode": 8,
       "themes": [
         "credinta"
@@ -618,7 +618,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-05.jpg",
+      "image": "/images/mock/Casa muzeu Putna-192.jpg",
       "shortCode": 9,
       "themes": [
         "meserii"
@@ -685,7 +685,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-06.jpg",
+      "image": "/images/mock/Casa muzeu Putna-193.jpg",
       "shortCode": 10,
       "themes": [
         "meserii"
@@ -752,7 +752,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-07.jpg",
+      "image": "/images/mock/Casa muzeu Putna-194.jpg",
       "shortCode": 11,
       "themes": [
         "meserii",
@@ -820,7 +820,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C1-08.jpg",
+      "image": "/images/mock/Casa muzeu Putna-200.jpg",
       "shortCode": 12,
       "themes": [
         "viata-zilnica"
@@ -887,7 +887,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-01.jpg",
+      "image": "/images/mock/Casa muzeu Putna-203.jpg",
       "shortCode": 13,
       "themes": [
         "viata-zilnica",
@@ -955,7 +955,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-02.jpg",
+      "image": "/images/mock/Casa muzeu Putna-209.jpg",
       "shortCode": 14,
       "themes": [
         "viata-zilnica"
@@ -1022,7 +1022,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-03.jpg",
+      "image": "/images/mock/Casa muzeu Putna-215.jpg",
       "shortCode": 15,
       "themes": [
         "credinta"
@@ -1089,7 +1089,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-04.jpg",
+      "image": "/images/mock/Casa muzeu Putna-217.jpg",
       "shortCode": 16,
       "themes": [
         "credinta"
@@ -1156,7 +1156,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-05.jpg",
+      "image": "/images/mock/Casa muzeu Putna-225.jpg",
       "shortCode": 17,
       "themes": [
         "viata-zilnica"
@@ -1223,7 +1223,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-06.jpg",
+      "image": "/images/mock/Casa muzeu Putna-228.jpg",
       "shortCode": 18,
       "themes": [
         "meserii",
@@ -1291,7 +1291,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C2-07.jpg",
+      "image": "/images/mock/bunica-emilia-bicu-in-casa-muzeu.JPG",
       "shortCode": 19,
       "themes": [
         "viata-zilnica"
@@ -1299,12 +1299,12 @@
       "media": [
         {
           "type": "image",
-          "url": "/images/stops/cvb/CVB-C2-07.jpg"
+          "url": "/images/mock/bunica-emilia-bicu-in-casa-muzeu.JPG"
         },
         {
           "type": "youtube",
           "url": "PLACEHOLDER_VIDEO_ID",
-          "thumbnail": "/images/stops/cvb/CVB-C2-07.jpg",
+          "thumbnail": "/images/mock/bunica-emilia-bicu-in-casa-muzeu.JPG",
           "caption": {
             "ro": "Instrumente muzicale tradiționale la Casa Muzeu Bukowina",
             "en": "Traditional musical instruments at Casa Muzeu Bukowina",
@@ -1375,7 +1375,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C3-01.jpg",
+      "image": "/images/mock/Casa muzeu Putna-245.jpg",
       "shortCode": 20,
       "themes": [
         "viata-zilnica",
@@ -1443,7 +1443,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C3-02.jpg",
+      "image": "/images/mock/Casa muzeu Putna-246.jpg",
       "shortCode": 21,
       "themes": [
         "viata-zilnica"
@@ -1510,7 +1510,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C3-03.jpg",
+      "image": "/images/mock/Casa muzeu Putna-249.jpg",
       "shortCode": 22,
       "themes": [
         "viata-zilnica"
@@ -1577,7 +1577,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C3-04.jpg",
+      "image": "/images/mock/Casa muzeu Putna-251.jpg",
       "shortCode": 23,
       "themes": [
         "viata-zilnica"
@@ -1644,7 +1644,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C4-01.jpg",
+      "image": "/images/mock/poze-curatenie-muzeu-2008-blidar.JPG",
       "shortCode": 24,
       "themes": [
         "viata-zilnica",
@@ -1712,7 +1712,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C4-02.jpg",
+      "image": "/images/mock/Casa muzeu Putna-262.jpg",
       "shortCode": 25,
       "themes": [
         "viata-zilnica"
@@ -1779,7 +1779,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C4-03.jpg",
+      "image": "/images/mock/Casa muzeu Putna-268.jpg",
       "shortCode": 26,
       "themes": [
         "viata-zilnica"
@@ -1846,7 +1846,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cvb/CVB-C4-04.jpg",
+      "image": "/images/mock/matusa-veronica-in-tinerete.png",
       "shortCode": 27,
       "themes": [
         "viata-zilnica"
@@ -1913,7 +1913,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-TIN-01.jpg",
+      "image": "/images/mock/Casa muzeu Putna-279.jpg",
       "shortCode": 30,
       "themes": [
         "arhitectura",
@@ -1981,7 +1981,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-TIN-02.jpg",
+      "image": "/images/mock/Casa muzeu Putna-282.jpg",
       "shortCode": 31,
       "themes": [
         "istorie"
@@ -2048,7 +2048,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-TIN-03.jpg",
+      "image": "/images/mock/Casa muzeu Putna-286.jpg",
       "shortCode": 32,
       "themes": [
         "arhitectura",
@@ -2116,7 +2116,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C1-01.jpg",
+      "image": "/images/mock/Casa muzeu Putna-296.jpg",
       "shortCode": 33,
       "themes": [
         "viata-zilnica",
@@ -2184,7 +2184,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C1-02.jpg",
+      "image": "/images/mock/IMG_20240416_184846750_HDR.jpg",
       "shortCode": 34,
       "themes": [
         "meserii",
@@ -2252,7 +2252,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C1-03.jpg",
+      "image": "/images/mock/IMG_20240422_170439598.jpg",
       "shortCode": 35,
       "themes": [
         "arhitectura"
@@ -2319,7 +2319,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C1-04.jpg",
+      "image": "/images/mock/IMG_20240422_171205529_HDR.jpg",
       "shortCode": 36,
       "themes": [
         "viata-zilnica"
@@ -2386,7 +2386,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C2-01.jpg",
+      "image": "/images/mock/IMG_20240422_171220349_HDR.jpg",
       "shortCode": 37,
       "themes": [
         "arhitectura",
@@ -2454,7 +2454,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C2-02.jpg",
+      "image": "/images/mock/IMG_20240422_171229983.jpg",
       "shortCode": 38,
       "themes": [
         "arhitectura",
@@ -2522,7 +2522,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C2-03.jpg",
+      "image": "/images/mock/IMG_20240422_173148538_HDR.jpg",
       "shortCode": 39,
       "themes": [
         "arhitectura",
@@ -2590,7 +2590,7 @@
         "fr": "",
         "it": ""
       },
-      "image": "/images/stops/cai/CAI-C2-04.jpg",
+      "image": "/images/mock/IMG_20240422_173241544.jpg",
       "shortCode": 40,
       "themes": [
         "istorie"
