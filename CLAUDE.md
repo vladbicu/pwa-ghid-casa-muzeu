@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev          # start dev server (served at http://localhost:5173/ghid/)
+npm run dev          # start dev server (served at http://localhost:5173/)
 npm run build        # tsc + vite build → dist/
 npm run lint         # eslint src/
 npm run format       # prettier --write src/
@@ -19,7 +19,7 @@ No test suite exists — verify changes by running the dev server.
 
 ## Architecture
 
-This is a React + TypeScript + Vite **PWA** (Progressive Web App) digital museum guide. It is deployed at `/ghid/` (the Vite `base` is `/ghid/`). All asset paths must use the `asset()` helper from `src/utils/asset.ts` to prepend the base URL correctly.
+This is a React + TypeScript + Vite **PWA** (Progressive Web App) digital museum guide. It is deployed as a standalone site at the domain root (the Vite `base` is `/`). All asset paths must use the `asset()` helper from `src/utils/asset.ts` to prepend the base URL correctly.
 
 ### Data layer (`public/data/`)
 

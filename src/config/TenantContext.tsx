@@ -6,7 +6,7 @@ const DEFAULT_TENANT: TenantConfig = {
   name: 'Casa Muzeu Bukowina',
   shortName: 'Ghid Muzeu',
   logo: '/icons/logo.png',
-  baseUrl: '/ghid/',
+  baseUrl: '/',
   colors: {
     primary: '#2C1810',
     secondary: '#6B7D5C',

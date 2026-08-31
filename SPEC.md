@@ -8,7 +8,7 @@ Digital guide app for the Casa Muzeu Bukowina complex in Putna, Suceava county. 
 
 - **Audience:** Visitors (tourist mode) and docents (guide mode)
 - **Languages:** Romanian, English, French, Italian — all content is fully translated
-- **Deployment:** Served at `/ghid/` as a static site; installable as a PWA
+- **Deployment:** Served as a standalone static site at the domain root (`/`); installable as a PWA
 - **Houses covered:** Casa Veronica Bicu (CVB) and Casa Aionitoaie (CAI)
 
 ---
