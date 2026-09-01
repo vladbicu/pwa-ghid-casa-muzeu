@@ -1,73 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Map, Users, Church, Home, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useIntroSlides } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
 import { asset } from '../utils/asset';
-import type { IntroSlide } from '../types';
 
 export const INTRO_SEEN_KEY = 'ghid-intro-seen';
 
-const iconMap: Record<string, React.ElementType> = {
-  Map,
-  Users,
-  Church,
-  Home,
-};
-
-function TimelineEntry({ slide, language, index }: { slide: IntroSlide; language: string; index: number }) {
-  const Icon = iconMap[slide.icon] ?? Map;
-  const title = (slide.title as Record<string, string>)[language] ?? slide.title.ro;
-  const body = (slide.body as Record<string, string>)[language] ?? slide.body.ro;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: index * 0.1 }}
-      className="relative pl-8"
-    >
-      {/* Dot on the timeline line */}
-      <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-museum-moss border-2 border-museum-beige" />
-
-      {/* Icon + title */}
-      <div className="flex items-center gap-2 mb-2">
-        <Icon size={18} className="text-museum-moss shrink-0" />
-        <h2 className="font-semibold text-museum-walnut text-lg leading-tight">{title}</h2>
-      </div>
-
-      {/* Body */}
-      <p className="text-museum-walnut/70 text-sm leading-relaxed">{body}</p>
-
-      {/* Image */}
-      {slide.image && (
-        <img
-          src={asset(slide.image)}
-          alt={title}
-          className="mt-3 w-full rounded-xl object-cover"
-          style={{ maxHeight: 192 }}
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-        />
-      )}
-    </motion.div>
-  );
-}
+const FALLBACK_IMG = '/images/mock/Casa muzeu Putna-296.jpg';
 
 export function IntroPage() {
   const navigate = useNavigate();
   const { language } = useSettings();
   const ui = getUI(language);
   const { data: slides, loading } = useIntroSlides();
+  const [index, setIndex] = useState(0);
+  const [imgErr, setImgErr] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(INTRO_SEEN_KEY, '1');
   }, []);
 
-  if (loading || !slides) {
+  if (loading || !slides || slides.length === 0) {
     return <div className="min-h-screen bg-museum-beige" />;
   }
+
+  const slide = slides[Math.min(index, slides.length - 1)];
+  const title = (slide.title as Record<string, string>)[language] ?? slide.title.ro;
+  const body = (slide.body as Record<string, string>)[language] ?? slide.body.ro;
+  const isLast = index >= slides.length - 1;
+
+  const next = () => {
+    if (isLast) navigate('/');
+    else {
+      setIndex((i) => i + 1);
+      setImgErr(false);
+    }
+  };
 
   return (
     <motion.main
@@ -75,40 +45,70 @@ export function IntroPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25 }}
-      className="pb-24 pt-6 px-4 md:px-8 max-w-2xl mx-auto"
+      className="min-h-screen bg-museum-beige flex flex-col max-w-2xl mx-auto"
+      style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 26px)' }}
     >
-      {/* Page header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-1">
-          <h1 className="text-2xl font-bold text-museum-walnut">{ui.aboutBukovina}</h1>
-          <span className="text-xs font-bold text-museum-walnut/50 bg-museum-sand px-2 py-0.5 rounded-full">
-            1775–1918
+      <div className="px-5 pt-16">
+        <div className="rounded-card overflow-hidden h-[230px] bg-clay-200">
+          <img
+            src={asset(imgErr || !slide.image ? FALLBACK_IMG : slide.image)}
+            alt=""
+            onError={() => setImgErr(true)}
+            className="washed w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="px-6 pt-5 flex-1 flex flex-col gap-3">
+        <div className="flex items-center gap-2.5">
+          <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-accent-700">
+            {ui.aboutBukovina}
+          </span>
+          <span className="flex-1 h-[1.5px] bg-clay-300" />
+          <span className="text-[11px] font-bold text-clay-600">
+            {index + 1} / {slides.length}
           </span>
         </div>
-        <p className="text-museum-walnut/60 text-sm">{ui.bukovinaSubtitle}</p>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={slide.id}
+            initial={{ opacity: 0, x: 12 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -12 }}
+            transition={{ duration: 0.2 }}
+          >
+            <h2 className="font-heading text-[30px] leading-[1.1] text-museum-walnut mb-3">{title}</h2>
+            <p className="text-[16px] leading-[1.6] text-pretty-wrap text-museum-walnut">{body}</p>
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="flex gap-1.5 mt-1">
+          {slides.map((s, i) => (
+            <span
+              key={s.id}
+              className={`h-[5px] rounded-full transition-all ${
+                i === index ? 'w-[26px] bg-accent' : 'w-[9px] bg-clay-300'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Timeline */}
-      <div className="relative border-l-2 border-museum-walnut/15 ml-3 space-y-10 mb-12">
-        {slides.map((slide, idx) => (
-          <TimelineEntry key={slide.id} slide={slide} language={language} index={idx} />
-        ))}
-      </div>
-
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: slides.length * 0.1 + 0.2 }}
-        className="flex justify-center"
-      >
+      <div className="px-6 pt-4 flex gap-2.5 items-center">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 bg-museum-walnut text-museum-cream px-6 py-3 rounded-full font-semibold shadow-warm hover:bg-museum-walnut/90 active:scale-95 transition-all"
+          className="text-[14px] font-semibold text-clay-600 px-3"
         >
-          {ui.startVisit} <ArrowRight size={16} />
+          {ui.skipIntro}
         </button>
-      </motion.div>
+        <button
+          onClick={next}
+          className="flex-1 bg-accent text-white rounded-full py-4 text-center font-heading text-[16px] shadow-md"
+        >
+          {isLast ? ui.startVisit : ui.moreBtn}
+        </button>
+      </div>
     </motion.main>
   );
 }

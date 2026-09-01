@@ -34,7 +34,7 @@ export function IndustryHubPage() {
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-2 mb-3"
         >
-          <span className="bg-museum-moss text-museum-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">
+          <span className="bg-accent text-museum-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">
             {ui.studyBadge}
           </span>
         </motion.div>

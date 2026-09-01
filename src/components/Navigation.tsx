@@ -1,7 +1,6 @@
 import React from 'react';
 import { Home, Hash } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useTenant } from '../config/TenantContext';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
@@ -12,38 +11,33 @@ export function Navigation() {
   const ui = getUI(language);
 
   const navItems = [
-    { icon: Home, label: 'Tururi', path: '/' },
+    { icon: Home, label: ui.toursNav, path: '/' },
     ...(tenant.features.shortCodes
       ? [{ icon: Hash, label: ui.findNav, path: '/find' }]
       : []),
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-museum-beige border-t border-museum-walnut/10 pb-safe pt-2 px-4 z-50 shadow-[0_-4px_20px_rgba(107,68,35,0.1)]">
-      <div className="max-w-md mx-auto flex justify-around items-center h-16">
+    <nav
+      className="fixed left-0 right-0 z-50 flex justify-center px-4 pointer-events-none"
+      style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 20px)' }}
+    >
+      <div className="pointer-events-auto flex gap-1 bg-museum-walnut rounded-full p-1.5 shadow-lg">
         {navItems.map((item) => (
           <NavLink
-            key={item.label}
+            key={item.path}
             to={item.path}
             end={item.path === '/'}
-            className={({ isActive }) => `
-              relative flex flex-col items-center justify-center w-16 h-full gap-1 transition-colors duration-300
-              ${isActive ? 'text-museum-moss' : 'text-museum-walnut/60 hover:text-museum-walnut/80'}
-            `}
+            className={({ isActive }) =>
+              `flex items-center gap-2 rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${
+                isActive
+                  ? 'bg-museum-cream text-museum-walnut'
+                  : 'text-clay-300 hover:text-museum-cream'
+              }`
+            }
           >
-            {({ isActive }) => (
-              <>
-                {isActive && (
-                  <motion.div
-                    layoutId="nav-indicator"
-                    className="absolute -top-2 w-8 h-1 bg-museum-moss rounded-full"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  />
-                )}
-                <item.icon size={24} strokeWidth={isActive ? 2.5 : 2} />
-                <span className="text-[10px] font-medium">{item.label}</span>
-              </>
-            )}
+            <item.icon size={18} strokeWidth={2.75} />
+            <span>{item.label}</span>
           </NavLink>
         ))}
       </div>

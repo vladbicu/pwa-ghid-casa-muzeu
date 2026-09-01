@@ -22,12 +22,22 @@ import { AdminQRPage } from './pages/admin/AdminQRPage';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SettingsProvider } from './context/SettingsContext';
+import { KidsProgressProvider } from './context/KidsProgressContext';
 import { useTenant } from './config/TenantContext';
+import { KidsWelcomePage } from './pages/kids/KidsWelcomePage';
+import { KidsPassportPage } from './pages/kids/KidsPassportPage';
+import { KidsStopPage } from './pages/kids/KidsStopPage';
+import { KidsCompletePage } from './pages/kids/KidsCompletePage';
 
 function AppRoutes() {
   const location = useLocation();
   const navigate = useNavigate();
-  const isStopPage = useMatch('/tour/:tourId/stop/:stopId');
+  const isKidsRoute = useMatch('/pasaportul-exploratorului/*');
+  // The redesign gives tour/stop/section/intro screens their own full-bleed
+  // hero + back button — the app Header and bottom nav only belong on the
+  // "hub" screens.
+  const chromeRoutes = ['/', '/find', '/industry', '/admin/qr'];
+  const showChrome = chromeRoutes.includes(location.pathname);
   const direction = (location.state as { direction?: number } | null)?.direction ?? 0;
   const tenant = useTenant();
 
@@ -41,7 +51,16 @@ function AppRoutes() {
     }
   }, []);
 
-  const hideChrome = !!isStopPage;
+  useEffect(() => {
+    if (isKidsRoute) {
+      document.documentElement.classList.add('kids-mode');
+    } else {
+      document.documentElement.classList.remove('kids-mode');
+    }
+    return () => document.documentElement.classList.remove('kids-mode');
+  }, [isKidsRoute]);
+
+  const hideChrome = !showChrome || !!isKidsRoute;
 
   return (
     <>
@@ -57,6 +76,10 @@ function AppRoutes() {
           <Route path="/find" element={<FindPage />} />
           <Route path="/intro" element={<IntroPage />} />
           <Route path="/admin/qr" element={<AdminQRPage />} />
+          <Route path="/pasaportul-exploratorului" element={<KidsWelcomePage />} />
+          <Route path="/pasaportul-exploratorului/pasaport" element={<KidsPassportPage />} />
+          <Route path="/pasaportul-exploratorului/oprire/:stopId" element={<KidsStopPage />} />
+          <Route path="/pasaportul-exploratorului/complet" element={<KidsCompletePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
@@ -69,11 +92,13 @@ export function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <SettingsProvider>
-        <ErrorBoundary>
-          <div className="min-h-screen bg-museum-beige text-museum-walnut font-sans selection:bg-museum-moss/30">
-            <AppRoutes />
-          </div>
-        </ErrorBoundary>
+        <KidsProgressProvider>
+          <ErrorBoundary>
+            <div className="min-h-screen bg-museum-beige text-museum-walnut font-sans selection:bg-museum-moss/30">
+              <AppRoutes />
+            </div>
+          </ErrorBoundary>
+        </KidsProgressProvider>
       </SettingsProvider>
     </Router>
   );

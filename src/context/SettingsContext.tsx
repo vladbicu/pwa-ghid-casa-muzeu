@@ -6,14 +6,11 @@ interface SettingsContextType {
   language: Lang;
   setLanguage: (lang: Lang) => void;
   availableLanguages: { code: Lang; label: string; available: boolean }[];
-  theme: 'light' | 'dark';
-  setTheme: (theme: 'light' | 'dark') => void;
   viewMode: 'tourist' | 'guide';
   setViewMode: (mode: 'tourist' | 'guide') => void;
 }
 
 const LANGUAGE_KEY = 'ghid-language';
-const THEME_KEY = 'ghid-theme';
 const VIEW_MODE_KEY = 'ghid-view-mode';
 
 const LANGUAGE_LABELS: Record<Lang, string> = {
@@ -44,14 +41,6 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     return defaultLanguage;
   });
 
-  const [theme, setThemeState] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem(THEME_KEY);
-      if (stored === 'light' || stored === 'dark') return stored;
-    }
-    return 'light';
-  });
-
   const [viewMode, setViewModeState] = useState<'tourist' | 'guide'>(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem(VIEW_MODE_KEY);
@@ -60,18 +49,15 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     return 'tourist';
   });
 
+  // The "Vatra" redesign has no dark palette — the light ground is already
+  // low-glare. Ensure any legacy `html.dark` class is cleared.
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [theme]);
+    document.documentElement.classList.remove('dark');
+  }, []);
 
   const setLanguage = (lang: Lang) => {
     setLanguageState(lang);
     localStorage.setItem(LANGUAGE_KEY, lang);
-  };
-
-  const setTheme = (t: 'light' | 'dark') => {
-    setThemeState(t);
-    localStorage.setItem(THEME_KEY, t);
   };
 
   const setViewMode = (mode: 'tourist' | 'guide') => {
@@ -85,8 +71,6 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
         language,
         setLanguage,
         availableLanguages,
-        theme,
-        setTheme,
         viewMode,
         setViewMode,
       }}

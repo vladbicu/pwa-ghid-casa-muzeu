@@ -8,12 +8,12 @@ const DEFAULT_TENANT: TenantConfig = {
   logo: '/icons/logo.png',
   baseUrl: '/',
   colors: {
-    primary: '#2C1810',
-    secondary: '#6B7D5C',
-    accent: '#F0EBE3',
-    background: '#FAF7F0',
-    surface: '#FFFCF5',
-    text: '#2C1810',
+    primary: '#201e1d',
+    secondary: '#7a8a5e',
+    accent: '#ebddc5',
+    background: '#f5ead8',
+    surface: '#f9f4ed',
+    text: '#201e1d',
   },
   defaultLanguage: 'ro',
   availableLanguages: ['ro', 'en', 'fr', 'it'],
@@ -73,7 +73,7 @@ export function TenantProvider({ children }: { children: ReactNode }) {
   }, []);
 
   if (!tenant) {
-    return <div style={{ background: '#FAF7F0', minHeight: '100vh' }} />;
+    return <div style={{ background: '#f5ead8', minHeight: '100vh' }} />;
   }
 
   return <TenantContext.Provider value={tenant}>{children}</TenantContext.Provider>;

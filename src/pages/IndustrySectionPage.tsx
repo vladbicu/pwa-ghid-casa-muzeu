@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import { useIndustrySection, getLocalizedText } from '../hooks/useData';
+import { useIndustrySection, useIndustrySections, getLocalizedText } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
 import { TimelineEvent } from '../components/TimelineEvent';
@@ -11,17 +11,18 @@ import { asset } from '../utils/asset';
 export function IndustrySectionPage() {
   const { sectionId } = useParams<{ sectionId: string }>();
   const { data: section, loading } = useIndustrySection(sectionId);
+  const { data: allSections } = useIndustrySections();
   const { language } = useSettings();
   const ui = getUI(language);
   const [imgError, setImgError] = useState(false);
 
   if (loading) {
     return (
-      <div className="pb-24">
-        <div className="animate-pulse bg-museum-walnut/10 h-52 md:h-64" />
-        <div className="max-w-2xl mx-auto px-4 pt-6 space-y-4">
+      <div className="pb-28">
+        <div className="animate-pulse bg-museum-walnut/10 h-[230px]" />
+        <div className="max-w-2xl mx-auto px-5 pt-6 space-y-4">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-24" />
+            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-[20px] h-24" />
           ))}
         </div>
       </div>
@@ -30,9 +31,9 @@ export function IndustrySectionPage() {
 
   if (!section) {
     return (
-      <div className="p-8 text-center text-museum-walnut/60">
+      <div className="p-8 text-center text-clay-600">
         <p>{ui.stopNotFound}</p>
-        <Link to="/industry" className="text-museum-moss underline mt-2 inline-block">
+        <Link to="/industry" className="text-accent-700 underline mt-2 inline-block">
           {ui.backToIndustry}
         </Link>
       </div>
@@ -41,6 +42,7 @@ export function IndustrySectionPage() {
 
   const title = getLocalizedText(section.title, language) ?? section.title.ro;
   const description = getLocalizedText(section.description, language) ?? section.description.ro;
+  const siblings = allSections.filter((s) => s.id !== section.id);
 
   return (
     <motion.main
@@ -48,10 +50,10 @@ export function IndustrySectionPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25 }}
-      className="pb-24"
+      className="min-h-screen bg-museum-beige pb-28"
     >
       {/* Hero */}
-      <div className="relative h-52 md:h-64 bg-museum-sand overflow-hidden">
+      <div className="relative h-[230px] w-full overflow-hidden bg-museum-walnut/20">
         {!imgError && (
           <img
             src={asset(section.image)}
@@ -60,33 +62,27 @@ export function IndustrySectionPage() {
             className="w-full h-full object-cover"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-museum-walnut/70 via-museum-walnut/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <span className="text-museum-cream/70 text-xs font-semibold uppercase tracking-widest mb-1 block">
-            {section.period}
-          </span>
-          <h1 className="text-2xl md:text-3xl font-bold text-museum-cream leading-tight">{title}</h1>
-        </div>
-      </div>
-
-      <div className="max-w-2xl mx-auto px-4 md:px-8 pt-6">
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(32,30,29,0.5), rgba(32,30,29,0.15) 55%)' }}
+        />
         <Link
           to="/industry"
-          className="inline-flex items-center gap-1 text-sm text-museum-walnut/60 hover:text-museum-walnut mb-6 transition-colors"
+          aria-label={ui.backToIndustry}
+          className="absolute top-14 left-[18px] w-10 h-10 rounded-full bg-museum-cream/92 flex items-center justify-center text-museum-walnut"
         >
-          <ArrowLeft size={14} />
-          {ui.backToIndustry}
+          <ArrowLeft size={19} strokeWidth={2.75} />
         </Link>
+      </div>
 
-        <p className="text-museum-walnut/70 text-sm leading-relaxed mb-8 pb-8 border-b border-museum-walnut/10">
-          {description}
-        </p>
+      {/* Sheet */}
+      <div className="relative z-[1] -mt-[30px] rounded-t-sheet bg-museum-beige px-5 pt-6 max-w-2xl mx-auto">
+        <div className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-accent-700 mb-1.5">
+          {section.period}
+        </div>
+        <h1 className="font-heading text-[27px] leading-[1.1] text-museum-walnut mb-2">{title}</h1>
+        <p className="text-[13.5px] leading-normal text-clay-700 mb-6">{description}</p>
 
-        <h2 className="text-xs font-bold uppercase tracking-widest text-museum-walnut/40 mb-6">
-          {ui.timeline}
-        </h2>
-
-        {/* Timeline */}
         <div>
           {section.events.map((event, index) => (
             <TimelineEvent
@@ -98,6 +94,20 @@ export function IndustrySectionPage() {
             />
           ))}
         </div>
+
+        {siblings.length > 0 && (
+          <div className="flex gap-2.5 mt-4">
+            {siblings.map((s) => (
+              <Link
+                key={s.id}
+                to={`/industry/${s.id}`}
+                className="flex-1 text-center border-[1.5px] border-clay-300 rounded-full py-3.5 font-heading text-[15px] text-museum-walnut"
+              >
+                {getLocalizedText(s.title, language) ?? s.id}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </motion.main>
   );

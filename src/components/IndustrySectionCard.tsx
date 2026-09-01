@@ -42,7 +42,7 @@ export function IndustrySectionCard({ section, index }: IndustrySectionCardProps
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-museum-walnut/60 to-transparent" />
           <div className="absolute top-3 right-3">
-            <span className="bg-museum-moss text-museum-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">
+            <span className="bg-accent text-museum-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">
               {ui.studyBadge}
             </span>
           </div>
@@ -52,13 +52,13 @@ export function IndustrySectionCard({ section, index }: IndustrySectionCardProps
         </div>
 
         <div className="p-4">
-          <h3 className="font-bold text-museum-walnut text-lg leading-tight mb-1 group-hover:text-museum-moss transition-colors">
+          <h3 className="font-bold text-museum-walnut text-lg leading-tight mb-1 group-hover:text-accent-700 transition-colors">
             {title}
           </h3>
           <p className="text-museum-walnut/60 text-sm line-clamp-2 mb-3">{description}</p>
           <div className="flex items-center justify-between text-xs text-museum-walnut/50">
             <span>{section.events.length} {ui.timeline.toLowerCase()}</span>
-            <ArrowRight size={14} className="text-museum-moss group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={14} className="text-accent-700 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
       </Link>
