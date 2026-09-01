@@ -115,14 +115,6 @@ export function HomePage() {
         )}
       </div>
 
-      <div className="flex justify-center pt-4">
-        <Link
-          to="/pasaportul-exploratorului"
-          className="text-clay-500 hover:text-clay-700 text-sm font-medium transition-colors"
-        >
-          Mod copii →
-        </Link>
-      </div>
     </motion.main>
   );
 }
