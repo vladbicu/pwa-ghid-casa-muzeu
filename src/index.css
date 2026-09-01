@@ -1,70 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+/* Main-app fonts (Bree Serif + Figtree) are self-hosted — imported in main.tsx.
+   This Google Fonts line stays only for the separate kids app, which still uses
+   Nunito/Outfit via `font-[Nunito,Outfit,sans-serif]`. */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  /* Light mode palette (RGB triplets for Tailwind opacity support) */
+  /* "Vatra" palette — Organic design system. RGB triplets for Tailwind
+     <alpha-value> support. museum-* key names are kept so unrewritten
+     components and the tenant-color runtime override keep working. */
   :root {
-    --museum-beige:  250 247 240;   /* #FAF7F0 */
-    --museum-walnut:  44  24  16;   /* #2C1810 */
-    --museum-moss:   107 125  92;   /* #6B7D5C */
-    --museum-cream:  255 252 245;   /* #FFFCF5 */
-    --museum-sand:   240 235 227;   /* #F0EBE3 */
-    --museum-brown:   61  40  23;   /* #3D2817 */
-  }
+    --museum-beige:  245 234 216;   /* #f5ead8 — page ground */
+    --museum-cream:  249 244 237;   /* #f9f4ed — cards / surface */
+    --museum-sand:   235 221 197;   /* #ebddc5 — tinted fills, inactive segments */
+    --museum-walnut:  32  30  29;   /* #201e1d — text, dark buttons */
+    --museum-moss:   122 138  94;   /* #7a8a5e — accent-2 / guide mode */
+    --museum-brown:  198 113  57;   /* #c67139 — primary accent (terracotta) */
 
-  /* Dark mode palette — activated by .dark class on <html> */
+    /* Tonal ramps (from the handoff README). */
+    --color-neutral-100: 249 244 237;
+    --color-neutral-200: 238 231 219;
+    --color-neutral-300: 220 211 196;
+    --color-neutral-400: 192 182 165;
+    --color-neutral-500: 161 151 134;
+    --color-neutral-600: 130 121 106;
+    --color-neutral-700: 100  92  80;
+    --color-neutral-800:  71  66  56;
+    --color-neutral-900:  46  43  37;
+
+    --color-accent-100: 255 242 235;
+    --color-accent-200: 255 225 208;
+    --color-accent-300: 255 198 165;
+    --color-accent-400: 246 160 107;
+    --color-accent-500: 214 127  72;
+    --color-accent-600: 178  98  45;
+    --color-accent-700: 140  73  26;
+    --color-accent-800: 100  51  18;
+    --color-accent-900:  64  35  16;
+
+    --color-accent-2-100: 240 250 225;
+    --color-accent-2-200: 225 238 204;
+    --color-accent-2-300: 204 219 178;
+    --color-accent-2-400: 174 191 146;
+    --color-accent-2-500: 143 160 115;
+    --color-accent-2-600: 114 129  87;
+    --color-accent-2-700:  86  99  63;
+    --color-accent-2-800:  61  71  43;
+    --color-accent-2-900:  39  46  27;
+
+    --shadow-sm: 0 1px 2px rgba(46, 43, 37, 0.14);
+    --shadow-md: 0 3px 10px rgba(46, 43, 37, 0.16);
+    --shadow-lg: 0 12px 32px rgba(46, 43, 37, 0.22);
+  }
 }
 
-html.dark {
-  --museum-beige:   18  10   6;  /* very dark warm bg    */
-  --museum-walnut: 245 240 232;  /* light warm text      */
-  --museum-moss:   143 168 122;  /* brighter green       */
-  --museum-cream:   35  20  12;  /* dark card surface    */
-  --museum-sand:    52  30  18;  /* slightly lighter     */
-  --museum-brown:   52  30  18;
+html.kids-mode {
+  --kids-parchment: 245 237 212;   /* #F5EDD4 — background */
+  --kids-terracotta: 217 95 59;    /* #D95F3B — primary action */
+  --kids-gold: 242 162 39;         /* #F2A227 — highlights */
+  --kids-cobalt: 29 78 137;        /* #1D4E89 — stamp ink */
+  --kids-paper: 255 250 240;       /* #FFFAF0 — card surface */
+  --kids-ink: 45 26 14;            /* #2D1A0E — text */
+  --kids-correct: 39 174 96;       /* #27AE60 — correct answer */
+  --kids-hint: 230 126 34;         /* #E67E22 — wrong / hint */
 }
 
 @layer base {
   body {
     @apply bg-museum-beige text-museum-walnut font-sans antialiased;
-    background-image: radial-gradient(
-      circle at center,
-      rgb(var(--museum-beige)) 0%,
-      rgb(var(--museum-sand)) 100%
-    );
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-heading tracking-tight;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--museum-brown));
+    outline-offset: 2px;
   }
 }
 
 @layer utilities {
   .text-shadow-sm {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   }
 
-  .wood-grain {
-    background-color: #6B4423;
-    background-image:
-      repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.03) 0px,
-        rgba(255,255,255,0.03) 1px,
-        transparent 1px,
-        transparent 12px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        rgba(0,0,0,0.1) 0px,
-        rgba(0,0,0,0.1) 1px,
-        transparent 1px,
-        transparent 8px
-      );
+  /* Content photographs sit back into the page. Full-bleed heroes are NOT
+     washed — they get a gradient scrim instead. */
+  .washed {
+    filter: saturate(0.6) contrast(0.85) brightness(1.1);
+  }
+
+  .text-pretty-wrap {
+    text-wrap: pretty;
   }
 
   /* Safe area padding for notched devices */

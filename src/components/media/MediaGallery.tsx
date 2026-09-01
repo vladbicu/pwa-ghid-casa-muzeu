@@ -160,7 +160,7 @@ function MultiMediaGallery({
               key={idx}
               onClick={() => setActiveIdx(idx)}
               className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden scroll-snap-start border-2 transition-all ${
-                isActive ? 'border-museum-moss' : 'border-transparent opacity-60 hover:opacity-90'
+                isActive ? 'border-accent' : 'border-transparent opacity-60 hover:opacity-90'
               }`}
             >
               {thumb ? (

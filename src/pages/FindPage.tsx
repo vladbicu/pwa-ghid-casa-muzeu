@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Delete, Check } from 'lucide-react';
+import { Delete } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   useTours,
@@ -8,6 +8,7 @@ import {
   useIndustrySections,
   findStopByCode,
   findSectionByCode,
+  getLocalizedText,
 } from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
@@ -22,13 +23,12 @@ export function FindPage() {
   const { data: sections, loading: sectionsLoading } = useIndustrySections();
   const loading = stopsLoading || toursLoading || sectionsLoading;
 
-  const stops = stopsData ?? [];
-  const tours = toursData ?? [];
+  const stops = useMemo(() => stopsData ?? [], [stopsData]);
+  const tours = useMemo(() => toursData ?? [], [toursData]);
 
   const [input, setInput] = useState('');
   const [shaking, setShaking] = useState(false);
 
-  // All valid shortCodes for extension check
   const allCodes = useMemo(() => {
     const codes: number[] = [];
     for (const s of stops) if (s.shortCode !== undefined) codes.push(s.shortCode);
@@ -36,10 +36,21 @@ export function FindPage() {
     return codes;
   }, [stops, sections]);
 
+  // Live resolution — what the current input points at, before navigating.
+  const resolvedLabel = useMemo(() => {
+    if (!input) return '';
+    const num = parseInt(input, 10);
+    if (isNaN(num)) return '';
+    const hit = findStopByCode(num, stops, tours);
+    if (hit) return getLocalizedText(hit.stop.title, language) || '';
+    const sec = findSectionByCode(num, sections);
+    if (sec) return getLocalizedText(sec.title, language) || '';
+    return '';
+  }, [input, stops, tours, sections, language]);
+
   const tryNavigate = (code: string) => {
     const num = parseInt(code, 10);
     if (isNaN(num)) return false;
-
     const stopResult = findStopByCode(num, stops, tours);
     if (stopResult) {
       navigate(`/tour/${stopResult.tourId}/stop/${stopResult.stop.id}`);
@@ -65,16 +76,11 @@ export function FindPage() {
     if (shaking || input.length >= 2) return;
     const newInput = input + d.toString();
     setInput(newInput);
-
-    // Auto-navigate if no valid code could extend this prefix further
     const hasExtension =
       newInput.length === 1 &&
       allCodes.some((c) => c.toString().length > 1 && c.toString().startsWith(newInput));
-
     if (!hasExtension) {
-      if (!tryNavigate(newInput)) {
-        shake();
-      }
+      if (!tryNavigate(newInput)) shake();
     }
   };
 
@@ -83,18 +89,7 @@ export function FindPage() {
     setInput((prev) => prev.slice(0, -1));
   };
 
-  const handleConfirm = () => {
-    if (shaking || !input) return;
-    if (!tryNavigate(input)) {
-      shake();
-    }
-  };
-
-  const keypadRows = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-  ];
+  const digits = [input[0] ?? '', input[1] ?? ''];
 
   return (
     <motion.main
@@ -102,66 +97,69 @@ export function FindPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25 }}
-      className="pb-24 pt-8 px-4 max-w-sm mx-auto flex flex-col items-center"
+      className="min-h-screen bg-museum-beige pb-28 pt-16 px-6 max-w-sm mx-auto flex flex-col items-center"
     >
-      <h1 className="text-xl font-bold text-museum-walnut mb-1">{ui.findPageTitle}</h1>
-      <p className="text-sm text-museum-walnut/60 mb-8 text-center">{ui.findPageSubtitle}</p>
+      <h1 className="font-heading text-[27px] leading-[1.1] text-museum-walnut mb-1.5 text-center">
+        {ui.findPageTitle}
+      </h1>
+      <p className="text-[14px] text-clay-700 mb-6 text-center">{ui.findPageSubtitle}</p>
 
-      {/* Code display */}
+      {/* Digit slots */}
       <motion.div
         animate={shaking ? { x: [-8, 8, -8, 8, -4, 4, 0] } : { x: 0 }}
         transition={{ duration: 0.35 }}
-        className="mb-8 w-full flex flex-col items-center"
+        className="flex gap-3 justify-center"
       >
-        <div
-          className={`font-mono text-[72px] leading-none font-bold tracking-widest min-w-[4ch] text-center transition-colors ${
-            shaking ? 'text-red-500' : 'text-museum-walnut'
-          }`}
-        >
-          {input || '—'}
-        </div>
-        {shaking && (
-          <p className="text-sm text-red-500 mt-2 font-medium">{ui.findCodeNotFound}</p>
-        )}
-        {loading && !shaking && (
-          <p className="text-xs text-museum-walnut/40 mt-2">…</p>
-        )}
+        {digits.map((d, i) => (
+          <span
+            key={i}
+            className={`w-16 h-[78px] rounded-[22px] bg-clay-100 shadow-sm flex items-center justify-center font-heading text-[36px] transition-colors ${
+              shaking ? 'text-accent-700' : d ? 'text-museum-walnut' : 'text-clay-400'
+            }`}
+          >
+            {d || (i === 0 ? '0' : '')}
+          </span>
+        ))}
       </motion.div>
 
-      {/* Keypad */}
-      <div className="w-full max-w-[280px]">
-        <div className="grid grid-cols-3 gap-3 mb-3">
-          {keypadRows.flat().map((n) => (
-            <button
-              key={n}
-              onClick={() => handleDigit(n)}
-              className="h-16 rounded-2xl bg-museum-cream border border-museum-walnut/10 text-museum-walnut text-2xl font-semibold shadow-warm hover:bg-museum-sand active:scale-95 transition-all"
-            >
-              {n}
-            </button>
-          ))}
-        </div>
-        <div className="grid grid-cols-3 gap-3">
-          <button
-            onClick={handleBackspace}
-            className="h-16 rounded-2xl bg-museum-cream border border-museum-walnut/10 text-museum-walnut/60 shadow-warm hover:bg-museum-sand active:scale-95 transition-all flex items-center justify-center"
-          >
-            <Delete size={22} />
-          </button>
-          <button
-            onClick={() => handleDigit(0)}
-            className="h-16 rounded-2xl bg-museum-cream border border-museum-walnut/10 text-museum-walnut text-2xl font-semibold shadow-warm hover:bg-museum-sand active:scale-95 transition-all"
-          >
-            0
-          </button>
-          <button
-            onClick={handleConfirm}
-            className="h-16 rounded-2xl bg-museum-moss text-museum-cream shadow-warm hover:bg-museum-moss/90 active:scale-95 transition-all flex items-center justify-center"
-          >
-            <Check size={24} strokeWidth={2.5} />
-          </button>
-        </div>
+      <div className="h-6 mt-3 text-center">
+        {shaking ? (
+          <span className="text-[13px] font-bold text-accent-700">{ui.findCodeNotFound}</span>
+        ) : resolvedLabel ? (
+          <span className="text-[13px] font-bold text-accent-700">{resolvedLabel}</span>
+        ) : loading ? (
+          <span className="text-xs text-clay-500">…</span>
+        ) : null}
       </div>
+
+      {/* Keypad */}
+      <div className="grid grid-cols-3 gap-3.5 mt-4 w-full max-w-[280px]">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+          <button
+            key={n}
+            onClick={() => handleDigit(n)}
+            className="aspect-square rounded-full bg-clay-100 shadow-sm font-heading text-[28px] text-museum-walnut active:scale-95 transition-transform"
+          >
+            {n}
+          </button>
+        ))}
+        <span />
+        <button
+          onClick={() => handleDigit(0)}
+          className="aspect-square rounded-full bg-clay-100 shadow-sm font-heading text-[28px] text-museum-walnut active:scale-95 transition-transform"
+        >
+          0
+        </button>
+        <button
+          onClick={handleBackspace}
+          aria-label="⌫"
+          className="aspect-square rounded-full bg-museum-sand text-clay-700 flex items-center justify-center active:scale-95 transition-transform"
+        >
+          <Delete size={22} strokeWidth={2.5} />
+        </button>
+      </div>
+
+      <p className="text-center text-[12.5px] text-clay-600 mt-6">{ui.scanQrHint}</p>
     </motion.main>
   );
 }

@@ -1,76 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Moon, Users, User } from 'lucide-react';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { Check } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 import { useTenant } from '../config/TenantContext';
 import { getUI } from '../i18n/ui';
-import { asset } from '../utils/asset';
+import { BrandLockup } from './BrandMark';
+
+const LANG_SHORT: Record<string, string> = { ro: 'RO', en: 'EN', fr: 'FR', it: 'IT' };
 
 export function Header() {
-  const [logoError, setLogoError] = useState(false);
-  const { theme, setTheme, viewMode, setViewMode, language } = useSettings();
+  const { viewMode, setViewMode, language, setLanguage, availableLanguages } = useSettings();
   const tenant = useTenant();
   const ui = getUI(language);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onClick(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+    }
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-museum-beige/90 backdrop-blur-sm border-b border-museum-walnut/10 px-6 py-4">
-      <div className="max-w-5xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          {logoError ? (
-            <span className="text-lg font-bold text-museum-walnut tracking-tight">
-              {tenant.name}
-            </span>
-          ) : (
-            <img
-              src={asset(tenant.logo)}
-              alt={tenant.name}
-              onError={() => setLogoError(true)}
-              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          )}
+    <header className="px-5 pt-5 pb-3">
+      <div className="max-w-5xl mx-auto flex items-center justify-between gap-3">
+        <Link to="/" aria-label={tenant.name}>
+          <BrandLockup />
         </Link>
 
         <div className="flex items-center gap-2">
           {tenant.features.guidMode && (
-            <div
-              title={viewMode === 'tourist' ? ui.switchToGuide : ui.switchToTourist}
-              className="flex items-center bg-museum-sand rounded-full p-0.5 text-xs font-semibold"
-            >
+            <div className="flex items-center bg-museum-sand rounded-full p-[3px] text-[11px] font-bold">
               <button
                 onClick={() => setViewMode('tourist')}
-                aria-label={ui.touristMode}
-                className={`flex items-center gap-1 px-2.5 py-1 rounded-full transition-colors ${
-                  viewMode === 'tourist'
-                    ? 'bg-museum-walnut text-museum-cream'
-                    : 'text-museum-walnut/60 hover:text-museum-walnut'
+                aria-pressed={viewMode === 'tourist'}
+                className={`px-2.5 py-1 rounded-full transition-colors ${
+                  viewMode === 'tourist' ? 'bg-accent text-white' : 'text-clay-700'
                 }`}
               >
-                <Users size={14} />
-                <span className="hidden sm:inline">{ui.touristMode}</span>
+                {ui.touristMode}
               </button>
               <button
                 onClick={() => setViewMode('guide')}
-                aria-label={ui.guideMode}
-                className={`flex items-center gap-1 px-2.5 py-1 rounded-full transition-colors ${
-                  viewMode === 'guide'
-                    ? 'bg-museum-walnut text-museum-cream'
-                    : 'text-museum-walnut/60 hover:text-museum-walnut'
+                aria-pressed={viewMode === 'guide'}
+                className={`px-2.5 py-1 rounded-full transition-colors ${
+                  viewMode === 'guide' ? 'bg-accent text-white' : 'text-clay-700'
                 }`}
               >
-                <User size={14} />
-                <span className="hidden sm:inline">{ui.guideMode}</span>
+                {ui.guideMode}
               </button>
             </div>
           )}
-          <button
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-            className="p-2 rounded-lg text-museum-walnut/60 hover:text-museum-walnut hover:bg-museum-walnut/8 transition-colors"
-          >
-            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-          </button>
-          <LanguageSwitcher />
+
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setLangOpen((o) => !o)}
+              aria-label={`Limba — ${availableLanguages.find((l) => l.code === language)?.label}`}
+              aria-expanded={langOpen}
+              className="text-[11px] font-bold border-[1.5px] border-clay-300 rounded-full px-2.5 py-1.5 text-museum-walnut hover:border-museum-walnut/40 transition-colors"
+            >
+              {LANG_SHORT[language] ?? language.toUpperCase()}
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-2 bg-museum-cream rounded-2xl shadow-lg border border-clay-300 overflow-hidden z-50 min-w-[150px]">
+                {availableLanguages.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => {
+                      setLanguage(l.code);
+                      setLangOpen(false);
+                    }}
+                    className={`w-full px-4 py-2.5 text-left text-sm flex items-center justify-between gap-2 transition-colors ${
+                      l.code === language
+                        ? 'text-accent-700 font-semibold'
+                        : 'text-museum-walnut hover:bg-museum-sand'
+                    }`}
+                  >
+                    {l.label}
+                    {l.code === language && <Check size={14} strokeWidth={2.75} />}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>

@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useTour, useStopsForTour, getLocalizedText, groupStopsByRoom, useThemes } from '../hooks/useData';
+import {
+  useTour,
+  useStopsForTour,
+  useResumeTour,
+  getLocalizedText,
+  groupStopsByRoom,
+  computeTourDuration,
+  useThemes,
+} from '../hooks/useData';
 import { useSettings } from '../context/SettingsContext';
 import { getUI } from '../i18n/ui';
 import { StopCard } from '../components/StopCard';
-import { ArrowLeft, Clock, MapPin, Play, Layers, BookOpen, Scissors, Coffee, Heart, Building2 } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { asset } from '../utils/asset';
-
-const themeIconMap: Record<string, React.ElementType> = {
-  BookOpen, Scissors, Coffee, Heart, Building2,
-};
 
 export function TourDetailPage() {
   const { tourId } = useParams();
@@ -21,15 +25,15 @@ export function TourDetailPage() {
   const { data: tour, loading: tourLoading } = useTour(tourId);
   const { data: allStopsForTour, loading: stopsLoading } = useStopsForTour(tour);
   const { data: themes } = useThemes();
+  const resume = useResumeTour();
 
   if (tourLoading) {
     return (
-      <div className="pb-24 bg-museum-beige min-h-screen">
-        <div className="animate-pulse bg-museum-walnut/10 h-[40vh] min-h-[300px]" />
-        <div className="max-w-4xl mx-auto px-4 md:px-8 mt-6 space-y-4">
-          <div className="animate-pulse bg-museum-walnut/10 rounded-xl h-10 w-2/3" />
+      <div className="pb-28 min-h-screen">
+        <div className="animate-pulse bg-museum-walnut/10 h-[270px]" />
+        <div className="max-w-2xl mx-auto px-5 mt-6 space-y-3">
           {[0, 1, 2, 3, 4].map((i) => (
-            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-20" />
+            <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-[20px] h-14" />
           ))}
         </div>
       </div>
@@ -38,10 +42,10 @@ export function TourDetailPage() {
 
   if (!tour) {
     return (
-      <div className="min-h-screen bg-museum-beige flex items-center justify-center p-8 text-center">
-        <div className="bg-museum-cream rounded-2xl shadow-warm-lg p-10 max-w-md border border-museum-walnut/10">
-          <h1 className="text-xl font-bold text-museum-walnut mb-4">Turul nu a fost găsit</h1>
-          <Link to="/" className="text-museum-moss hover:underline">← Tururi</Link>
+      <div className="min-h-screen flex items-center justify-center p-8 text-center">
+        <div className="bg-museum-cream rounded-card shadow-lg p-10 max-w-md">
+          <h1 className="text-xl mb-4 text-museum-walnut">Turul nu a fost găsit</h1>
+          <Link to="/" className="text-accent-700 hover:underline">← {ui.toursNav}</Link>
         </div>
       </div>
     );
@@ -49,9 +53,10 @@ export function TourDetailPage() {
 
   const title = getLocalizedText(tour.title, language) || '';
   const description = getLocalizedText(tour.description, language) || '';
+  const duration = computeTourDuration(tour);
 
   const relevantThemes = themes.filter((theme) =>
-    allStopsForTour.some((stop) => stop.themes?.includes(theme.id))
+    allStopsForTour.some((stop) => stop.themes?.includes(theme.id)),
   );
 
   const stops = selectedThemeId
@@ -64,6 +69,7 @@ export function TourDetailPage() {
   const beginTourUrl = firstStopId
     ? `/tour/${tour.id}/stop/${firstStopId}${selectedThemeId ? `?theme=${selectedThemeId}` : ''}`
     : null;
+  const resumeStopId = resume?.tourId === tour.id ? resume.stopId : null;
 
   return (
     <motion.div
@@ -71,136 +77,130 @@ export function TourDetailPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25 }}
-      className="pb-24 bg-museum-beige min-h-screen"
+      className="pb-28 min-h-screen"
     >
-      {/* Hero Header */}
-      <div className="relative h-[40vh] min-h-[300px] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-museum-walnut/20">
-          {tour.image && (
-            <img
-              src={asset(tour.image)}
-              alt={title}
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-museum-beige" />
-
+      {/* Hero */}
+      <div className="relative h-[270px] w-full overflow-hidden bg-museum-walnut/20">
+        {tour.image && (
+          <img
+            src={asset(tour.image)}
+            alt={title}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            className="w-full h-full object-cover"
+          />
+        )}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(32,30,29,0.45), rgba(32,30,29,0.05) 50%)' }}
+        />
         <Link
           to="/"
-          aria-label="Înapoi la tururi"
-          className="absolute top-6 left-6 p-3 bg-museum-cream/20 backdrop-blur-md text-museum-cream rounded-full hover:bg-museum-cream/30 transition-colors z-10"
+          aria-label={ui.back}
+          className="absolute top-14 left-[18px] w-10 h-10 rounded-full bg-museum-cream/90 flex items-center justify-center text-museum-walnut"
         >
-          <ArrowLeft size={24} />
+          <ArrowLeft size={19} strokeWidth={2.75} />
         </Link>
-
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-museum-beige via-museum-beige/80 to-transparent pt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="flex gap-4 mb-3 text-sm font-medium text-museum-walnut/80">
-              <span className="flex items-center gap-1 bg-museum-cream px-3 py-1 rounded-full shadow-sm">
-                <Clock size={14} /> {tour.durationLabel}
-              </span>
-              <span className="flex items-center gap-1 bg-museum-cream px-3 py-1 rounded-full shadow-sm">
-                <MapPin size={14} /> {stopsLoading ? '…' : stops.length} {ui.stops}
-              </span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-museum-walnut mb-2">{title}</h1>
-            <p className="text-museum-walnut/80 text-lg md:text-xl max-w-2xl leading-relaxed">
-              {description}
-            </p>
-          </motion.div>
-        </div>
       </div>
 
-      {/* Content */}
-      <main className="max-w-4xl mx-auto px-4 md:px-8 mt-6">
-        {/* Theme selector */}
-        {!stopsLoading && relevantThemes.length > 0 && (
-          <div className="overflow-x-auto pb-2 -mx-4 px-4 mb-5">
-            <div className="flex gap-2 w-max">
-              <button
-                onClick={() => setSelectedThemeId(null)}
-                className={`flex flex-col items-center gap-2 px-4 py-3 rounded-xl border min-w-[88px] transition-all ${
-                  selectedThemeId === null
-                    ? 'bg-museum-walnut text-museum-cream border-museum-walnut'
-                    : 'bg-museum-cream text-museum-walnut border-museum-walnut/10 hover:border-museum-moss/30'
-                }`}
-              >
-                <Layers size={20} />
-                <span className="text-xs font-medium leading-tight text-center">{ui.completeTour}</span>
-              </button>
+      {/* Sheet */}
+      <div className="relative z-[1] -mt-[30px] rounded-t-sheet bg-museum-beige px-5 pt-6 max-w-2xl mx-auto">
+        <div className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-accent-700 mb-1.5">
+          Casa {tour.order} · Putna
+        </div>
+        <h1 className="font-heading text-[28px] leading-[1.1] text-museum-walnut mb-2">{title}</h1>
+        <p className="text-[13.5px] leading-snug text-clay-700">
+          {ui.stopsCount(tour.stopIds.length)} · {duration}
+        </p>
+        <p className="text-[13.5px] leading-normal text-clay-700 mt-1.5">{description}</p>
 
-              {relevantThemes.map((theme) => {
-                const Icon = themeIconMap[theme.icon] ?? Layers;
-                const themeTitle = getLocalizedText(theme.title, language) ?? theme.id;
-                const count = allStopsForTour.filter((s) => s.themes?.includes(theme.id)).length;
-                const isActive = selectedThemeId === theme.id;
-                return (
-                  <button
-                    key={theme.id}
-                    onClick={() => setSelectedThemeId(theme.id)}
-                    className={`flex flex-col items-center gap-2 px-4 py-3 rounded-xl border min-w-[88px] transition-all ${
-                      isActive
-                        ? 'border-2 text-museum-cream'
-                        : 'bg-museum-cream text-museum-walnut border-museum-walnut/10 hover:border-museum-moss/30'
-                    }`}
-                    style={isActive ? { backgroundColor: theme.color, borderColor: theme.color } : {}}
-                  >
-                    <Icon size={20} style={{ color: isActive ? 'white' : theme.color }} />
-                    <span className="text-xs font-medium leading-tight text-center">{themeTitle}</span>
-                    <span className="text-[10px] opacity-60">{ui.stopsCount(count)}</span>
-                  </button>
-                );
-              })}
-            </div>
+        {/* Theme filter chips */}
+        {!stopsLoading && relevantThemes.length > 0 && (
+          <div className="flex gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 mt-4">
+            <button
+              onClick={() => setSelectedThemeId(null)}
+              className={`shrink-0 whitespace-nowrap text-[12.5px] font-semibold px-3.5 py-2 rounded-full transition-colors ${
+                selectedThemeId === null
+                  ? 'bg-museum-walnut text-clay-100'
+                  : 'border-[1.5px] border-clay-300 text-museum-walnut'
+              }`}
+            >
+              {ui.completeTour}
+            </button>
+            {relevantThemes.map((theme) => {
+              const isActive = selectedThemeId === theme.id;
+              return (
+                <button
+                  key={theme.id}
+                  onClick={() => setSelectedThemeId(theme.id)}
+                  className={`shrink-0 whitespace-nowrap text-[12.5px] font-semibold px-3.5 py-2 rounded-full transition-colors ${
+                    isActive
+                      ? 'bg-museum-walnut text-clay-100'
+                      : 'border-[1.5px] border-clay-300 text-museum-walnut'
+                  }`}
+                >
+                  {getLocalizedText(theme.title, language) ?? theme.id}
+                </button>
+              );
+            })}
           </div>
         )}
 
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-museum-walnut">{ui.stops}</h2>
-          {beginTourUrl && (
-            <Link
-              to={beginTourUrl}
-              state={{ direction: 1 }}
-              className="flex items-center gap-2 bg-museum-moss text-museum-cream px-5 py-2.5 rounded-full font-semibold shadow-warm hover:bg-museum-moss/90 transition-colors active:scale-95"
-            >
-              <Play size={18} fill="currentColor" /> {ui.beginTour}
-            </Link>
-          )}
-        </div>
-
-        {stopsLoading ? (
-          <div className="space-y-3">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-xl h-20" />
-            ))}
-          </div>
-        ) : (
-          roomGroups.map((group) => (
-            <div key={group.roomId} className="mb-6">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-museum-walnut/40 mb-3 px-1">
-                {group.roomName}
-              </h3>
-              <div className="space-y-3">
+        {/* Room groups */}
+        <div className="mt-5 flex flex-col gap-5">
+          {stopsLoading ? (
+            [0, 1, 2, 3, 4].map((i) => (
+              <div key={i} className="animate-pulse bg-museum-walnut/10 rounded-[20px] h-14" />
+            ))
+          ) : (
+            roomGroups.map((group) => (
+              <div key={group.roomId} className="flex flex-col gap-2">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-clay-600">
+                    {group.roomName}
+                  </span>
+                  <span className="flex-1 h-[1.5px] bg-clay-300" />
+                  <span className="text-[11px] text-clay-600">
+                    {ui.stopsCount(group.stops.length)}
+                  </span>
+                </div>
                 {group.stops.map((stop) => (
                   <StopCard
                     key={stop.id}
                     stop={stop}
                     tourId={tour.id}
                     index={stopIndexMap.get(stop.id) ?? 0}
+                    isCurrent={stop.id === resumeStopId}
+                    isResume={stop.id === resumeStopId}
                     themeId={selectedThemeId ?? undefined}
                   />
                 ))}
               </div>
-            </div>
-          ))
-        )}
-      </main>
+            ))
+          )}
+        </div>
+      </div>
+
+      {/* Sticky footer */}
+      {beginTourUrl && (
+        <div
+          className="fixed left-0 right-0 z-30 px-5 pt-3.5"
+          style={{
+            bottom: 0,
+            paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 26px)',
+            background: 'linear-gradient(to top, rgb(var(--museum-beige)) 70%, transparent)',
+          }}
+        >
+          <div className="max-w-2xl mx-auto">
+            <Link
+              to={beginTourUrl}
+              state={{ direction: 1 }}
+              className="block text-center bg-accent text-white rounded-full py-4 font-heading text-[16px] shadow-md"
+            >
+              {resumeStopId ? ui.continueTour : ui.beginTour}
+            </Link>
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 }

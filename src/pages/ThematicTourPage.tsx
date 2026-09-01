@@ -40,7 +40,7 @@ export function ThematicTourPage() {
       <div className="min-h-screen bg-museum-beige flex items-center justify-center p-8 text-center">
         <div className="bg-museum-cream rounded-2xl shadow-warm-lg p-10 max-w-md border border-museum-walnut/10">
           <h1 className="text-xl font-bold text-museum-walnut mb-4">Tema nu a fost găsită</h1>
-          <Link to="/" className="text-museum-moss hover:underline">{ui.back}</Link>
+          <Link to="/" className="text-accent-700 hover:underline">{ui.back}</Link>
         </div>
       </div>
     );
@@ -56,7 +56,7 @@ export function ThematicTourPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25 }}
-      className="pb-24 pt-6 px-4 md:px-8 max-w-3xl mx-auto"
+      className="pb-24 pt-14 px-4 md:px-8 max-w-3xl mx-auto"
     >
       <Link
         to="/"

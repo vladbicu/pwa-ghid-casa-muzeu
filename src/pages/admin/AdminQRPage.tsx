@@ -51,7 +51,7 @@ function QRCard({ entity }: { entity: QREntity }) {
       <button
         onClick={handleDownload}
         disabled={!dataUrl}
-        className="text-xs text-museum-moss hover:underline disabled:opacity-40 flex items-center gap-1 transition-opacity"
+        className="text-xs text-accent-700 hover:underline disabled:opacity-40 flex items-center gap-1 transition-opacity"
       >
         <Download size={12} /> PNG
       </button>
@@ -155,7 +155,7 @@ export function AdminQRPage() {
       {/* Section 1: QR codes */}
       <section className="mb-10">
         <h2 className="text-lg font-semibold text-museum-walnut mb-4 flex items-center gap-2">
-          <QrCode size={20} className="text-museum-moss" />
+          <QrCode size={20} className="text-accent-700" />
           QR Codes
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -168,7 +168,7 @@ export function AdminQRPage() {
       {/* Section 2: Numeric codes table */}
       <section className="mb-10">
         <h2 className="text-lg font-semibold text-museum-walnut mb-4 flex items-center gap-2">
-          <Table size={20} className="text-museum-moss" />
+          <Table size={20} className="text-accent-700" />
           Coduri numerice
         </h2>
         <div className="overflow-x-auto rounded-xl border border-museum-walnut/10 shadow-warm">
@@ -190,7 +190,7 @@ export function AdminQRPage() {
                     i % 2 === 0 ? 'bg-museum-cream' : 'bg-museum-beige'
                   }`}
                 >
-                  <td className="px-4 py-2.5 font-mono font-bold text-museum-moss">
+                  <td className="px-4 py-2.5 font-mono font-bold text-accent-700">
                     {row.code}
                   </td>
                   <td className="px-4 py-2.5 font-mono text-xs text-museum-walnut/70">
@@ -209,13 +209,13 @@ export function AdminQRPage() {
       {/* Section 3: Export buttons */}
       <section>
         <h2 className="text-lg font-semibold text-museum-walnut mb-4 flex items-center gap-2">
-          <Download size={20} className="text-museum-moss" />
+          <Download size={20} className="text-accent-700" />
           Export
         </h2>
         <div className="flex flex-wrap gap-3">
           <button
             onClick={handleDownloadCSV}
-            className="flex items-center gap-2 bg-museum-moss text-museum-cream px-5 py-2.5 rounded-full font-semibold shadow-warm hover:bg-museum-moss/90 active:scale-95 transition-all"
+            className="flex items-center gap-2 bg-accent text-museum-cream px-5 py-2.5 rounded-full font-semibold shadow-warm hover:bg-accent-600 active:scale-95 transition-all"
           >
             <Download size={16} /> Export CSV
           </button>
