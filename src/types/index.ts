@@ -42,7 +42,34 @@ export interface Stop {
   questions: Record<Lang, string[]>;
   extra: Record<Lang, string>;
   image: string;
+  kids?: KidsData;
 }
+
+export interface KidsAnswer {
+  text: Record<Lang, string>;
+  correct: boolean;
+}
+
+export interface KidsAgeAdaptation {
+  question: Record<Lang, string>;
+  answers: KidsAnswer[];
+}
+
+export interface KidsData {
+  include: boolean;
+  stampIcon: string;
+  order: number;
+  scriptKids: Record<Lang, string>;
+  question: Record<Lang, string>;
+  answers: KidsAnswer[];
+  funFact: Record<Lang, string>;
+  ageAdaptations?: {
+    '6-8'?: KidsAgeAdaptation;
+    '12-14'?: KidsAgeAdaptation;
+  };
+}
+
+export type AgeGroup = '6-8' | '9-11' | '12-14';
 
 export interface StopsData {
   version: number;

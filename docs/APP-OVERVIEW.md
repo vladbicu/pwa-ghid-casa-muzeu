@@ -1,0 +1,1 @@
+React+TS+Vite PWA museum guide for Casa Muzeu Bukowina, deployed at domain root, 4 languages (ro/en/fr/it), static JSON, no backend. Screens: Home, intro deck, 2 house tours (38 stops with scripts/media/guide questions), 5 thematic tours, 3 industry sections with timelines, short-code Find page, QR admin, plus a separate kids "Explorer Passport" game (a stamp per stop).
